@@ -1,0 +1,93 @@
+{
+  "created": "2026-08-18T11:34:08+02:00",
+  "camera": "center",
+  "lens_id": "EO-58-001-12mm",
+  "board": {
+    "squares": [
+      12,
+      9
+    ],
+    "square_mm": 60.0,
+    "marker_mm": 47.0,
+    "dictionary": "DICT_5X5_250",
+    "legacy": true
+  },
+  "standoff_mm": 6.0,
+  "groups": {
+    "deck": {
+      "n_poses": 5,
+      "distance_mean_m": 3.0672425821969656,
+      "distance_spread_mm": 9.593015748236677,
+      "distance_std_mm": 3.6035741593959387,
+      "normal": [
+        0.032357079889923875,
+        0.02056626280846218,
+        0.9992647538140682
+      ],
+      "within_group_tilt_max_deg": 0.4355380707898771,
+      "rms_px_mean": 0.19610036148363133,
+      "bow_pp_median_mm": 1.382,
+      "bow_pp_max_mm": 2.388,
+      "bow_noise_floor_mm": 0.941,
+      "bow_snr": 1.47,
+      "bow_significant": false
+    },
+    "riser1": {
+      "n_poses": 5,
+      "distance_mean_m": 2.9361009103421174,
+      "distance_spread_mm": 12.642873355855677,
+      "distance_std_mm": 4.624366136496011,
+      "normal": [
+        0.03854374675081528,
+        0.010031573306396762,
+        0.9992065587872246
+      ],
+      "within_group_tilt_max_deg": 1.1525797596445893,
+      "rms_px_mean": 0.218224258105599,
+      "bow_pp_median_mm": 1.636,
+      "bow_pp_max_mm": 1.989,
+      "bow_noise_floor_mm": 1.047,
+      "bow_snr": 1.56,
+      "bow_significant": false
+    },
+    "riser": {
+      "n_poses": 5,
+      "distance_mean_m": 2.8506470693163823,
+      "distance_spread_mm": 4.929668020857481,
+      "distance_std_mm": 2.1215507675317804,
+      "normal": [
+        0.03689633862750638,
+        0.010108437911383356,
+        0.9992679719068734
+      ],
+      "within_group_tilt_max_deg": 0.17831292082497674,
+      "rms_px_mean": 0.19464265093580863,
+      "bow_pp_median_mm": 1.975,
+      "bow_pp_max_mm": 2.155,
+      "bow_noise_floor_mm": 0.934,
+      "bow_snr": 2.11,
+      "bow_significant": true
+    }
+  },
+  "separations": {
+    "deck->riser1": {
+      "measured_mm": 130.319,
+      "nominal_mm": 130.0,
+      "error_mm": 0.319,
+      "within_group_spread_mm": 6.499,
+      "tilt_vs_base_deg": 0.7
+    },
+    "deck->riser": {
+      "measured_mm": 217.862,
+      "nominal_mm": 218.0,
+      "error_mm": -0.138,
+      "within_group_spread_mm": 6.09,
+      "tilt_vs_base_deg": 0.6532
+    }
+  },
+  "deck_marker_plane_m": 3.0672425821969656,
+  "deck_surface_m": 3.0732425821969653,
+  "separations_ok": true,
+  "bow_ok": false,
+  "ok": false
+}

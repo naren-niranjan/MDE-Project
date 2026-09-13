@@ -1,0 +1,27 @@
+{
+  "snapshot": "/path/to/snap",
+  "calib_dir": null,
+  "cameras": [
+    "center",
+    "left",
+    "right"
+  ],
+  "output_dir": "./fused_output",
+  "moge_checkpoint": "Ruicheng/moge-2-vitl-normal",
+  "align_depths": false,
+  "icp": false,
+  "tsdf": false,
+  "tsdf_voxel": 0.005,
+  "tsdf_trunc": 0.04,
+  "edge_rel_threshold": 0.05,
+  "depth_min": 0.3,
+  "depth_max": 15.0,
+  "icp_threshold": 0.05,
+  "sift_features": 5000,
+  "lowe_ratio": 0.75,
+  "reproj_thresh": 2.0,
+  "irls_iters": 4,
+  "inverse_extrinsics": false,
+  "save_per_camera": true,
+  "fp16": false
+}

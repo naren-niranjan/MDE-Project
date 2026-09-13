@@ -1,0 +1,152 @@
+{
+  "lens_id": "EO-58-001-12mm",
+  "reference_camera": "center",
+  "deck_perp_m": 3.07964,
+  "separation_m": null,
+  "reference_planes": [
+    {
+      "label": "riser",
+      "perp_m": 2.82263,
+      "height_above_deck_m": 0.25667,
+      "height_above_deck_mm": 256.7,
+      "tilt_vs_deck_deg": 0.426,
+      "spread_mm": 0.93,
+      "flatness_rms_mm": 0.63,
+      "pooled_extent_m": 1.35,
+      "max_board_tilt_deg": 1.99,
+      "n_images": 3,
+      "n_points": 264,
+      "worst_rms_px": 0.1974,
+      "min_corners": 88,
+      "normal": [
+        -0.030393,
+        -0.015079,
+        -0.999424
+      ],
+      "per_image": [
+        {
+          "file": "gt/riser_01.png",
+          "n_corners": 88,
+          "rms_px": 0.175,
+          "tilt_deg": 1.84,
+          "lateral_offset_m": 0.169,
+          "ambiguity_ratio": 4.28,
+          "offset_from_pooled_mm": 0.33,
+          "residual_rms_mm": 0.63
+        },
+        {
+          "file": "gt/riser_02.png",
+          "n_corners": 88,
+          "rms_px": 0.1891,
+          "tilt_deg": 1.98,
+          "lateral_offset_m": 0.411,
+          "ambiguity_ratio": 28.94,
+          "offset_from_pooled_mm": 0.01,
+          "residual_rms_mm": 0.17
+        },
+        {
+          "file": "gt/riser_03.png",
+          "n_corners": 88,
+          "rms_px": 0.1974,
+          "tilt_deg": 1.99,
+          "lateral_offset_m": 0.286,
+          "ambiguity_ratio": 11.42,
+          "offset_from_pooled_mm": -0.6,
+          "residual_rms_mm": 0.87
+        }
+      ],
+      "expected_height_mm": 257.0,
+      "expected_error_mm": -0.3
+    },
+    {
+      "label": "deck",
+      "perp_m": 3.07964,
+      "height_above_deck_m": 0.0,
+      "height_above_deck_mm": 0.0,
+      "tilt_vs_deck_deg": 0.0,
+      "spread_mm": 0.0,
+      "flatness_rms_mm": 0.84,
+      "pooled_extent_m": 1.559,
+      "max_board_tilt_deg": 2.44,
+      "n_images": 2,
+      "n_points": 176,
+      "worst_rms_px": 0.1877,
+      "min_corners": 88,
+      "normal": [
+        -0.037817,
+        -0.015446,
+        -0.999165
+      ],
+      "per_image": [
+        {
+          "file": "gt/deck_01.png",
+          "n_corners": 88,
+          "rms_px": 0.1877,
+          "tilt_deg": 2.44,
+          "lateral_offset_m": 0.416,
+          "ambiguity_ratio": 16.28,
+          "offset_from_pooled_mm": -0.02,
+          "residual_rms_mm": 1.11
+        },
+        {
+          "file": "gt/deck_03.png",
+          "n_corners": 88,
+          "rms_px": 0.1701,
+          "tilt_deg": 2.29,
+          "lateral_offset_m": 0.532,
+          "ambiguity_ratio": 31.57,
+          "offset_from_pooled_mm": -0.02,
+          "residual_rms_mm": 0.43
+        }
+      ]
+    }
+  ],
+  "span_m": 0.25701,
+  "parcel_band_m": [
+    0.03,
+    0.6
+  ],
+  "planes_in_parcel_band": [
+    "riser"
+  ],
+  "usable": true,
+  "problems": [],
+  "focal_spread": {
+    "fx_px": {
+      "left": 3490.56,
+      "center": 3479.61,
+      "right": 3479.62,
+      "top": 3506.41
+    },
+    "spread_fraction": 0.00768
+  },
+  "measured": "2026-08-17",
+  "method": "ChArUco board laid on each surface, solvePnPGeneric against the calibrated intrinsics of the reference camera, board plus mount 47.0 mm ADDED along each placement's own normal, then ALL placements of one surface fitted as a single robust plane. Legacy marker layout off",
+  "notes": "perp_m values are PHYSICAL distances from the reference camera's optical centre, taken from a plane pooled over every placement, so they do not carry the normal-error-times-lateral-offset artefact that a per-placement perpendicular does. spread_mm is now the disagreement between placements about that common plane, which is a consistency measurement rather than a placement artefact. These are not the same quantity as --seg-plane-distance or --deck-distance, which select a band in DA3's unanchored coordinates and read several per cent short. layer_align.py can only match a plane listed here if the same physical surface is present in the capture, so leave the riser BLOCK on the belt, board removed, when taking the alignment capture.",
+  "detail": {
+    "camera_serial": "261100628",
+    "intrinsics_rms_px": 0.2742339034230437,
+    "board": {
+      "squares": [
+        12,
+        9
+      ],
+      "square_m": 0.06,
+      "marker_m": 0.047,
+      "dictionary": "DICT_5X5_250",
+      "legacy_pattern": false,
+      "thickness_mm": 47.0,
+      "thickness_sign": "added along the normal"
+    },
+    "ambiguity_ratio_limit": 3.0,
+    "max_spread_mm": 2.0,
+    "failures": {
+      "deck": [
+        {
+          "file": "gt/deck_02.png",
+          "reason": "planar PnP ambiguity: the second pose reprojects only 2.61 times worse than the first, so the standoff is not determined by the corners. Tilt the board 10 to 20 deg"
+        }
+      ]
+    }
+  }
+}

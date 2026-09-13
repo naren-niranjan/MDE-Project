@@ -1,0 +1,75 @@
+{
+  "camera": "left",
+  "image_size": [
+    2448,
+    2048
+  ],
+  "camera_matrix": [
+    [
+      2358.0835454404587,
+      0.0,
+      1267.135334911167
+    ],
+    [
+      0.0,
+      2359.50652563859,
+      1016.2489738809759
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "dist_coeffs": [
+    -0.21558710769124462,
+    0.3074892829269337,
+    0.0027658019000887995,
+    0.0009186630056764319,
+    -0.3427608679539941
+  ],
+  "distortion_model": "radial_tangential_k1k2p1p2k3",
+  "rms_reprojection_error_px": 1.573795866613086,
+  "mean_per_view_error_px": 1.1021005554444512,
+  "max_per_view_error_px": 4.003229046579995,
+  "distortion_sane": true,
+  "n_views_used": 36,
+  "views_used": [
+    "frame_0000.png",
+    "frame_0001.png",
+    "frame_0002.png",
+    "frame_0003.png",
+    "frame_0004.png",
+    "frame_0005.png",
+    "frame_0006.png",
+    "frame_0007.png",
+    "frame_0008.png",
+    "frame_0009.png",
+    "frame_0010.png",
+    "frame_0011.png",
+    "frame_0012.png",
+    "frame_0013.png",
+    "frame_0014.png",
+    "frame_0015.png",
+    "frame_0016.png",
+    "frame_0017.png",
+    "frame_0018.png",
+    "frame_0019.png",
+    "frame_0020.png",
+    "frame_0021.png",
+    "frame_0022.png",
+    "frame_0023.png",
+    "frame_0024.png",
+    "frame_0025.png",
+    "frame_0026.png",
+    "frame_0027.png",
+    "frame_0028.png",
+    "frame_0029.png",
+    "frame_0030.png",
+    "frame_0031.png",
+    "frame_0032.png",
+    "frame_0033.png",
+    "frame_0034.png",
+    "frame_0035.png"
+  ]
+}

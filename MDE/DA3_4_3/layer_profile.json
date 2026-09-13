@@ -1,0 +1,36 @@
+{
+  "cloud": "runs/20260807_105802/prior/cloud_center.ply",
+  "n_points_raw": 501288,
+  "n_points_used": 501288,
+  "plane": {
+    "normal": [
+      -0.01285546051629337,
+      -0.010522642298446204,
+      -0.9998619960444407
+    ],
+    "d": 3.984087527632724,
+    "inlier_frac": 0.24380795071894798
+  },
+  "params": {
+    "voxel_m": 0.0,
+    "plane_thresh_m": 0.008,
+    "plane_band_m": 0.15,
+    "bandwidth_mm": 2.0,
+    "min_prominence": 0.06
+  },
+  "global": {
+    "n_points": 280976,
+    "n_modes": 2,
+    "mode_positions_mm": [
+      -37.62,
+      -2.96
+    ],
+    "mode_separations_mm": [
+      34.66
+    ],
+    "spread_mm": 19.56,
+    "p5_p95_span_mm": 58.17
+  },
+  "tiles": [],
+  "elapsed_s": 0.471
+}

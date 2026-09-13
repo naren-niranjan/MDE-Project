@@ -1,0 +1,51 @@
+[
+ {
+  "subset": "center",
+  "area_m2": 9.063,
+  "max_baseline_m": 0.0,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "left",
+  "area_m2": 6.735,
+  "max_baseline_m": 0.0,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "right",
+  "area_m2": 6.398,
+  "max_baseline_m": 0.0,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "center+left",
+  "area_m2": 6.14,
+  "max_baseline_m": 0.7846,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "center+right",
+  "area_m2": 6.13,
+  "max_baseline_m": 0.7773,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "left+right",
+  "area_m2": 3.66,
+  "max_baseline_m": 1.5618,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ },
+ {
+  "subset": "center+left+right",
+  "area_m2": 8.87,
+  "max_baseline_m": 1.5618,
+  "parcels_covered": 3,
+  "parcels_total": 3
+ }
+]

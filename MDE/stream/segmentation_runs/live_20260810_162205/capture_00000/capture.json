@@ -1,0 +1,156 @@
+{
+  "capture": 0,
+  "timestamp": "2026-08-10T16:49:10+02:00",
+  "depth_correction": {
+    "source": null,
+    "per_camera": null,
+    "global": {
+      "a": 1.0,
+      "b": 0.0
+    },
+    "absolute_applied": true,
+    "auto_align": true,
+    "segmentation": true,
+    "auto_align_state": {
+      "ok": true,
+      "plane_normal": [
+        0.00219,
+        0.0062,
+        0.99998
+      ],
+      "plane_offset_m": 3.98854,
+      "plane_inliers": 5963,
+      "n_reference_points": 23520,
+      "offsets_mm": {
+        "left": 10.234,
+        "center": 0.0,
+        "right": 10.271,
+        "top": 47.924
+      },
+      "clamped": [],
+      "solve_ms": 27.36
+    }
+  },
+  "per_camera": [
+    {
+      "camera": "left",
+      "median_depth_m": 3.949588739198501,
+      "depth_p05_m": 2.7514994972169946,
+      "depth_p95_m": 4.017538749498184,
+      "n_points": 121952,
+      "conf_threshold": 8.61146812438965,
+      "dropped": {
+        "conf": 84672,
+        "edge": 4721,
+        "grazing": 335
+      }
+    },
+    {
+      "camera": "center",
+      "median_depth_m": 3.969333529472351,
+      "depth_p05_m": 2.760708212852478,
+      "depth_p95_m": 4.0010470151901245,
+      "n_points": 122716,
+      "conf_threshold": 8.150086212158204,
+      "dropped": {
+        "conf": 84672,
+        "edge": 3932,
+        "grazing": 360
+      }
+    },
+    {
+      "camera": "right",
+      "median_depth_m": 3.94919117971188,
+      "depth_p05_m": 2.8527777461600916,
+      "depth_p95_m": 3.989988949735226,
+      "n_points": 123686,
+      "conf_threshold": 8.995555877685547,
+      "dropped": {
+        "conf": 84672,
+        "edge": 3132,
+        "grazing": 190
+      }
+    },
+    {
+      "camera": "top",
+      "median_depth_m": 4.483043468939374,
+      "depth_p05_m": 3.391481901156018,
+      "depth_p95_m": 4.526422871100018,
+      "n_points": 121884,
+      "conf_threshold": 6.339193534851075,
+      "dropped": {
+        "conf": 84672,
+        "edge": 4713,
+        "grazing": 411
+      }
+    }
+  ],
+  "fused": {
+    "n_points_before_voxel": 490238,
+    "n_points_written": 471541,
+    "voxel_m": 0.004,
+    "bbox_min": [
+      -1.223864424164064,
+      -2.645400264184661,
+      2.6425280570983887
+    ],
+    "bbox_max": [
+      2.223725448459708,
+      2.174059343317303,
+      4.037639617919922
+    ]
+  },
+  "segmentation": {
+    "ok": true,
+    "reason": null,
+    "n_boxes": 26,
+    "warnings": [],
+    "conveyor": {
+      "normal": [
+        -0.0026852885953321166,
+        -0.009214830973333138,
+        -0.9999539369967462
+      ],
+      "offset_m": 3.9885294844536974,
+      "inlier_fraction": 0.31872288455946496,
+      "inlier_rms_m": 0.00431953915130215,
+      "distance_from_reference_camera_m": 3.9885294844536974,
+      "frame_x_axis": [
+        0.9999963946060805,
+        -2.4744569734525883e-05,
+        -0.0026851745839869307
+      ],
+      "frame_y_axis": [
+        -3.3881317890172014e-21,
+        0.9999575422375888,
+        -0.009214864196548482
+      ],
+      "frame_note": "right-handed about the approach axis, that is about -normal, so reported yaw matches the wrist rotation"
+    },
+    "timings_ms": {
+      "subsample": 63.02,
+      "conveyor_plane": 79.6,
+      "cluster": 197.21,
+      "fit_faces": 300.82,
+      "relations": 19.71,
+      "total": 661.43
+    },
+    "files": {
+      "boxes_json": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/boxes.json",
+      "boxes_csv": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/boxes.csv",
+      "segmented_ply": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/segmented.ply",
+      "seg_left": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_left.png",
+      "seg_center": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_center.png",
+      "seg_right": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_right.png",
+      "seg_top": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_top.png",
+      "segmented_png": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/segmented.png"
+    }
+  },
+  "timings_ms": {
+    "backproject": 277.17,
+    "fuse": 512.41,
+    "write": 932.57,
+    "segment": 1279.07,
+    "total": 3005.37
+  }
+}

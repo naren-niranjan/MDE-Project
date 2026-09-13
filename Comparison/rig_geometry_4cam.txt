@@ -1,0 +1,36 @@
+cameras (rig frame = reference camera)
+  center   C=(+0.0000,+0.0000,+0.0000)  axis  0.00 deg off ref   roll    +0.0 deg   fx=  3479.6
+  left     C=(+0.0234,+0.2932,-0.0031)  axis  1.65 deg off ref   roll  +109.4 deg   fx=  3490.6
+  top      C=(+0.0754,-0.2201,-0.5409)  axis  1.06 deg off ref   roll   -91.2 deg   fx=  3506.4
+  right    C=(-0.0108,-0.8590,+0.0151)  axis  1.03 deg off ref   roll  +178.8 deg   fx=  3479.6
+  *** non-upright mounts: left, top, right. Run every subset with --upright or the
+      ranking is partly a ranking of roll angle.
+
+baselines (lateral component triangulates; axial component conditions the pose prior)
+  center  -left     |b|=0.2941  lateral=0.2941  axial=0.0031  ( 1.1% axial)
+  center  -top      |b|=0.5888  lateral=0.2327  axial=0.5409  (91.9% axial)
+  center  -right    |b|=0.8592  lateral=0.8591  axial=0.0151  ( 1.8% axial)
+  left    -top      |b|=0.7452  lateral=0.5159  axial=0.5378  (72.2% axial)
+  left    -right    |b|=1.1528  lateral=1.1527  axial=0.0182  ( 1.6% axial)
+  top     -right    |b|=0.8513  lateral=0.6447  axial=0.5560  (65.3% axial)
+
+belt mask: 6947 cells, 2.78 m2, deck tilt 1.35 deg
+
+coverage (m2) over belt mask belt_mask.npz, >=2 views (>=1 for singles)
+subset                           cond      h=0   h=100   h=200   h=300   h=400   h=500
+--------------------------------------------------------------------------------------
+center                            -       2.09    2.02    1.96    1.90    1.86    1.79     -15% over height
+left                              -       1.85    1.79    1.74    1.68    1.63    1.57     -15% over height
+top                               -       2.01    1.96    1.91    1.86    1.81    1.75     -13% over height
+right                             -       1.47    1.36    1.24    1.15    1.04    0.95     -35% over height
+center+left                       -       1.76    1.70    1.65    1.59    1.54    1.48     -16% over height
+center+top                        -       1.92    1.86    1.80    1.75    1.70    1.64     -15% over height
+center+right                      -       1.43    1.32    1.20    1.12    1.02    0.92     -36% over height
+left+top                          -       1.82    1.77    1.71    1.66    1.60    1.55     -15% over height
+left+right                        -       1.24    1.14    1.04    0.95    0.86    0.77     -38% over height
+top+right                         -       1.38    1.28    1.17    1.08    0.98    0.90     -35% over height
+center+left+top                0.3115     1.97    1.92    1.87    1.81    1.76    1.71     -13% over height
+center+left+right              0.0137     2.03    1.96    1.88    1.82    1.75    1.68     -17% over height  <- collinear: pose prior cannot carry scale
+center+top+right               0.6349     2.05    1.98    1.91    1.85    1.79    1.71     -16% over height
+left+top+right                 0.5466     1.96    1.90    1.84    1.79    1.72    1.67     -15% over height
+center+left+top+right          0.5618     2.07    2.00    1.94    1.88    1.82    1.76     -15% over height

@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-08-14T11:33:46+02:00",
+  "settings": {
+    "cameras": {
+      "center": "261100628"
+    },
+    "calib_dir": "/home/jetson/Projects/Calibration_4_5/results",
+    "width": 2448,
+    "height": 2048,
+    "pixel_format": "RGB8",
+    "exposure_us": 20000.0,
+    "gain_db": 12.5,
+    "auto_exposure": false,
+    "num_buffers": 10,
+    "throughput_limit_bps": null,
+    "display": true
+  },
+  "display_rotation": {
+    "source": "derived from /home/jetson/Projects/Calibration_4_5/results/extrinsics.json (lens EO-58-001-12mm)",
+    "rotation_k": {
+      "center": 0
+    },
+    "roll_deg": {
+      "center": 0.0
+    },
+    "rot_sign": 1,
+    "applied_to_saved_frames": false
+  },
+  "startup_timing": {
+    "enumerate_and_open_s": 5.979,
+    "configure_and_start_s": 1.027
+  },
+  "stream_duration_s": 89.745,
+  "node_configuration": {
+    "center": [
+      "TriggerMode: Off",
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 12.5",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ]
+  },
+  "per_camera": {
+    "center": {
+      "frames": 633,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 7.053,
+      "rolling_fps_at_exit": 7.038,
+      "mean_level": 32.1,
+      "buffer_wait": {
+        "mean_ms": 140.293,
+        "median_ms": 140.296,
+        "p95_ms": 140.701,
+        "max_ms": 167.92
+      },
+      "host_convert": {
+        "mean_ms": 1.733,
+        "median_ms": 1.631,
+        "p95_ms": 2.071,
+        "max_ms": 5.987
+      },
+      "errors": []
+    }
+  }
+}

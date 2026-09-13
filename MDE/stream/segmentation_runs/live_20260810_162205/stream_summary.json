@@ -1,0 +1,679 @@
+{
+  "timestamp": "2026-08-10T16:49:27+02:00",
+  "settings": {
+    "calib_dir": "/home/jetson/Projects/Calibration_4_1/results",
+    "out_dir": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205",
+    "cameras": [
+      "left",
+      "center",
+      "right",
+      "top"
+    ],
+    "reference": "center",
+    "width": 2448,
+    "height": 2048,
+    "pixel_format": "RGB8",
+    "bayer_code": "COLOR_BayerRG2RGB",
+    "exposure_us": 15000,
+    "gain_db": 0,
+    "num_buffers": 6,
+    "buffer_timeout_ms": 2000,
+    "throughput_limit": 0,
+    "ptp": false,
+    "max_sync_ms": 0.0,
+    "stall_warn": 3.0,
+    "use_device_timestamp": false,
+    "model": "depth-anything/da3nested-giant-large-1.1",
+    "mode": "prior",
+    "process_res": 504,
+    "device": "cuda",
+    "warmup": 2,
+    "input_scale": 1.0,
+    "load_affine": null,
+    "apply_absolute": true,
+    "auto_align": true,
+    "auto_align_stride": 3,
+    "auto_align_ema": 0.3,
+    "auto_align_tol": 0.08,
+    "auto_align_max_step": 0.15,
+    "save_raw_depth": true,
+    "conf_percentile": 40.0,
+    "edge_thresh": 0.02,
+    "edge_dilate": 1,
+    "max_incidence": 85.0,
+    "voxel": 0.004,
+    "undistort": true,
+    "capture_key": "p",
+    "capture_per_camera": false,
+    "capture_colour_by_camera": false,
+    "capture_images": true,
+    "preview_width": 560,
+    "depth_range": null,
+    "preview": true,
+    "perf_interval": 5.0,
+    "perf_window": 30,
+    "perf_csv": "perf.csv",
+    "json": "stream_summary.json",
+    "duration": 0.0,
+    "max_frames": 0,
+    "segment": true,
+    "seg_voxel": 0.006,
+    "seg_roi": null,
+    "seg_plane_thresh": 0.008,
+    "seg_plane_iter": 2000,
+    "seg_min_height": 0.02,
+    "seg_max_height": 1.0,
+    "seg_cluster_eps": 0.02,
+    "seg_cluster_min_points": 60,
+    "seg_min_points": 300,
+    "seg_top_percentile": 97.0,
+    "seg_top_band": 0.03,
+    "seg_face_thresh": 0.006,
+    "seg_min_face_points": 150,
+    "seg_max_tilt": 25.0,
+    "seg_max_levels": 3,
+    "seg_level_gap": 0.02,
+    "seg_dim_percentile": 1.0,
+    "seg_min_dim": 0.05,
+    "seg_max_dim": 1.2,
+    "seg_min_coverage": 0.55,
+    "seg_max_residual": 0.012,
+    "seg_single_view_frac": 0.95,
+    "seg_min_view_points": 40,
+    "seg_approach_offset": 0.1,
+    "seg_clearance_warn": 0.015,
+    "seg_overlay_scale": 2.0,
+    "seg_draw_points": true,
+    "seg_seed": 0
+  },
+  "cameras": {
+    "left": "260505158",
+    "center": "261100628",
+    "right": "261100627",
+    "top": "261100631"
+  },
+  "rectified_sizes": {
+    "left": [
+      2447,
+      2047
+    ],
+    "center": [
+      2447,
+      2047
+    ],
+    "right": [
+      2447,
+      2047
+    ],
+    "top": [
+      2447,
+      2047
+    ]
+  },
+  "depth_correction": {
+    "source": null,
+    "per_camera": null,
+    "global": {
+      "a": 1.0,
+      "b": 0.0
+    },
+    "absolute_applied": true,
+    "auto_align": true,
+    "segmentation": true
+  },
+  "auto_align": {
+    "frames_solved": 21,
+    "frames_rejected": 0,
+    "final_offsets_mm": {
+      "left": 8.303,
+      "center": 0.0,
+      "right": 11.473,
+      "top": 48.653
+    },
+    "base_scale": {
+      "left": 1.0,
+      "center": 1.0,
+      "right": 1.0,
+      "top": 1.0
+    },
+    "ema": 0.3,
+    "stride": 3,
+    "assign_tol_m": 0.08,
+    "max_step_m": 0.15
+  },
+  "segmentation": {
+    "enabled": true,
+    "captures_segmented": 2,
+    "parcels_total": 58,
+    "parcels_per_capture_median": 29.0
+  },
+  "ptp_status": null,
+  "node_configuration": {
+    "left": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: not set (float expected instead of int)",
+      "GainAuto: Off",
+      "Gain: not set (float expected instead of int)",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "center": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: not set (float expected instead of int)",
+      "GainAuto: Off",
+      "Gain: not set (float expected instead of int)",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "right": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: not set (float expected instead of int)",
+      "GainAuto: Off",
+      "Gain: not set (float expected instead of int)",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "top": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: not set (float expected instead of int)",
+      "GainAuto: Off",
+      "Gain: not set (float expected instead of int)",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ]
+  },
+  "measured_duration_s": 34.412,
+  "frames_processed": 19,
+  "output_hz_mean": 0.5521,
+  "acquisition": {
+    "frames_acquired_total": 876,
+    "frames_consumed_total": 76,
+    "discard_fraction": 0.9132,
+    "sync_rejections": 0
+  },
+  "stage_timings": {
+    "assemble": {
+      "n": 19,
+      "mean_ms": 0.04,
+      "median_ms": 0.03,
+      "p95_ms": 0.04,
+      "min_ms": 0.03,
+      "max_ms": 0.04
+    },
+    "inference": {
+      "n": 19,
+      "mean_ms": 1305.05,
+      "median_ms": 1301.31,
+      "p95_ms": 1378.32,
+      "min_ms": 1241.16,
+      "max_ms": 1433.51
+    },
+    "correct": {
+      "n": 19,
+      "mean_ms": 37.48,
+      "median_ms": 35.96,
+      "p95_ms": 47.74,
+      "min_ms": 19.7,
+      "max_ms": 54.96
+    },
+    "preview": {
+      "n": 19,
+      "mean_ms": 131.1,
+      "median_ms": 36.72,
+      "p95_ms": 657.9,
+      "min_ms": 21.83,
+      "max_ms": 1126.48
+    },
+    "cycle": {
+      "n": 19,
+      "mean_ms": 1482.33,
+      "median_ms": 1386.79,
+      "p95_ms": 2029.79,
+      "min_ms": 1315.74,
+      "max_ms": 2475.9
+    }
+  },
+  "per_camera_acquisition": {
+    "left": {
+      "frames_acquired": 220,
+      "frames_consumed": 19,
+      "frames_discarded": 201,
+      "discard_fraction": 0.9136,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_acquired_fps": 6.393,
+      "buffer_wait": {
+        "n": 349,
+        "mean_ms": 88.09,
+        "median_ms": 122.06,
+        "p95_ms": 138.12,
+        "min_ms": 0.02,
+        "max_ms": 395.48
+      },
+      "rectify": {
+        "n": 349,
+        "mean_ms": 63.33,
+        "median_ms": 19.83,
+        "p95_ms": 233.89,
+        "min_ms": 14.38,
+        "max_ms": 532.64
+      },
+      "errors": []
+    },
+    "center": {
+      "frames_acquired": 225,
+      "frames_consumed": 19,
+      "frames_discarded": 206,
+      "discard_fraction": 0.9156,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_acquired_fps": 6.538,
+      "buffer_wait": {
+        "n": 358,
+        "mean_ms": 93.99,
+        "median_ms": 121.58,
+        "p95_ms": 128.12,
+        "min_ms": 0.02,
+        "max_ms": 547.97
+      },
+      "rectify": {
+        "n": 358,
+        "mean_ms": 54.32,
+        "median_ms": 20.33,
+        "p95_ms": 192.31,
+        "min_ms": 15.24,
+        "max_ms": 558.06
+      },
+      "errors": []
+    },
+    "right": {
+      "frames_acquired": 212,
+      "frames_consumed": 19,
+      "frames_discarded": 193,
+      "discard_fraction": 0.9104,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_acquired_fps": 6.161,
+      "buffer_wait": {
+        "n": 343,
+        "mean_ms": 26.13,
+        "median_ms": 5.97,
+        "p95_ms": 124.33,
+        "min_ms": 0.02,
+        "max_ms": 291.35
+      },
+      "rectify": {
+        "n": 343,
+        "mean_ms": 125.7,
+        "median_ms": 135.73,
+        "p95_ms": 215.61,
+        "min_ms": 14.0,
+        "max_ms": 659.28
+      },
+      "errors": []
+    },
+    "top": {
+      "frames_acquired": 219,
+      "frames_consumed": 19,
+      "frames_discarded": 200,
+      "discard_fraction": 0.9132,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_acquired_fps": 6.364,
+      "buffer_wait": {
+        "n": 348,
+        "mean_ms": 92.88,
+        "median_ms": 121.73,
+        "p95_ms": 150.52,
+        "min_ms": 0.01,
+        "max_ms": 470.43
+      },
+      "rectify": {
+        "n": 348,
+        "mean_ms": 59.46,
+        "median_ms": 20.29,
+        "p95_ms": 197.91,
+        "min_ms": 14.61,
+        "max_ms": 517.08
+      },
+      "errors": []
+    }
+  },
+  "captures": [
+    {
+      "capture": 0,
+      "timestamp": "2026-08-10T16:49:10+02:00",
+      "depth_correction": {
+        "source": null,
+        "per_camera": null,
+        "global": {
+          "a": 1.0,
+          "b": 0.0
+        },
+        "absolute_applied": true,
+        "auto_align": true,
+        "segmentation": true,
+        "auto_align_state": {
+          "ok": true,
+          "plane_normal": [
+            0.00219,
+            0.0062,
+            0.99998
+          ],
+          "plane_offset_m": 3.98854,
+          "plane_inliers": 5963,
+          "n_reference_points": 23520,
+          "offsets_mm": {
+            "left": 10.234,
+            "center": 0.0,
+            "right": 10.271,
+            "top": 47.924
+          },
+          "clamped": [],
+          "solve_ms": 27.36
+        }
+      },
+      "per_camera": [
+        {
+          "camera": "left",
+          "median_depth_m": 3.949588739198501,
+          "depth_p05_m": 2.7514994972169946,
+          "depth_p95_m": 4.017538749498184,
+          "n_points": 121952,
+          "conf_threshold": 8.61146812438965,
+          "dropped": {
+            "conf": 84672,
+            "edge": 4721,
+            "grazing": 335
+          }
+        },
+        {
+          "camera": "center",
+          "median_depth_m": 3.969333529472351,
+          "depth_p05_m": 2.760708212852478,
+          "depth_p95_m": 4.0010470151901245,
+          "n_points": 122716,
+          "conf_threshold": 8.150086212158204,
+          "dropped": {
+            "conf": 84672,
+            "edge": 3932,
+            "grazing": 360
+          }
+        },
+        {
+          "camera": "right",
+          "median_depth_m": 3.94919117971188,
+          "depth_p05_m": 2.8527777461600916,
+          "depth_p95_m": 3.989988949735226,
+          "n_points": 123686,
+          "conf_threshold": 8.995555877685547,
+          "dropped": {
+            "conf": 84672,
+            "edge": 3132,
+            "grazing": 190
+          }
+        },
+        {
+          "camera": "top",
+          "median_depth_m": 4.483043468939374,
+          "depth_p05_m": 3.391481901156018,
+          "depth_p95_m": 4.526422871100018,
+          "n_points": 121884,
+          "conf_threshold": 6.339193534851075,
+          "dropped": {
+            "conf": 84672,
+            "edge": 4713,
+            "grazing": 411
+          }
+        }
+      ],
+      "fused": {
+        "n_points_before_voxel": 490238,
+        "n_points_written": 471541,
+        "voxel_m": 0.004,
+        "bbox_min": [
+          -1.223864424164064,
+          -2.645400264184661,
+          2.6425280570983887
+        ],
+        "bbox_max": [
+          2.223725448459708,
+          2.174059343317303,
+          4.037639617919922
+        ]
+      },
+      "segmentation": {
+        "ok": true,
+        "reason": null,
+        "n_boxes": 26,
+        "warnings": [],
+        "conveyor": {
+          "normal": [
+            -0.0026852885953321166,
+            -0.009214830973333138,
+            -0.9999539369967462
+          ],
+          "offset_m": 3.9885294844536974,
+          "inlier_fraction": 0.31872288455946496,
+          "inlier_rms_m": 0.00431953915130215,
+          "distance_from_reference_camera_m": 3.9885294844536974,
+          "frame_x_axis": [
+            0.9999963946060805,
+            -2.4744569734525883e-05,
+            -0.0026851745839869307
+          ],
+          "frame_y_axis": [
+            -3.3881317890172014e-21,
+            0.9999575422375888,
+            -0.009214864196548482
+          ],
+          "frame_note": "right-handed about the approach axis, that is about -normal, so reported yaw matches the wrist rotation"
+        },
+        "timings_ms": {
+          "subsample": 63.02,
+          "conveyor_plane": 79.6,
+          "cluster": 197.21,
+          "fit_faces": 300.82,
+          "relations": 19.71,
+          "total": 661.43
+        },
+        "files": {
+          "boxes_json": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/boxes.json",
+          "boxes_csv": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/boxes.csv",
+          "segmented_ply": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/segmented.ply",
+          "seg_left": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_left.png",
+          "seg_center": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_center.png",
+          "seg_right": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_right.png",
+          "seg_top": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/seg_top.png",
+          "segmented_png": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00000/segmented.png"
+        }
+      },
+      "timings_ms": {
+        "backproject": 277.17,
+        "fuse": 512.41,
+        "write": 932.57,
+        "segment": 1279.07,
+        "total": 3005.37
+      }
+    },
+    {
+      "capture": 1,
+      "timestamp": "2026-08-10T16:49:20+02:00",
+      "depth_correction": {
+        "source": null,
+        "per_camera": null,
+        "global": {
+          "a": 1.0,
+          "b": 0.0
+        },
+        "absolute_applied": true,
+        "auto_align": true,
+        "segmentation": true,
+        "auto_align_state": {
+          "ok": true,
+          "plane_normal": [
+            0.00257,
+            0.00888,
+            0.99996
+          ],
+          "plane_offset_m": 3.99086,
+          "plane_inliers": 6447,
+          "n_reference_points": 23520,
+          "offsets_mm": {
+            "left": 9.29,
+            "center": 0.0,
+            "right": 10.703,
+            "top": 47.241
+          },
+          "clamped": [],
+          "solve_ms": 39.94
+        }
+      },
+      "per_camera": [
+        {
+          "camera": "left",
+          "median_depth_m": 3.949502257127769,
+          "depth_p05_m": 2.7342845475864483,
+          "depth_p95_m": 4.020921734590538,
+          "n_points": 121916,
+          "conf_threshold": 8.477731323242187,
+          "dropped": {
+            "conf": 84672,
+            "edge": 4719,
+            "grazing": 373
+          }
+        },
+        {
+          "camera": "center",
+          "median_depth_m": 3.9706077575683594,
+          "depth_p05_m": 2.7377596378326414,
+          "depth_p95_m": 4.005252265930176,
+          "n_points": 122865,
+          "conf_threshold": 8.095962524414062,
+          "dropped": {
+            "conf": 84671,
+            "edge": 3832,
+            "grazing": 312
+          }
+        },
+        {
+          "camera": "right",
+          "median_depth_m": 3.9517119980591944,
+          "depth_p05_m": 2.8529326415795495,
+          "depth_p95_m": 3.9951162195939234,
+          "n_points": 123630,
+          "conf_threshold": 8.804399681091308,
+          "dropped": {
+            "conf": 84672,
+            "edge": 3162,
+            "grazing": 216
+          }
+        },
+        {
+          "camera": "top",
+          "median_depth_m": 4.4815206514735415,
+          "depth_p05_m": 3.391716145171662,
+          "depth_p95_m": 4.53080329765274,
+          "n_points": 121785,
+          "conf_threshold": 6.243818187713623,
+          "dropped": {
+            "conf": 84672,
+            "edge": 4813,
+            "grazing": 410
+          }
+        }
+      ],
+      "fused": {
+        "n_points_before_voxel": 490196,
+        "n_points_written": 472126,
+        "voxel_m": 0.004,
+        "bbox_min": [
+          -1.2704836979063134,
+          -2.648029666772651,
+          2.666480302810669
+        ],
+        "bbox_max": [
+          2.226275701498085,
+          2.164376075767428,
+          4.039012908935547
+        ]
+      },
+      "segmentation": {
+        "ok": true,
+        "reason": null,
+        "n_boxes": 32,
+        "warnings": [],
+        "conveyor": {
+          "normal": [
+            -0.003724500886983034,
+            -0.00966097464152107,
+            -0.9999463953943325
+          ],
+          "offset_m": 3.9933085896666,
+          "inlier_fraction": 0.3170741878535982,
+          "inlier_rms_m": 0.004210161492446356,
+          "distance_from_reference_camera_m": 3.9933085896666,
+          "frame_x_axis": [
+            0.9999930640225175,
+            -3.598255819567922e-05,
+            -0.0037243270684303624
+          ],
+          "frame_y_axis": [
+            -6.776263578034403e-21,
+            0.9999533310481202,
+            -0.009661041650288414
+          ],
+          "frame_note": "right-handed about the approach axis, that is about -normal, so reported yaw matches the wrist rotation"
+        },
+        "timings_ms": {
+          "subsample": 59.81,
+          "conveyor_plane": 73.82,
+          "cluster": 185.89,
+          "fit_faces": 247.2,
+          "relations": 47.62,
+          "total": 615.23
+        },
+        "files": {
+          "boxes_json": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/boxes.json",
+          "boxes_csv": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/boxes.csv",
+          "segmented_ply": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/segmented.ply",
+          "seg_left": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/seg_left.png",
+          "seg_center": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/seg_center.png",
+          "seg_right": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/seg_right.png",
+          "seg_top": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/seg_top.png",
+          "segmented_png": "/home/jetson/Projects/MDE/stream/segmentation_runs/live_20260810_162205/capture_00001/segmented.png"
+        }
+      },
+      "timings_ms": {
+        "backproject": 310.76,
+        "fuse": 395.79,
+        "write": 928.26,
+        "segment": 1315.83,
+        "total": 2955.09
+      }
+    }
+  ],
+  "memory": {
+    "gpu_peak_alloc_gb": 8.565
+  }
+}

@@ -1,0 +1,468 @@
+=== flip / rotate / roll handling in all .py files
+add_deployed_arm.py:45: --sign-convention gt_minus_recon and the correction term flips.
+box_geometry.py:249:     m.rotate(rot_from_z(d), center=(0.0, 0.0, 0.0))
+box_geometry.py:274:     m.rotate(rot_from_z(direction), center=(0.0, 0.0, 0.0))
+box_geometry.py:356:         colour = tuple(float(c) / 255.0 for c in bgr[::-1])
+box_geometry.py:415:         colour = [float(c) / 255.0 for c in bgr[::-1]]
+box_segment.py:125:     (255, 200, 0), (120, 120, 255), (0, 255, 255), (180, 60, 255),
+box_segment.py:264:                         "roller pitch and below the distance to any other "
+box_segment.py:616:         roll = float(np.arctan2(R[2, 1], R[2, 2]))
+box_segment.py:619:         roll = float(np.arctan2(-R[1, 2], R[1, 1]))
+box_segment.py:621:     return [np.degrees(roll), np.degrees(pitch), np.degrees(yaw)]
+box_segment.py:1449:             yaw = (yaw + 90.0) % 180.0 - 90.0
+box_segment.py:1661:             f"structure being segmented, usually the roller deck after the "
+box_segment.py:1787:         cols[labels == b["id"]] = np.array(bgr[::-1], dtype=float) / 255.0
+box_segment.py:2182:     "roll_deg", "pitch_deg", "yaw_deg", "yaw_conveyor_deg",
+box_segment.py:2218:             "roll_deg": round(rpy[0], 2), "pitch_deg": round(rpy[1], 2),
+check_alignment.py:145:     A conveyor is a long rectangle and is very nearly symmetric under a 180
+check_alignment.py:157:     for label, Ryaw, flip_n in (("as registered", 0.0, False),
+check_alignment.py:158:                                 ("yaw +180", np.pi, False),
+check_alignment.py:159:                                 ("normal flipped", 0.0, True),
+check_alignment.py:160:                                 ("yaw +180, normal", np.pi, True)):
+check_alignment.py:161:         axis = n if not flip_n else n
+check_alignment.py:168:         if flip_n:
+check_alignment.py:193:               "not a yaw flip. Open the two clouds together before going on.")
+da3_offline.py:159:                     help="rotate any camera mounted inverted to gravity-upright "
+da3_offline.py:161:                          "rotate the depth back. DA3's monocular prior is "
+da3_offline.py:165:     ap.add_argument("--roll-thresh", type=float, default=90.0,
+da3_offline.py:166:                     help="roll beyond this (deg) counts as inverted")
+da3_offline.py:279:     flip = {}
+da3_offline.py:284:             roll = np.degrees(np.arctan2(R[0, 1], R[0, 0]))
+da3_offline.py:285:             flip[nm] = abs(roll) > a.roll_thresh
+da3_offline.py:286:             print(f"[roll ] {nm:7s} {roll:+7.1f} deg"
+da3_offline.py:287:                   + ("   -> rotating 180 for inference" if flip[nm] else ""))
+da3_offline.py:289:             if not flip[nm]:
+da3_offline.py:291:             frames[i] = np.ascontiguousarray(frames[i][::-1, ::-1])
+da3_offline.py:335:     if any(flip.values()):
+da3_offline.py:338:             if not flip[nm]:
+da3_offline.py:340:             depth[i] = depth[i][::-1, ::-1]
+da3_offline.py:343:                 conf[i] = conf[i][::-1, ::-1]
+da3_offline.py:344:             frames[i] = np.ascontiguousarray(frames[i][::-1, ::-1])
+da3_offline.py:364:         print(f"[roll ] depth rotated back for "
+da3_offline.py:365:               f"{', '.join(n for n in names if flip[n])}")
+depth_align.py:871:                 if gray.shape[::-1] != (plan[n]["crop"][2], plan[n]["crop"][3]):
+fix_upright_extrinsics.py:10: --upright rotates a camera mounted inverted to gravity-upright before inference,
+fix_upright_extrinsics.py:12: da3_offline.py rotates the depth back and moves the principal point back, but it
+fix_upright_extrinsics.py:14: differs from the real one by 180 degrees about the optical axis, so every
+fix_upright_extrinsics.py:15: flipped view is reported pointing away from where it is.
+fix_upright_extrinsics.py:17: Among flipped cameras the error cancels in any relative rotation, so a subset
+fix_upright_extrinsics.py:18: made only of flipped views looks healthy. Mix in one unflipped view and the
+fix_upright_extrinsics.py:20: below the 90 degree roll threshold, which is why every subset containing it
+fix_upright_extrinsics.py:21: failed at 179 to 180 degrees and no other subset did.
+fix_upright_extrinsics.py:25: Rotating the image by 180 degrees is a virtual camera with x' = Rz x, where
+fix_upright_extrinsics.py:31: Depth along the optical axis is invariant to a roll and the principal point was
+fix_upright_extrinsics.py:38: Read from the calibration, exactly as da3_offline.py reads it: roll about the
+fix_upright_extrinsics.py:39: optical axis is atan2(R[0,1], R[0,0]) and anything beyond --roll-thresh was
+fix_upright_extrinsics.py:40: flipped. The list is printed before anything is written, so it can be checked
+fix_upright_extrinsics.py:41: against the [roll ] lines the sweep produced.
+fix_upright_extrinsics.py:100:                 print(f"[roll ] {nm}: DA3 returned the supplied extrinsics, "
+fix_upright_extrinsics.py:105: def rolls(calib_dir: Path, cams, reference: str):
+fix_upright_extrinsics.py:122: def fix_run(run: Path, cams, flipped, args):
+fix_upright_extrinsics.py:127:         if c not in flipped:
+fix_upright_extrinsics.py:143:         return "no flipped camera in this subset"
+fix_upright_extrinsics.py:146:             "E_<cam>.npy rotated by diag(-1,-1,1) to undo the --upright roll; "
+fix_upright_extrinsics.py:148:     return "rotated " + "+".join(touched)
+fix_upright_extrinsics.py:159:             f"by hand: inside the `if any(flip.values())` loop, after K_out is "
+fix_upright_extrinsics.py:172:         description="Undo the 180 degree roll left in the extrinsics by "
+fix_upright_extrinsics.py:180:     ap.add_argument("--roll-thresh", type=float, default=90.0,
+fix_upright_extrinsics.py:181:                     help="must match the --roll-thresh the sweep was run with")
+fix_upright_extrinsics.py:191:     roll = rolls(args.calib_dir, CAMS, args.reference)
+fix_upright_extrinsics.py:192:     flipped = {c for c in CAMS if abs(roll[c]) > args.roll_thresh}
+fix_upright_extrinsics.py:193:     print(f"roll about the optical axis, threshold {args.roll_thresh:.0f} deg")
+fix_upright_extrinsics.py:195:         print(f"  {c:7s} {roll[c]:+8.1f} deg   "
+fix_upright_extrinsics.py:196:               + ("flipped for inference" if c in flipped else "left alone"))
+fix_upright_extrinsics.py:197:     if not flipped:
+fix_upright_extrinsics.py:201:     print(f"\nany subset mixing {sorted(flipped)} with "
+fix_upright_extrinsics.py:202:           f"{sorted(set(CAMS) - flipped)} is the one that fused into two "
+fix_upright_extrinsics.py:222:         res = fix_run(run, cams, flipped, args)
+fix_upright_extrinsics.py:224:         if res.startswith("rotated"):
+fix_upright_extrinsics.py:228:           f"a roll, so only the pose was ever wrong.")
+fix_upright_extrinsics.py:232:           "are still near 180, the rotation was applied in the wrong "
+grade_subsets.py:301:                          "--gt-plane-tol: a scan resolves the rollers as "
+grade_subsets.py:312: def rect_transform(src, dst, flip_yaw=False, flip_n=False):
+grade_subsets.py:315:     if flip_yaw:
+grade_subsets.py:317:     if flip_n:
+grade_subsets.py:382:             print(f"[gt   ]   yaw{'+180' if fy else '   '} "
+grade_subsets.py:768:                          "scan resolves the rollers as cylinders, so the deck "
+layer_audit.py:24:                     so it moves a surface, it does not rotate it. A tilt is a
+layer_audit.py:431:             f"per-view inverse-depth affine cannot rotate a surface, so no "
+layer_probe.py:11:   reflections     Points below the deck plane. The powered roller deck is
+layer_probe.py:384:             "Clip below the deck. The roller surface is specular and the "
+pin_alignment.py:159: def frame_transform(src_f, dst_f, yaw180=False, flip_n=False):
+pin_alignment.py:162:     A rectangle is symmetric under a 180 degree rotation about its normal, so
+pin_alignment.py:173:     if yaw180:
+pin_alignment.py:175:     if flip_n:
+pin_alignment.py:187:     return [(f"yaw{180 if y else 0:>3}, normal{'-' if f else '+'}",
+pin_alignment.py:520:     ap.add_argument("--yaw180", action="store_true",
+pin_alignment.py:609:           f"under a 180 degree yaw and the conveyor cannot say which is right; "
+pin_alignment.py:635:             lab = "yaw180, normal+" if args.yaw180 else "yaw  0, normal+"
+pin_markers.py:503: def drop_flipped(cands, gt_all, dst_f, sample=200000, band=(0.06, 0.60)):
+pin_markers.py:510:     flipped normal they would have to stand into the conveyor.
+pin_markers.py:538:     The candidates differ by a 180 degree yaw and by the normal's sign, and a
+pin_markers.py:827:                 cands = drop_flipped(cands, gt_all, dst_f)
+pin_markers.py:915:         cands = drop_flipped(cands, gt, dst_f)
+rig_analysis.py:26:                   -0.001048795041801043, -4.43051862224039e-05, 0.0]},
+rig_analysis.py:42:  "centre_m": [0.07155121211803056, -0.2292631652062267, 3.1174503790841306],
+rig_geometry.py:21: Per camera it also reports roll about the optical axis, because gravity
+rig_geometry.py:102:         roll = np.degrees(np.arctan2(R[c][0, 1], R[c][0, 0]))
+rig_geometry.py:104:               f"axis {tilt:5.2f} deg off ref   roll {roll:+7.1f} deg   "
+rig_geometry.py:109:               "with --upright or the\n      ranking is partly a ranking of roll "
+roll_check.py:4: print('=== flip / rotate / roll handling in all .py files')
+roll_check.py:5: pat = r'ReverseX|ReverseY|flip|rot90|rotate|\[::-1|roll|upside|180'
+roll_check.py:51:     print('\ncorrelation of edge maps: identity / rotated 180 (the larger one is the true orientation)')
+roll_check.py:58:             c0 = float((gi * gd).mean()); c1 = float((gi * gd[::-1, ::-1]).mean())
+sweep_subsets.py:86:                          "on a rig with a rolled mount is partly a ranking of "
+
+=== da3_offline.py 270-345
+270                                  f"fields are {p.keys() if isinstance(p, dict) else dir(p)}")
+271             img = raw[n] if m1 is None else cv2.remap(raw[n], m1, m2,
+272                                                       cv2.INTER_LINEAR)
+273             frames.append(img)
+274             Ks_in.append(np.asarray(K, float))
+275         print(f"[rect ] {args.rect_mode}, rectified to "
+276               f"{frames[0].shape[1]}x{frames[0].shape[0]}")
+277 
+278     # ---- gravity canonicalisation ----------------------------------------
+279     flip = {}
+280     if a.upright:
+281         for i, nm in enumerate(names):
+282             R = np.asarray(ext[nm]["E"], float)[:3, :3] if isinstance(ext[nm], dict) \
+283                 and "E" in ext[nm] else np.asarray(ext[nm], float)[:3, :3]
+284             roll = np.degrees(np.arctan2(R[0, 1], R[0, 0]))
+285             flip[nm] = abs(roll) > a.roll_thresh
+286             print(f"[roll ] {nm:7s} {roll:+7.1f} deg"
+287                   + ("   -> rotating 180 for inference" if flip[nm] else ""))
+288         for i, nm in enumerate(names):
+289             if not flip[nm]:
+290                 continue
+291             frames[i] = np.ascontiguousarray(frames[i][::-1, ::-1])
+292             h_, w_ = frames[i].shape[:2]
+293             K = Ks_in[i].copy()
+294             K[0, 2] = (w_ - 1) - K[0, 2]
+295             K[1, 2] = (h_ - 1) - K[1, 2]
+296             Ks_in[i] = K
+297 
+298     scale = float(getattr(args, "input_scale", 1.0) or 1.0)
+299     if scale != 1.0 and hasattr(ds, "scale_K"):
+300         frames = [cv2.resize(f, None, fx=scale, fy=scale,
+301                              interpolation=cv2.INTER_AREA) for f in frames]
+302         Ks_in = [ds.scale_K(K, scale) for K in Ks_in]
+303         print(f"[scale] input_scale {scale}")
+304 
+305     Es = [np.asarray(ext[n]["E"] if isinstance(ext[n], dict) and "E" in ext[n]
+306                      else ext[n], float) for n in names]
+307 
+308     # ---- inference --------------------------------------------------------
+309     print(f"[model] {getattr(args, 'model', '?')} on "
+310           f"{getattr(args, 'device', '?')}, process_res {args.process_res}")
+311     model = ds.load_model(args.model, args.device)
+312 
+313     use_prior = (a.pose_prior == "always"
+314                  or (a.pose_prior == "auto" and len(names) >= 3))
+315     if use_prior:
+316         print(f"[prior] extrinsics supplied ({len(names)} views)")
+317         if len(names) >= 3:
+318             C = np.stack([-np.asarray(E)[:3, :3].T @ np.asarray(E)[:3, 3]
+319                           for E in Es])
+320             sv = np.linalg.svd(C - C.mean(0), compute_uv=False)
+321             if sv[1] / sv[0] < 0.05:
+322                 print(f"  [warn] camera centres are nearly collinear "
+323                       f"(singular values {sv[0]:.3f}/{sv[1]:.3f}/{sv[2]:.3f}). "
+324                       f"Umeyama scale rests on the smallest axis and is fragile.")
+325         pred = ds.run_inference(model, frames, Ks_in, Es, args)
+326     else:
+327         # Intrinsics only. Skips DA3's _align_to_input_extrinsics_intrinsics,
+328         # so no Umeyama and no minimum camera count. Scale comes back from the
+329         # deck+floor fit in grade_subsets.py instead.
+330         print(f"[prior] none -- intrinsics only, uniform across all subsets")
+331         pred = model.inference(frames, intrinsics=Ks_in,
+332                                process_res=args.process_res)
+333     depth, conf, K_out, E_out = unwrap(pred, names, Ks_in, Es)
+334     # undo the rotation so depth, K and E are all back in the camera's own frame
+335     if any(flip.values()):
+336         depth = np.array(depth, copy=True)
+337         for i, nm in enumerate(names):
+338             if not flip[nm]:
+339                 continue
+340             depth[i] = depth[i][::-1, ::-1]
+341             if conf is not None:
+342                 conf = np.array(conf, copy=True)
+343                 conf[i] = conf[i][::-1, ::-1]
+344             frames[i] = np.ascontiguousarray(frames[i][::-1, ::-1])
+345             h_, w_ = depth[i].shape[:2]
+
+=== imports in da3_stream.py
+   imported, deliberately, so that the streamer has no import-time dependency on
+   from __future__ import annotations
+   import argparse
+   import csv
+   import ctypes
+   import json
+   import os
+   import select
+   import statistics
+   import sys
+   import threading
+   import time
+   from collections import deque
+   from datetime import datetime
+   from pathlib import Path
+   import numpy as np
+
+=== run folders: ['/home/jetson/Projects/MDE/new/runs/live_20260831_113807']
+    boxes_log.csv 4498
+    frame_00000 4096
+    frame_00000/E_center.npy 176
+    frame_00000/E_left.npy 176
+    frame_00000/E_right.npy 176
+    frame_00000/E_top.npy 176
+    frame_00000/K_center.npy 164
+    frame_00000/K_left.npy 164
+    frame_00000/K_right.npy 164
+    frame_00000/K_top.npy 164
+    frame_00000/conf_center.npy 846848
+    frame_00000/conf_left.npy 846848
+    frame_00000/conf_right.npy 846848
+    frame_00000/conf_top.npy 846848
+    frame_00000/depth_center.npy 1693568
+    frame_00000/depth_left.npy 1693568
+    frame_00000/depth_raw_center.npy 846848
+    frame_00000/depth_raw_left.npy 846848
+    frame_00000/depth_raw_right.npy 846848
+    frame_00000/depth_raw_top.npy 846848
+    frame_00000/depth_right.npy 1693568
+    frame_00000/depth_top.npy 1693568
+    frame_00000/fused.ply 16771988
+    frame_00000/fused_by_camera.ply 17287121
+    frame_00000/layers.json 387
+    frame_00000/proc_center.png 346871
+    frame_00000/proc_left.png 389541
+    frame_00000/proc_right.png 357117
+    frame_00000/proc_top.png 350345
+    frame_00000/segmentation 4096
+    frame_00000/segmentation/boxes.csv 574
+    frame_00000/segmentation/boxes.json 3256
+    frame_00000/segmentation/seg_center.png 834968
+    frame_00000/segmentation/seg_left.png 983475
+    frame_00000/segmentation/seg_right.png 865199
+    frame_00000/segmentation/seg_top.png 858608
+    frame_00000/segmentation/segmented.ply 5815361
+    frame_00000/segmentation/segmented_mosaic.png 3589073
+    frame_00001 4096
+    frame_00001/E_center.npy 176
+    frame_00001/E_left.npy 176
+    frame_00001/E_right.npy 176
+    frame_00001/E_top.npy 176
+    frame_00001/K_center.npy 164
+    frame_00001/K_left.npy 164
+    frame_00001/K_right.npy 164
+    frame_00001/K_top.npy 164
+    frame_00001/conf_center.npy 846848
+    frame_00001/conf_left.npy 846848
+    frame_00001/conf_right.npy 846848
+    frame_00001/conf_top.npy 846848
+    frame_00001/depth_center.npy 1693568
+    frame_00001/depth_left.npy 1693568
+    frame_00001/depth_raw_center.npy 846848
+    frame_00001/depth_raw_left.npy 846848
+    frame_00001/depth_raw_right.npy 846848
+    frame_00001/depth_raw_top.npy 846848
+    frame_00001/depth_right.npy 1693568
+    frame_00001/depth_top.npy 1693568
+    frame_00001/fused.ply 16661720
+depth-like arrays: {'frame_00000/conf_center.npy': (420, 504), 'frame_00000/conf_left.npy': (420, 504), 'frame_00000/conf_right.npy': (420, 504), 'frame_00000/conf_top.npy': (420, 504), 'frame_00000/depth_center.npy': (420, 504), 'frame_00000/depth_left.npy': (420, 504), 'frame_00000/depth_raw_center.npy': (420, 504), 'frame_00000/depth_raw_left.npy': (420, 504), 'frame_00000/depth_raw_right.npy': (420, 504), 'frame_00000/depth_raw_top.npy': (420, 504), 'frame_00000/depth_right.npy': (420, 504), 'frame_00000/depth_top.npy': (420, 504), 'frame_00001/conf_center.npy': (420, 504), 'frame_00001/conf_left.npy': (420, 504), 'frame_00001/conf_right.npy': (420, 504), 'frame_00001/conf_top.npy': (420, 504), 'frame_00001/depth_center.npy': (420, 504), 'frame_00001/depth_left.npy': (420, 504), 'frame_00001/depth_raw_center.npy': (420, 504), 'frame_00001/depth_raw_left.npy': (420, 504), 'frame_00001/depth_raw_right.npy': (420, 504), 'frame_00001/depth_raw_top.npy': (420, 504), 'frame_00001/depth_right.npy': (420, 504), 'frame_00001/depth_top.npy': (420, 504)}
+images: ['frame_00000/proc_center.png', 'frame_00000/proc_left.png', 'frame_00000/proc_right.png', 'frame_00000/proc_top.png', 'frame_00000/segmentation/seg_center.png', 'frame_00000/segmentation/seg_left.png', 'frame_00000/segmentation/seg_right.png', 'frame_00000/segmentation/seg_top.png', 'frame_00000/segmentation/segmented_mosaic.png', 'frame_00001/proc_center.png', 'frame_00001/proc_left.png', 'frame_00001/proc_right.png']
+
+correlation of edge maps: identity / rotated 180 (the larger one is the true orientation)
+  frame_00000/proc_center.png              frame_00000/conf_center.npy              +0.292 / +0.009 
+  frame_00000/proc_center.png              frame_00000/conf_left.npy                +0.003 / +0.043 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/conf_right.npy               +0.017 / +0.076 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/conf_top.npy                 +0.031 / +0.034 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_center.npy             +0.182 / +0.011 
+  frame_00000/proc_center.png              frame_00000/depth_left.npy               +0.001 / +0.007 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_raw_center.npy         +0.182 / +0.011 
+  frame_00000/proc_center.png              frame_00000/depth_raw_left.npy           +0.001 / +0.007 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_raw_right.npy          -0.016 / +0.045 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_raw_top.npy            -0.007 / -0.006 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_right.npy              -0.016 / +0.045 <- ROTATED
+  frame_00000/proc_center.png              frame_00000/depth_top.npy                -0.007 / -0.006 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/conf_center.npy              +0.300 / +0.010 
+  frame_00000/proc_center.png              frame_00001/conf_left.npy                +0.002 / +0.045 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/conf_right.npy               +0.014 / +0.077 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/conf_top.npy                 +0.037 / +0.036 
+  frame_00000/proc_center.png              frame_00001/depth_center.npy             +0.181 / +0.012 
+  frame_00000/proc_center.png              frame_00001/depth_left.npy               +0.001 / +0.009 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/depth_raw_center.npy         +0.181 / +0.012 
+  frame_00000/proc_center.png              frame_00001/depth_raw_left.npy           +0.001 / +0.009 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/depth_raw_right.npy          -0.016 / +0.046 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/depth_raw_top.npy            -0.006 / -0.006 
+  frame_00000/proc_center.png              frame_00001/depth_right.npy              -0.016 / +0.046 <- ROTATED
+  frame_00000/proc_center.png              frame_00001/depth_top.npy                -0.006 / -0.006 
+  frame_00000/proc_left.png                frame_00000/conf_center.npy              +0.030 / +0.031 <- ROTATED
+  frame_00000/proc_left.png                frame_00000/conf_left.npy                +0.299 / +0.091 
+  frame_00000/proc_left.png                frame_00000/conf_right.npy               +0.037 / +0.021 
+  frame_00000/proc_left.png                frame_00000/conf_top.npy                 +0.080 / +0.059 
+  frame_00000/proc_left.png                frame_00000/depth_center.npy             +0.024 / +0.002 
+  frame_00000/proc_left.png                frame_00000/depth_left.npy               +0.193 / +0.017 
+  frame_00000/proc_left.png                frame_00000/depth_raw_center.npy         +0.024 / +0.002 
+  frame_00000/proc_left.png                frame_00000/depth_raw_left.npy           +0.193 / +0.017 
+  frame_00000/proc_left.png                frame_00000/depth_raw_right.npy          +0.013 / +0.018 <- ROTATED
+  frame_00000/proc_left.png                frame_00000/depth_raw_top.npy            -0.003 / -0.011 
+  frame_00000/proc_left.png                frame_00000/depth_right.npy              +0.013 / +0.018 <- ROTATED
+  frame_00000/proc_left.png                frame_00000/depth_top.npy                -0.003 / -0.011 
+  frame_00000/proc_left.png                frame_00001/conf_center.npy              +0.029 / +0.026 
+  frame_00000/proc_left.png                frame_00001/conf_left.npy                +0.303 / +0.084 
+  frame_00000/proc_left.png                frame_00001/conf_right.npy               +0.033 / +0.020 
+  frame_00000/proc_left.png                frame_00001/conf_top.npy                 +0.085 / +0.065 
+  frame_00000/proc_left.png                frame_00001/depth_center.npy             +0.024 / +0.002 
+  frame_00000/proc_left.png                frame_00001/depth_left.npy               +0.191 / +0.016 
+  frame_00000/proc_left.png                frame_00001/depth_raw_center.npy         +0.025 / +0.002 
+  frame_00000/proc_left.png                frame_00001/depth_raw_left.npy           +0.191 / +0.016 
+  frame_00000/proc_left.png                frame_00001/depth_raw_right.npy          +0.012 / +0.018 <- ROTATED
+  frame_00000/proc_left.png                frame_00001/depth_raw_top.npy            -0.004 / -0.011 
+  frame_00000/proc_left.png                frame_00001/depth_right.npy              +0.012 / +0.018 <- ROTATED
+  frame_00000/proc_left.png                frame_00001/depth_top.npy                -0.004 / -0.011 
+  frame_00000/proc_right.png               frame_00000/conf_center.npy              +0.028 / +0.087 <- ROTATED
+  frame_00000/proc_right.png               frame_00000/conf_left.npy                +0.021 / +0.008 
+  frame_00000/proc_right.png               frame_00000/conf_right.npy               +0.253 / +0.014 
+  frame_00000/proc_right.png               frame_00000/conf_top.npy                 +0.039 / +0.013 
+  frame_00000/proc_right.png               frame_00000/depth_center.npy             +0.002 / +0.016 <- ROTATED
+  frame_00000/proc_right.png               frame_00000/depth_left.npy               -0.000 / +0.002 <- ROTATED
+  frame_00000/proc_right.png               frame_00000/depth_raw_center.npy         +0.002 / +0.016 <- ROTATED
+  frame_00000/proc_right.png               frame_00000/depth_raw_left.npy           -0.000 / +0.002 <- ROTATED
+  frame_00000/proc_right.png               frame_00000/depth_raw_right.npy          +0.181 / -0.023 
+  frame_00000/proc_right.png               frame_00000/depth_raw_top.npy            +0.012 / +0.011 
+  frame_00000/proc_right.png               frame_00000/depth_right.npy              +0.181 / -0.023 
+  frame_00000/proc_right.png               frame_00000/depth_top.npy                +0.012 / +0.011 
+  frame_00000/proc_right.png               frame_00001/conf_center.npy              +0.025 / +0.088 <- ROTATED
+  frame_00000/proc_right.png               frame_00001/conf_left.npy                +0.025 / +0.009 
+  frame_00000/proc_right.png               frame_00001/conf_right.npy               +0.256 / +0.010 
+  frame_00000/proc_right.png               frame_00001/conf_top.npy                 +0.043 / +0.015 
+  frame_00000/proc_right.png               frame_00001/depth_center.npy             +0.005 / +0.017 <- ROTATED
+  frame_00000/proc_right.png               frame_00001/depth_left.npy               +0.000 / +0.002 <- ROTATED
+  frame_00000/proc_right.png               frame_00001/depth_raw_center.npy         +0.005 / +0.017 <- ROTATED
+  frame_00000/proc_right.png               frame_00001/depth_raw_left.npy           +0.000 / +0.002 <- ROTATED
+  frame_00000/proc_right.png               frame_00001/depth_raw_right.npy          +0.184 / -0.023 
+  frame_00000/proc_right.png               frame_00001/depth_raw_top.npy            +0.014 / +0.012 
+  frame_00000/proc_right.png               frame_00001/depth_right.npy              +0.184 / -0.023 
+  frame_00000/proc_right.png               frame_00001/depth_top.npy                +0.014 / +0.012 
+  frame_00000/proc_top.png                 frame_00000/conf_center.npy              +0.055 / +0.010 
+  frame_00000/proc_top.png                 frame_00000/conf_left.npy                +0.071 / +0.057 
+  frame_00000/proc_top.png                 frame_00000/conf_right.npy               -0.022 / +0.016 <- ROTATED
+  frame_00000/proc_top.png                 frame_00000/conf_top.npy                 +0.356 / +0.083 
+  frame_00000/proc_top.png                 frame_00000/depth_center.npy             +0.033 / -0.001 
+  frame_00000/proc_top.png                 frame_00000/depth_left.npy               +0.004 / +0.008 <- ROTATED
+  frame_00000/proc_top.png                 frame_00000/depth_raw_center.npy         +0.033 / -0.001 
+  frame_00000/proc_top.png                 frame_00000/depth_raw_left.npy           +0.004 / +0.008 <- ROTATED
+  frame_00000/proc_top.png                 frame_00000/depth_raw_right.npy          -0.013 / -0.011 <- ROTATED
+  frame_00000/proc_top.png                 frame_00000/depth_raw_top.npy            +0.179 / +0.010 
+  frame_00000/proc_top.png                 frame_00000/depth_right.npy              -0.013 / -0.011 <- ROTATED
+  frame_00000/proc_top.png                 frame_00000/depth_top.npy                +0.179 / +0.010 
+  frame_00000/proc_top.png                 frame_00001/conf_center.npy              +0.052 / +0.011 
+  frame_00000/proc_top.png                 frame_00001/conf_left.npy                +0.069 / +0.054 
+  frame_00000/proc_top.png                 frame_00001/conf_right.npy               -0.021 / +0.018 <- ROTATED
+  frame_00000/proc_top.png                 frame_00001/conf_top.npy                 +0.361 / +0.091 
+  frame_00000/proc_top.png                 frame_00001/depth_center.npy             +0.033 / +0.001 
+  frame_00000/proc_top.png                 frame_00001/depth_left.npy               +0.004 / +0.007 <- ROTATED
+  frame_00000/proc_top.png                 frame_00001/depth_raw_center.npy         +0.033 / +0.001 
+  frame_00000/proc_top.png                 frame_00001/depth_raw_left.npy           +0.004 / +0.007 <- ROTATED
+  frame_00000/proc_top.png                 frame_00001/depth_raw_right.npy          -0.014 / -0.011 <- ROTATED
+  frame_00000/proc_top.png                 frame_00001/depth_raw_top.npy            +0.177 / +0.009 
+  frame_00000/proc_top.png                 frame_00001/depth_right.npy              -0.014 / -0.011 <- ROTATED
+  frame_00000/proc_top.png                 frame_00001/depth_top.npy                +0.177 / +0.009 
+  frame_00000/segmentation/seg_center.png  frame_00000/conf_center.npy              +0.292 / +0.003 
+  frame_00000/segmentation/seg_center.png  frame_00000/conf_left.npy                -0.007 / +0.036 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/conf_right.npy               +0.017 / +0.071 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/conf_top.npy                 +0.025 / +0.026 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_center.npy             +0.184 / +0.008 
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_left.npy               -0.001 / +0.006 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_raw_center.npy         +0.184 / +0.008 
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_raw_left.npy           -0.001 / +0.006 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_raw_right.npy          -0.019 / +0.047 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_raw_top.npy            -0.008 / -0.005 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_right.npy              -0.019 / +0.047 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00000/depth_top.npy                -0.008 / -0.005 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/conf_center.npy              +0.300 / +0.006 
+  frame_00000/segmentation/seg_center.png  frame_00001/conf_left.npy                -0.009 / +0.038 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/conf_right.npy               +0.014 / +0.072 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/conf_top.npy                 +0.030 / +0.028 
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_center.npy             +0.184 / +0.010 
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_left.npy               -0.001 / +0.007 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_raw_center.npy         +0.184 / +0.010 
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_raw_left.npy           -0.001 / +0.007 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_raw_right.npy          -0.018 / +0.048 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_raw_top.npy            -0.007 / -0.005 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_right.npy              -0.018 / +0.048 <- ROTATED
+  frame_00000/segmentation/seg_center.png  frame_00001/depth_top.npy                -0.007 / -0.005 <- ROTATED
+  frame_00000/segmentation/seg_left.png    frame_00000/conf_center.npy              +0.028 / +0.027 
+  frame_00000/segmentation/seg_left.png    frame_00000/conf_left.npy                +0.289 / +0.074 
+  frame_00000/segmentation/seg_left.png    frame_00000/conf_right.npy               +0.036 / +0.016 
+  frame_00000/segmentation/seg_left.png    frame_00000/conf_top.npy                 +0.068 / +0.045 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_center.npy             +0.025 / +0.003 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_left.npy               +0.196 / +0.012 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_raw_center.npy         +0.025 / +0.003 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_raw_left.npy           +0.196 / +0.012 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_raw_right.npy          +0.010 / +0.017 <- ROTATED
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_raw_top.npy            -0.005 / -0.011 
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_right.npy              +0.010 / +0.017 <- ROTATED
+  frame_00000/segmentation/seg_left.png    frame_00000/depth_top.npy                -0.005 / -0.011 
+  frame_00000/segmentation/seg_left.png    frame_00001/conf_center.npy              +0.026 / +0.023 
+  frame_00000/segmentation/seg_left.png    frame_00001/conf_left.npy                +0.294 / +0.067 
+  frame_00000/segmentation/seg_left.png    frame_00001/conf_right.npy               +0.033 / +0.016 
+  frame_00000/segmentation/seg_left.png    frame_00001/conf_top.npy                 +0.072 / +0.050 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_center.npy             +0.025 / +0.004 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_left.npy               +0.193 / +0.011 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_raw_center.npy         +0.025 / +0.004 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_raw_left.npy           +0.193 / +0.011 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_raw_right.npy          +0.009 / +0.017 <- ROTATED
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_raw_top.npy            -0.005 / -0.010 
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_right.npy              +0.009 / +0.017 <- ROTATED
+  frame_00000/segmentation/seg_left.png    frame_00001/depth_top.npy                -0.005 / -0.010 
+  frame_00000/segmentation/seg_right.png   frame_00000/conf_center.npy              +0.024 / +0.080 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00000/conf_left.npy                +0.011 / -0.000 
+  frame_00000/segmentation/seg_right.png   frame_00000/conf_right.npy               +0.252 / +0.007 
+  frame_00000/segmentation/seg_right.png   frame_00000/conf_top.npy                 +0.034 / +0.005 
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_center.npy             +0.002 / +0.013 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_left.npy               -0.002 / +0.000 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_raw_center.npy         +0.002 / +0.013 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_raw_left.npy           -0.002 / +0.000 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_raw_right.npy          +0.177 / -0.024 
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_raw_top.npy            +0.014 / +0.013 
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_right.npy              +0.177 / -0.024 
+  frame_00000/segmentation/seg_right.png   frame_00000/depth_top.npy                +0.014 / +0.013 
+  frame_00000/segmentation/seg_right.png   frame_00001/conf_center.npy              +0.022 / +0.081 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00001/conf_left.npy                +0.015 / +0.001 
+  frame_00000/segmentation/seg_right.png   frame_00001/conf_right.npy               +0.256 / +0.003 
+  frame_00000/segmentation/seg_right.png   frame_00001/conf_top.npy                 +0.037 / +0.006 
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_center.npy             +0.005 / +0.014 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_left.npy               -0.001 / -0.000 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_raw_center.npy         +0.005 / +0.014 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_raw_left.npy           -0.001 / -0.000 <- ROTATED
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_raw_right.npy          +0.180 / -0.024 
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_raw_top.npy            +0.015 / +0.014 
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_right.npy              +0.180 / -0.024 
+  frame_00000/segmentation/seg_right.png   frame_00001/depth_top.npy                +0.015 / +0.014 
+  frame_00000/segmentation/seg_top.png     frame_00000/conf_center.npy              +0.055 / +0.007 
+  frame_00000/segmentation/seg_top.png     frame_00000/conf_left.npy                +0.058 / +0.046 
+  frame_00000/segmentation/seg_top.png     frame_00000/conf_right.npy               -0.021 / +0.012 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00000/conf_top.npy                 +0.350 / +0.071 
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_center.npy             +0.035 / -0.002 
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_left.npy               +0.002 / +0.005 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_raw_center.npy         +0.035 / -0.002 
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_raw_left.npy           +0.002 / +0.005 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_raw_right.npy          -0.015 / -0.013 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_raw_top.npy            +0.186 / +0.011 
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_right.npy              -0.015 / -0.013 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00000/depth_top.npy                +0.186 / +0.011 
+  frame_00000/segmentation/seg_top.png     frame_00001/conf_center.npy              +0.052 / +0.008 
+  frame_00000/segmentation/seg_top.png     frame_00001/conf_left.npy                +0.056 / +0.044 
+  frame_00000/segmentation/seg_top.png     frame_00001/conf_right.npy               -0.020 / +0.014 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00001/conf_top.npy                 +0.353 / +0.078 
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_center.npy             +0.035 / -0.000 
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_left.npy               +0.002 / +0.004 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_raw_center.npy         +0.035 / +0.000 
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_raw_left.npy           +0.002 / +0.004 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_raw_right.npy          -0.016 / -0.013 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_raw_top.npy            +0.184 / +0.010 
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_right.npy              -0.016 / -0.013 <- ROTATED
+  frame_00000/segmentation/seg_top.png     frame_00001/depth_top.npy                +0.184 / +0.010 

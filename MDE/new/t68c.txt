@@ -1,0 +1,44 @@
+=== 1. top-face inlier fraction per box (run, capture, id, inlier_fraction, inliers, coverage)
+114629 0 0 0.9868 3890 0.9797 [3942, 1553]
+114629 0 1 0.9885 8173 0.9814 [2760, 2902, 2606]
+114629 0 2 0.9919 7326 0.9853 [2666, 2772, 1148, 823]
+114629 0 3 0.636 7648 0.9676 [4220, 3130, 2954, 1649]
+114629 0 4 0.8532 5578 0.9738 [4301, 2239]
+114629 0 5 0.8227 2149 0.8877 [2612]
+114629 1 0 0.9746 3920 0.9893 [4022, 1632]
+114629 1 1 0.99 8180 0.9843 [2742, 2883, 2637]
+114629 1 2 0.9948 8045 0.9912 [2650, 2774, 1588, 1100]
+114629 1 3 0.7394 9400 0.9854 [4253, 3390, 2951, 2066]
+114629 1 4 0.8296 6089 0.9476 [4263, 3083]
+114629 1 5 0.8378 2149 0.9074 [2565]
+115241 2 0 0.9604 3877 0.9861 [4037, 1838]
+115241 2 1 0.9897 8291 0.9876 [2806, 2887, 2684]
+115241 2 2 0.9947 8672 1.0 [2695, 2778, 1827, 1427]
+115241 2 3 0.7526 9196 0.9814 [4248, 3392, 2890, 1576]
+115241 2 4 0.8477 7049 0.9542 [4301, 4010]
+115241 2 5 0.8877 2244 0.9546 [2528]
+
+=== 2. sync_spread_ms / forced_trigger in da3_stream.py
+2244:             if fire:
+2245:                 record = {
+2246:                     "frame": processed - 1,
+2247:                     "t_s": round(time.perf_counter() - t_loop, 4),
+2248:                     "forced_trigger": forced,
+2249:                     "sync_spread_ms": round(spread_ms, 3),
+2250:                     "is_metric": is_metric,
+2251:                     "correction_applied": bool(corr),
+   ...
+2252:                     "view_terms_applied": bool(corr) and args.view_correction,
+   ...
+2397:         "sets_accepted": accepted_sets,
+2398:         "measured_duration_s": round(elapsed, 3),
+2399:         "mean_inference_hz": round(inferences / elapsed, 4) if inferences else 0.0,
+2400:         "sync_rejections": rejected_sync,
+2401:         "sync_spread_median_ms": (round(statistics.median(spread_history), 2)
+2402:                                   if spread_history else None),
+2403:         "last_layer_report": last_layer,
+2404:         "stage_timings": {k: stage_stats(v) for k, v in stage_ms.items()},
+   ...
+
+=== 3. upright / roll_thresh recorded in run metadata
+   none found in runs*/**/*.json

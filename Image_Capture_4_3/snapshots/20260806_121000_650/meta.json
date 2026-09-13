@@ -1,0 +1,75 @@
+{
+  "capture_local_time": "20260806_121000_650",
+  "cameras": {
+    "center": {
+      "serial": "261100628",
+      "t_call_ns": 242939549453948,
+      "t_device_ns": 1289055392518024,
+      "file": "center.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "top": {
+      "serial": "261100631",
+      "t_call_ns": 242939549492893,
+      "t_device_ns": 1289056013127704,
+      "file": "top.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "left": {
+      "serial": "260505158",
+      "t_call_ns": 242939549417634,
+      "t_device_ns": 1289055282020464,
+      "file": "left.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "right": {
+      "serial": "261100627",
+      "t_call_ns": 242939549348940,
+      "t_device_ns": 1289055893708824,
+      "file": "right.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    }
+  },
+  "exposure": {
+    "auto_exposure": false,
+    "exposure_us": 23000.0,
+    "gain_db": 0,
+    "white_balance": "lock",
+    "pixel_format": "RGB8",
+    "readback": {
+      "left": {
+        "exposure_us": 23006.224,
+        "gain_db": 0.0
+      },
+      "center": {
+        "exposure_us": 23006.224,
+        "gain_db": 0.0
+      },
+      "top": {
+        "exposure_us": 23006.224,
+        "gain_db": 0.0
+      },
+      "right": {
+        "exposure_us": 23006.224,
+        "gain_db": 0.0
+      }
+    }
+  },
+  "skew_ms": 731.10724
+}

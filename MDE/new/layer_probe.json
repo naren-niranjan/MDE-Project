@@ -1,0 +1,144 @@
+{
+  "per_view": {
+    "left": {
+      "n_points": 117842,
+      "below_deck_fraction": 0.2203458868654639,
+      "deck_band_points": 36898,
+      "parcel_band_points": 42409,
+      "deck_bias_mm": 4.713189608341217,
+      "deck_rms_mm": 7.8705292506447755,
+      "deck_p95_spread_mm": 22.843669144209766,
+      "deck_tilt_deg": 0.17947208385511648,
+      "radial_profile_mm": [
+        null,
+        9.7,
+        4.28,
+        3.27,
+        6.3,
+        4.41,
+        3.98,
+        -4.05
+      ],
+      "radial_amplitude_mm": 13.751775408692879,
+      "parcel_median_height_mm": 238.74527893102382
+    },
+    "center": {
+      "n_points": 119674,
+      "below_deck_fraction": 0.37540317863529254,
+      "deck_band_points": 26988,
+      "parcel_band_points": 38532,
+      "deck_bias_mm": -3.027444932732104,
+      "deck_rms_mm": 8.755004334481775,
+      "deck_p95_spread_mm": 26.412928160064347,
+      "deck_tilt_deg": 0.23472291598637274,
+      "radial_profile_mm": [
+        -7.94,
+        -11.61,
+        1.83,
+        -2.41,
+        -2.94,
+        -7.41,
+        null,
+        -4.61
+      ],
+      "radial_amplitude_mm": 13.438774202346737,
+      "parcel_median_height_mm": 235.55251933856968
+    },
+    "right": {
+      "n_points": 121495,
+      "below_deck_fraction": 0.3614222807522943,
+      "deck_band_points": 29975,
+      "parcel_band_points": 40251,
+      "deck_bias_mm": -1.8395499590564413,
+      "deck_rms_mm": 7.429946161269485,
+      "deck_p95_spread_mm": 24.623625176117734,
+      "deck_tilt_deg": 0.37293193644489503,
+      "radial_profile_mm": [
+        null,
+        -7.91,
+        -5.04,
+        -2.82,
+        -0.55,
+        1.03,
+        2.84,
+        1.91
+      ],
+      "radial_amplitude_mm": 10.74577160134993,
+      "parcel_median_height_mm": 229.00875385762066
+    },
+    "top": {
+      "n_points": 118953,
+      "below_deck_fraction": 0.3013290963657915,
+      "deck_band_points": 75,
+      "parcel_band_points": 76793,
+      "parcel_median_height_mm": 72.29862466721659
+    }
+  },
+  "deck_normal": [
+    -0.009347647402403436,
+    -0.00653050207875686,
+    -0.9999349849018384
+  ],
+  "deck_offset_m": -3.1683927213796266,
+  "parcel_top_disagreement_mm": {
+    "center|left": {
+      "n_cells": 1391,
+      "median_mm": -6.11,
+      "abs_median_mm": 8.02,
+      "p95_abs_mm": 33.91
+    },
+    "center|right": {
+      "n_cells": 929,
+      "median_mm": 3.98,
+      "abs_median_mm": 9.03,
+      "p95_abs_mm": 70.77
+    },
+    "center|top": {
+      "n_cells": 1517,
+      "median_mm": -26.9,
+      "abs_median_mm": 27.08,
+      "p95_abs_mm": 43.23
+    },
+    "left|right": {
+      "n_cells": 830,
+      "median_mm": 7.22,
+      "abs_median_mm": 12.06,
+      "p95_abs_mm": 84.41
+    },
+    "left|top": {
+      "n_cells": 1558,
+      "median_mm": -20.67,
+      "abs_median_mm": 21.39,
+      "p95_abs_mm": 57.16
+    },
+    "right|top": {
+      "n_cells": 1428,
+      "median_mm": -21.45,
+      "abs_median_mm": 21.81,
+      "p95_abs_mm": 55.66
+    }
+  },
+  "cells": {
+    "total": 5485,
+    "single_view": 3167,
+    "multi_view": 2318,
+    "multi_view_agreeing": 115,
+    "single_view_fraction": 0.577,
+    "agreement_tolerance_mm": 10.0
+  },
+  "verdict": {
+    "summary": [
+      "reflections      37.54 % of the worst view lies below the deck",
+      "per-view offset  deck bias spans   7.74 mm across views",
+      "scale error      parcel tops span 166.45 mm, pairwise cell disagreement  16.73 mm",
+      "radial bias      worst within-view deck bow  13.75 mm"
+    ],
+    "actions": [
+      "Clip below the deck. The roller surface is specular and the reflected parcels are being reconstructed as real geometry. A height cut at the deck plane removes them at no cost.",
+      "Apply a per-view shift. The views disagree by 7.7 mm at the deck itself, which a single scalar per camera removes.",
+      "Correct in inverse-depth space. Disagreement at parcel tops (16.7 mm) is far larger than at the deck (7.7 mm), so the error scales with depth and a shift fitted on the deck will not transfer to the tops.",
+      "Fit a spatially varying correction. One view bows by 13.8 mm across its field, so no per-view scalar can flatten it. A control-point grid over the image plane, fitted on the empty deck, is the minimum that will work.",
+      "Fuse by consensus rather than union. Fewer than half the multi-view cells agree within tolerance, so concatenating the clouds preserves every disagreement as a visible layer. Take a per-cell median across agreeing views instead."
+    ]
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "center+left+top+right_res1008": {
+    "scale": 1.374152,
+    "per_camera_scale": {
+      "center": 1.295284,
+      "left": 1.395911,
+      "top": 1.392515,
+      "right": 1.355788
+    },
+    "scale_spread": 0.074,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res1260": {
+    "scale": 1.878882,
+    "per_camera_scale": {
+      "center": 1.869294,
+      "left": 1.993047,
+      "top": 1.831236,
+      "right": 1.88847
+    },
+    "scale_spread": 0.0854,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res1512": {
+    "scale": 1.423483,
+    "per_camera_scale": {
+      "center": 1.418043,
+      "left": 1.464833,
+      "top": 1.362176,
+      "right": 1.428923
+    },
+    "scale_spread": 0.0724,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res1750": {
+    "scale": 0.857101,
+    "per_camera_scale": {
+      "center": 0.848465,
+      "left": 0.86728,
+      "top": 0.865736,
+      "right": 0.844911
+    },
+    "scale_spread": 0.0261,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res2002": {
+    "scale": 0.599537,
+    "per_camera_scale": {
+      "center": 0.592506,
+      "left": 0.598682,
+      "top": 0.639673,
+      "right": 0.600392
+    },
+    "scale_spread": 0.0776,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res2450": {
+    "scale": 0.396757,
+    "per_camera_scale": {
+      "center": 0.388366,
+      "left": 0.39347,
+      "top": 0.425382,
+      "right": 0.400043
+    },
+    "scale_spread": 0.0921,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res252": {
+    "scale": 0.966293,
+    "per_camera_scale": {
+      "left": 0.966293
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res504": {
+    "scale": 0.861497,
+    "per_camera_scale": {
+      "center": 0.822137,
+      "left": 0.866826,
+      "top": 1.007627,
+      "right": 0.856169
+    },
+    "scale_spread": 0.2088,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res700": {
+    "scale": 0.724358,
+    "per_camera_scale": {
+      "center": 0.68329,
+      "left": 0.729719,
+      "top": 0.796181,
+      "right": 0.718998
+    },
+    "scale_spread": 0.1542,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res1008": {
+    "scale": 1.758244,
+    "per_camera_scale": {
+      "center": 1.625911,
+      "left": 1.818006,
+      "top": 1.758244
+    },
+    "scale_spread": 0.1108,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res1260": {
+    "scale": 2.515236,
+    "per_camera_scale": {
+      "center": 2.515236,
+      "left": 2.681537,
+      "top": 2.460614
+    },
+    "scale_spread": 0.0866,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res1512": {
+    "scale": 1.700846,
+    "per_camera_scale": {
+      "center": 1.700846,
+      "left": 1.794296,
+      "top": 1.656989
+    },
+    "scale_spread": 0.08,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res1750": {
+    "scale": 1.358249,
+    "per_camera_scale": {
+      "center": 1.321007,
+      "left": 1.388451,
+      "top": 1.358249
+    },
+    "scale_spread": 0.0497,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res2002": {
+    "scale": 0.710149,
+    "per_camera_scale": {
+      "center": 0.7011,
+      "left": 0.710149,
+      "top": 0.771951
+    },
+    "scale_spread": 0.0974,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res2450": {
+    "scale": 0.423929,
+    "per_camera_scale": {
+      "center": 0.409745,
+      "left": 0.423929,
+      "top": 0.46117
+    },
+    "scale_spread": 0.1191,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res252": {
+    "scale": 1.800853,
+    "per_camera_scale": {
+      "left": 1.800853
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res504": {
+    "scale": 2.1878,
+    "per_camera_scale": {
+      "center": 1.942039,
+      "left": 2.1878,
+      "top": 2.347644
+    },
+    "scale_spread": 0.1879,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res700": {
+    "scale": 2.338413,
+    "per_camera_scale": {
+      "center": 2.330141,
+      "left": 2.558893,
+      "top": 2.338413
+    },
+    "scale_spread": 0.095,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res1008": {
+    "scale": 1.140805,
+    "per_camera_scale": {
+      "center": 1.036328,
+      "top": 1.177952,
+      "right": 1.140805
+    },
+    "scale_spread": 0.1266,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res1260": {
+    "scale": 1.53628,
+    "per_camera_scale": {
+      "center": 1.53628,
+      "top": 1.531882,
+      "right": 1.56606
+    },
+    "scale_spread": 0.0221,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res1512": {
+    "scale": 1.185137,
+    "per_camera_scale": {
+      "center": 1.185137,
+      "top": 1.156553,
+      "right": 1.238716
+    },
+    "scale_spread": 0.0688,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res1750": {
+    "scale": 0.930813,
+    "per_camera_scale": {
+      "center": 0.930813,
+      "top": 0.939156,
+      "right": 0.919146
+    },
+    "scale_spread": 0.0215,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res2002": {
+    "scale": 0.519499,
+    "per_camera_scale": {
+      "center": 0.519499,
+      "top": 0.580868,
+      "right": 0.512966
+    },
+    "scale_spread": 0.1263,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res2450": {
+    "scale": 0.438876,
+    "per_camera_scale": {
+      "center": 0.42879,
+      "top": 0.46361,
+      "right": 0.438876
+    },
+    "scale_spread": 0.0785,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res504": {
+    "scale": 1.064719,
+    "per_camera_scale": {
+      "center": 0.951514,
+      "top": 1.130194,
+      "right": 1.064719
+    },
+    "scale_spread": 0.1704,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res700": {
+    "scale": 1.038093,
+    "per_camera_scale": {
+      "center": 0.959208,
+      "top": 1.074584,
+      "right": 1.038093
+    },
+    "scale_spread": 0.1127,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res1008": {
+    "scale": 0.228145,
+    "per_camera_scale": {
+      "left": 0.228145,
+      "top": 0.257395,
+      "right": 0.227061
+    },
+    "scale_spread": 0.1277,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res1260": {
+    "scale": 0.29528,
+    "per_camera_scale": {
+      "left": 0.29528,
+      "top": 0.326003,
+      "right": 0.283471
+    },
+    "scale_spread": 0.141,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res1512": {
+    "scale": 0.707072,
+    "per_camera_scale": {
+      "left": 0.707072,
+      "top": 0.732072,
+      "right": 0.690538
+    },
+    "scale_spread": 0.0585,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res1750": {
+    "scale": 0.532127,
+    "per_camera_scale": {
+      "left": 0.532127,
+      "top": 0.585335,
+      "right": 0.530112
+    },
+    "scale_spread": 0.1006,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res2002": {
+    "scale": 0.203226,
+    "per_camera_scale": {
+      "left": 0.203226,
+      "top": 0.22022,
+      "right": 0.199812
+    },
+    "scale_spread": 0.0982,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res2450": {
+    "scale": 0.179111,
+    "per_camera_scale": {
+      "left": 0.176287,
+      "top": 0.190889,
+      "right": 0.179111
+    },
+    "scale_spread": 0.0802,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res252": {
+    "scale": 0.370179,
+    "per_camera_scale": {
+      "left": 0.370179
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res504": {
+    "scale": 0.17042,
+    "per_camera_scale": {
+      "left": 0.17042,
+      "top": 0.1922,
+      "right": 0.1695
+    },
+    "scale_spread": 0.128,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res700": {
+    "scale": 0.267082,
+    "per_camera_scale": {
+      "left": 0.267082,
+      "top": 0.292312,
+      "right": 0.262556
+    },
+    "scale_spread": 0.1086,
+    "solved_against": "AprilTag PnP versus depth"
+  }
+}

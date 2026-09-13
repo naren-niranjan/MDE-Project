@@ -1,0 +1,40 @@
+{
+  "capture_local_time": "20260721_114315_523",
+  "cameras": {
+    "center": {
+      "t_call_ns": 3960380864311689,
+      "t_device_ns": 518514187965568,
+      "file": "center.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "left": {
+      "t_call_ns": 3960380864273096,
+      "t_device_ns": 518514043031800,
+      "file": "left.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "right": {
+      "t_call_ns": 3960380864202246,
+      "t_device_ns": 518514486766968,
+      "file": "right.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    }
+  },
+  "exposure": {
+    "auto_exposure": false,
+    "exposure_us": 5000.0,
+    "gain_db": 0.0
+  }
+}

@@ -1,0 +1,292 @@
+=== da3_stream.py: 2423 lines ===
+
+--- imports ---
+  from __future__ import annotations
+  import argparse
+  import csv
+  import ctypes
+  import json
+  import os
+  import select
+  import statistics
+  import sys
+  import threading
+  import time
+  from collections import deque
+  from datetime import datetime
+  from pathlib import Path
+  import numpy
+  import cv2
+  import open3d
+  import torch
+  import box_segment
+  import box_geometry
+  from depth_anything_3.api import DepthAnything3
+  from arena_api.system import system
+  import termios
+  import tty
+  import termios
+
+--- top-level functions ---
+  L209   parse_args()
+  L505   load_intrinsics(calib_dir, name)
+  L523   load_extrinsics(calib_dir, names, reference)
+  L552   check_lens(intr, ext, names, expect)
+  L575   check_serials(intr, ext, names)
+  L586   camera_centre(E)
+  L590   rt(E)
+  L599   load_correction(path, names, lens, view_terms)
+           # Load a per-view height correction written by depth_align.py.
+  L657   pixel_rays(shape, K)
+  L666   apply_height_correction(depth, K, n_cam, d_cam, alpha, beta)
+           # h = z (n_cam . r) - d_cam ; h' = alpha h + beta ; z' = (h' + d_cam)/(n . r)
+  L689   correct_depths(depth, names, corr, K_out)
+  L713   build_rect_plan(intr, names, size, mode, enabled)
+  L757   scale_K(K, s)
+  L772   points_camera(depth, K)
+           # Depth is Z along the optical axis, not distance along the ray.
+  L777   edge_mask(depth, rel_thresh, dilate)
+  L790   normals_from_points(pts_cam)
+  L799   incidence_mask(pts_cam, max_deg)
+  L809   to_world(pts_cam, E)
+  L814   to_o3d(points, colors, rgb01)
+  L829   fit_plane_ransac(points, thresh, iters, seed, subsample)
+  L864   layer_report(per_view_points, centres, band_m, above_m)
+           # How far apart the four views place the same surface.
+  L904   print_layer_report(rep)
+  L924   load_model(model_id, device)
+  L930   as_numpy(v)
+  L938   run_inference(model, frames, Ks_in, Es, args)
+           # One DA3 pass, with the None-returning fields filled from the inputs.
+  L977   set_node(nodemap, name, value, log)
+  L987   buffer_to_array(item, bpp)
+  L994   to_rgb(frame, family, bayer_code)
+  L1100  stage_stats(vals)
+  L1113  plan_link(args, n_cameras)
+           # Size the frame rate and the per-camera throughput limit to the uplink.
+  L1137  configure(device, args, link, log)
+  L1163  wait_for_ptp(devices, names, timeout_s)
+  L1233  backproject(names, depth, conf, K_out, E_out, rgb_proc, args)
+  L1287  fuse_tsdf(names, depth, K_out, E_out, rgb_proc, args)
+           # Integrate the four views into one surface instead of stacking four.
+  L1319  segmentation_input(names, world_pts)
+           # The points the segmentation is given, with the camera each came from.
+  L1345  append_box_log(path, rows)
+           # Every parcel of every capture, in one file.
+  L1364  mosaic(tiles, width)
+  L1379  with_banner(image, lines, colour)
+  L1387  depth_preview(names, depth, workers, args, info_lines)
+  L1411  report_calibration(intr, ext, names, lens, plan, args, link)
+  L1458  report_correction(corr, meta, names, args)
+  L1500  report_segmentation_setup(args, seg_p, geom_p)
+           # What will happen on a capture, said once, before anything happens.
+  L1547  geometry_self_test()
+  L1689  wait_for_first_frames(workers, timeout_s)
+           # Block until every camera has published, so warm-up has real data.
+  L1704  main()
+
+--- classes ---
+  L455   class KeyPoller()
+           # Non-blocking single-character reads from a terminal.
+             L467   .__init__(self)
+             L471   .start(self)
+             L484   .stop(self)
+             L491   .poll(self)
+  L1002  class CameraWorker(threading.Thread)
+           # Acquire one camera, rectify via precomputed maps, publish the latest.
+             L1005  .__init__(self, name, device, args, plan, stop)
+             L1032  .latest(self)
+             L1038  .run(self)
+             L1084  .fps(self)
+             L1090  .summary(self, elapsed)
+  L1183  class SettleTrigger()
+           # Fire once the reference view stops changing, re-arm once it moves again.
+             L1191  .__init__(self, thresh, need, rearm)
+             L1200  .update(self, rgb)
+             L1224  .state(self)
+
+--- module-level constants ---
+  L186   CAMERAS = {'left': '260505158', 'center': '261100628', 'right': '261100627', 'top': '26110
+  L193   PIXEL_FORMATS = {'RGB8': (3, 'rgb'), 'BGR8': (3, 'bgr'), 'BayerRG8': (1, 'bayer')}
+  L195   PALETTE = [(0.9, 0.3, 0.25), (0.25, 0.65, 0.9), (0.35, 0.75, 0.4), (0.95, 0.75, 0.2), (0.7
+  L199   DEFAULT_CALIB = Path('/home/jetson/Projects/Calibration_4_5/results')
+  L200   DEFAULT_LENS = 'EO-58-001-12mm'
+  L201   CORRECTION_MODEL = 'deck_height_linear'
+  L202   GIGE_MB_S = 125.0
+
+--- lines by role ---
+
+  [model]  18 hits
+    L50    scatter, because DA3 solves the four frames jointly and one error appears
+    L69    the intrinsics and extrinsics DA3 returned, the processed images, the fused
+    L85    K_<cam>.npy  E_<cam>.npy         as DA3 returned them, for the processed
+    L87    proc_<cam>.png                   the images DA3 saw
+    L115   camera, and mixed sizes in one DA3 batch trigger a centre crop to the smallest
+    L211   description="Live four-camera DA3 fusion on the 12 mm rig, with "
+    L325   help="ask DA3 to report extrinsics on the supplied "
+    L677   to the map being corrected, which for DA3 means pred.intrinsics rather
+    L924   def load_model(model_id, device):
+    L925   from depth_anything_3.api import DepthAnything3
+    L926   m = DepthAnything3.from_pretrained(model_id)
+    L927   return m.to(device) if hasattr(m, "to") else m
+    L939   """One DA3 pass, with the None-returning fields filled from the inputs."""
+    L1439  print("[WARN] the rectified views do not share a size. DA3 will "
+    ... 4 more
+
+  [inference]  7 hits
+    L310   help="multiple of the ViT patch size 14; 504 = 14x36, "
+    L942   pred = model.inference(frames, intrinsics=Ks_in, extrinsics=Es,
+    L944   process_res=args.process_res)
+    L946   pred = model.inference(frames, process_res=args.process_res)
+    L1481  f"which is {unc.get('at_predict_height_mm', float('nan')):.1f} mm "
+    L1713  if args.process_res % 14:
+    L1714  print(f"[warn ] process_res {args.process_res} is not a multiple of 14; "
+
+  [rectify]  22 hits
+    L86    grid, not the rectified full frame
+    L114   getOptimalNewCameraMatrix at alpha = 0 returns a different valid ROI per
+    L226   "and rectification checks if --calib-dir exists, "
+    L321   help="isotropic downscale applied to the rectified image "
+    L363   ap.add_argument("--undistort", dest="undistort", action="store_true",
+    L365   ap.add_argument("--no-undistort", dest="undistort", action="store_false")
+    L678   than the rectified K.
+    L726   newK, roi = cv2.getOptimalNewCameraMatrix(K, dist, (w, h), 0, (w, h))
+    L749   map1, map2 = cv2.initUndistortRectifyMap(
+    L1003  """Acquire one camera, rectify via precomputed maps, publish the latest."""
+    L1028  self.rectify_ms = []
+    L1055  rgb = cv2.remap(rgb, self.map1, self.map2, cv2.INTER_LINEAR)
+    L1061  self.rectify_ms.append((t2 - t1) * 1e3)
+    L1096  "rectify": stage_stats(self.rectify_ms),
+    ... 8 more
+
+  [backproject]  13 hits
+    L346   "smallest reprojection error, which is exactly the "
+    L514   "rms_px": float(data.get("rms_reprojection_error_px", float("nan"))),
+    L815   pcd = o3d.geometry.PointCloud()
+    L1233  def backproject(names, depth, conf, K_out, E_out, rgb_proc, args):
+    L1854  "backproject", "fuse", "write", "segment",
+    L2082  backproject_ms = fuse_ms = write_ms = segment_ms = 0.0
+    L2092  clouds, tinted, per_cam, world_pts = backproject(
+    L2094  backproject_ms = (time.perf_counter() - t0) * 1e3
+    L2101  fused = o3d.geometry.PointCloud()
+    L2136  merged = o3d.geometry.PointCloud()
+    L2235  ("backproject", backproject_ms), ("fuse", fuse_ms),
+    L2264  "backproject": round(backproject_ms, 2),
+    L2284  f"corr {correct_ms:5.1f}  bp {backproject_ms:6.1f}  "
+
+  [correction]  79 hits
+    L11    depth_align.py, because the rig has been rebuilt around the Edmund Optics
+    L13    constants no longer apply. The correction is re-implemented here rather than
+    L26    h' = alpha h + beta
+    L38    pixel map, put 80 to 110 mm of depth correction in some cells and none in
+    L39    the neighbouring ones. On a conveyor that reads as a fold. --no-affine-grid
+    L42    3. THE CORRECTION FILE IS depth_correction.json, MODEL deck_height_linear.
+    L43    An old depth_affine.json is refused by name rather than silently
+    L54    correction file under height_uncertainty, and it is the number to quote
+    L60    correction is in place, not before.
+    L114   getOptimalNewCameraMatrix at alpha = 0 returns a different valid ROI per
+    L128   --correction depth_correction.json --save-mode all --save-npy \\
+    L230   ap.add_argument("--correction", "--affine", dest="correction", type=Path,
+    L232   help="depth_correction.json from depth_align.py, applied "
+    L236   ap.add_argument("--no-affine-grid", dest="dead_grid_flag",
+    ... 65 more
+
+  [save]  21 hits
+    L81    fused.ply                        the fused cloud
+    L82    fused_by_camera.ply              one colour per view, which is how
+    L91    segmented.ply                  coloured by parcel, conveyor grey
+    L93    boxes_mesh.ply  boxes_lines.ply the cuboids as geometry
+    L94    scene_boxed.ply                 cloud and boxes in one file, optional
+    L398   help="also write fused_by_camera.ply, one colour per "
+    L1535  parts = [k for k, on in (("boxes_mesh.ply", geom_p.mesh),
+    L1536  ("boxes_lines.ply", geom_p.lines),
+    L1537  ("scene_boxed.ply", geom_p.combined)) if on]
+    L1541  print("[geom ] scene_boxed.ply samples the box mesh to point "
+    L2120  full_capture = forced or args.save_npy
+    L2130  o3d.io.write_point_cloud(str(stem / "fused.ply"), fused)
+    L2133  o3d.io.write_point_cloud(
+    L2134  str(stem / f"cloud_{n}.ply"), clouds[n])
+    ... 7 more
+
+  [camera]  10 hits
+    L5     Live four-camera acquisition feeding Depth Anything 3 multi-view fusion,
+    L258   help="per-camera acquisition rate; 0 derives a rate that "
+    L1075  self.errors.append("acquisition thread giving up")
+    L1093  "acquisition_failures": self.failures,
+    L1158  set_node(st, "StreamAutoNegotiatePacketSize", True, log)
+    L1159  set_node(st, "StreamPacketResendEnable", True, log)
+    L1160  set_node(st, "StreamBufferHandlingMode", "NewestOnly", log)
+    L2004  print("all acquisition threads have stopped", file=sys.stderr)
+    L2323  print("all acquisition threads have stopped", file=sys.stderr)
+    L2405  "per_camera_acquisition": {w.cam_name: w.summary(elapsed) for w in workers},
+
+--- what writes the npy arrays ---
+
+  around L2120:
+    2116                   # ---- where this capture goes -------------------------
+    2117                   # A capture forced by the key is always written, whatever
+    2118                   # --save-mode says, because the key means "keep this one".
+    2119                   save_this = args.save_mode != "none" or forced
+    2120 >                 full_capture = forced or args.save_npy
+    2121                   if args.save_mode == "latest" and not forced:
+    2122                       stem = args.out_dir
+    2123                   else:
+    2124                       stem = args.out_dir / f"frame_{processed:05d}"
+
+  around L2147:
+    2143                           # offline: the corrected depth, the raw depth beside it
+    2144                           # so the correction can be audited, and the intrinsics
+    2145                           # and extrinsics that belong to the PROCESSED grid.
+    2146                           for i, n in enumerate(names):
+    2147 >                             np.save(stem / f"depth_{n}.npy", depth[i])
+    2148                               np.save(stem / f"depth_raw_{n}.npy", raw_depth[i])
+    2149                               if conf is not None:
+    2150                                   np.save(stem / f"conf_{n}.npy", conf[i])
+    2151                               np.save(stem / f"K_{n}.npy", K_out[i])
+
+  around L2148:
+    2144                           # so the correction can be audited, and the intrinsics
+    2145                           # and extrinsics that belong to the PROCESSED grid.
+    2146                           for i, n in enumerate(names):
+    2147                               np.save(stem / f"depth_{n}.npy", depth[i])
+    2148 >                             np.save(stem / f"depth_raw_{n}.npy", raw_depth[i])
+    2149                               if conf is not None:
+    2150                                   np.save(stem / f"conf_{n}.npy", conf[i])
+    2151                               np.save(stem / f"K_{n}.npy", K_out[i])
+    2152                               np.save(stem / f"E_{n}.npy", E_out[i])
+
+  around L2150:
+    2146                           for i, n in enumerate(names):
+    2147                               np.save(stem / f"depth_{n}.npy", depth[i])
+    2148                               np.save(stem / f"depth_raw_{n}.npy", raw_depth[i])
+    2149                               if conf is not None:
+    2150 >                                 np.save(stem / f"conf_{n}.npy", conf[i])
+    2151                               np.save(stem / f"K_{n}.npy", K_out[i])
+    2152                               np.save(stem / f"E_{n}.npy", E_out[i])
+    2153                               if args.save_proc and rgb_proc is not None:
+    2154                                   img = np.asarray(rgb_proc[i])
+
+  around L2151:
+    2147                               np.save(stem / f"depth_{n}.npy", depth[i])
+    2148                               np.save(stem / f"depth_raw_{n}.npy", raw_depth[i])
+    2149                               if conf is not None:
+    2150                                   np.save(stem / f"conf_{n}.npy", conf[i])
+    2151 >                             np.save(stem / f"K_{n}.npy", K_out[i])
+    2152                               np.save(stem / f"E_{n}.npy", E_out[i])
+    2153                               if args.save_proc and rgb_proc is not None:
+    2154                                   img = np.asarray(rgb_proc[i])
+    2155                                   if img.dtype != np.uint8:
+
+  around L2152:
+    2148                               np.save(stem / f"depth_raw_{n}.npy", raw_depth[i])
+    2149                               if conf is not None:
+    2150                                   np.save(stem / f"conf_{n}.npy", conf[i])
+    2151                               np.save(stem / f"K_{n}.npy", K_out[i])
+    2152 >                             np.save(stem / f"E_{n}.npy", E_out[i])
+    2153                               if args.save_proc and rgb_proc is not None:
+    2154                                   img = np.asarray(rgb_proc[i])
+    2155                                   if img.dtype != np.uint8:
+    2156                                       img = np.clip(
+
+--- main entry ---
+  L2422: if __name__ == "__main__":

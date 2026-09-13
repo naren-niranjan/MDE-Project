@@ -1,0 +1,692 @@
+[
+  {
+    "n_cams": 1,
+    "rot_err_deg": 0.0,
+    "scale": 1.384821,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "center_res1008",
+    "scale_baseline": 1.0,
+    "per_camera_scale": {
+      "center": 1.384821
+    },
+    "n_points": 378674,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 2.830351797429085,
+        "depth_p05_m": 2.549514358180297,
+        "depth_p95_m": 3.414972213215268,
+        "incidence_median_deg": 24.444578842652504,
+        "n_points": 468028,
+        "conf_threshold": 2.430324935913086,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16296,
+          "grazing": 23708
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 1,
+    "rot_err_deg": 0.0,
+    "scale": 1.856929,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "left_res1008",
+    "scale_baseline": 1.0,
+    "per_camera_scale": {
+      "left": 1.856929
+    },
+    "n_points": 381161,
+    "per_camera": [
+      {
+        "camera": "left",
+        "median_depth_m": 2.9790911584718227,
+        "depth_p05_m": 2.7389857704230787,
+        "depth_p95_m": 3.332546053339076,
+        "incidence_median_deg": 21.455078096928176,
+        "n_points": 483037,
+        "conf_threshold": 5.898464965820312,
+        "dropped": {
+          "conf": 338688,
+          "edge": 18246,
+          "grazing": 6749
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 1,
+    "rot_err_deg": 0.0,
+    "scale": 1.536606,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "right_res1008",
+    "scale_baseline": 1.0,
+    "per_camera_scale": {
+      "right": 1.536606
+    },
+    "n_points": 440566,
+    "per_camera": [
+      {
+        "camera": "right",
+        "median_depth_m": 3.18942616699934,
+        "depth_p05_m": 2.8407965250765326,
+        "depth_p95_m": 4.008982436681842,
+        "incidence_median_deg": 23.979191691551485,
+        "n_points": 471153,
+        "conf_threshold": 2.6033183574676513,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16957,
+          "grazing": 19922
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 1,
+    "rot_err_deg": 0.0,
+    "scale": 2.677628,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "top_res1008",
+    "scale_baseline": 1.0,
+    "per_camera_scale": {
+      "top": 2.677628
+    },
+    "n_points": 484295,
+    "per_camera": [
+      {
+        "camera": "top",
+        "median_depth_m": 3.7672239092078206,
+        "depth_p05_m": 3.5360836045966146,
+        "depth_p95_m": 4.5641709914469715,
+        "incidence_median_deg": 28.08300668403343,
+        "n_points": 484319,
+        "conf_threshold": 3.475702905654907,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16876,
+          "grazing": 6837
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 1.641,
+    "scale": 1.636415,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "center+left_res1008",
+    "scale_baseline": 1.097891,
+    "per_camera_scale": {
+      "center": 1.611428,
+      "left": 1.661401
+    },
+    "n_points": 731887,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.2526706360120774,
+        "depth_p05_m": 2.960235959182787,
+        "depth_p95_m": 4.0186435699567795,
+        "incidence_median_deg": 22.439920136004766,
+        "n_points": 476044,
+        "conf_threshold": 2.939182662963867,
+        "dropped": {
+          "conf": 338688,
+          "edge": 15768,
+          "grazing": 16220
+        }
+      },
+      {
+        "camera": "left",
+        "median_depth_m": 3.2181401349503993,
+        "depth_p05_m": 2.9513567141491532,
+        "depth_p95_m": 4.04482567548728,
+        "incidence_median_deg": 23.07139067750566,
+        "n_points": 474043,
+        "conf_threshold": 3.0634936332702636,
+        "dropped": {
+          "conf": 338688,
+          "edge": 23109,
+          "grazing": 10880
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 1.581,
+    "scale": 1.88688,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "center+right_res1008",
+    "scale_baseline": 1.06059,
+    "per_camera_scale": {
+      "center": 1.895869,
+      "right": 1.87789
+    },
+    "n_points": 949360,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.2969036902005673,
+        "depth_p05_m": 3.065861877421546,
+        "depth_p95_m": 4.22919203124609,
+        "incidence_median_deg": 27.523232832974305,
+        "n_points": 481829,
+        "conf_threshold": 2.4920451164245607,
+        "dropped": {
+          "conf": 338688,
+          "edge": 12845,
+          "grazing": 13358
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.2334147457003595,
+        "depth_p05_m": 2.871155948658228,
+        "depth_p95_m": 4.178603255004883,
+        "incidence_median_deg": 27.735435339176835,
+        "n_points": 479473,
+        "conf_threshold": 2.184370517730713,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14245,
+          "grazing": 14314
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 1.187,
+    "scale": 1.884921,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "center+top_res1008",
+    "scale_baseline": 1.976247,
+    "per_camera_scale": {
+      "center": 1.849456,
+      "top": 1.920385
+    },
+    "n_points": 899672,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.152879299738884,
+        "depth_p05_m": 2.8071604330945017,
+        "depth_p95_m": 4.094609729426765,
+        "incidence_median_deg": 24.355235841182242,
+        "n_points": 475672,
+        "conf_threshold": 2.6259425163269046,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14709,
+          "grazing": 17651
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.680299672679305,
+        "depth_p05_m": 3.36788671339345,
+        "depth_p95_m": 4.703734328435421,
+        "incidence_median_deg": 24.11670322076514,
+        "n_points": 477179,
+        "conf_threshold": 2.234134387969971,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14834,
+          "grazing": 16019
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 1.813,
+    "scale": 1.743625,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "left+right_res1008",
+    "scale_baseline": 1.086304,
+    "per_camera_scale": {
+      "left": 1.752005,
+      "right": 1.735245
+    },
+    "n_points": 785739,
+    "per_camera": [
+      {
+        "camera": "left",
+        "median_depth_m": 3.2066666140165925,
+        "depth_p05_m": 2.886670806189239,
+        "depth_p95_m": 3.987765299605489,
+        "incidence_median_deg": 22.61338290428653,
+        "n_points": 478138,
+        "conf_threshold": 3.1416501045227054,
+        "dropped": {
+          "conf": 338688,
+          "edge": 22274,
+          "grazing": 7620
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.1898637347379326,
+        "depth_p05_m": 2.8416041229370235,
+        "depth_p95_m": 3.9791394578071833,
+        "incidence_median_deg": 22.888583818612688,
+        "n_points": 474508,
+        "conf_threshold": 2.2310753345489505,
+        "dropped": {
+          "conf": 338688,
+          "edge": 17933,
+          "grazing": 15591
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 4.522,
+    "scale": 2.12268,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "left+top_res1008",
+    "scale_baseline": 1.414768,
+    "per_camera_scale": {
+      "left": 2.060757,
+      "top": 2.184604
+    },
+    "n_points": 882124,
+    "per_camera": [
+      {
+        "camera": "left",
+        "median_depth_m": 3.001969877782882,
+        "depth_p05_m": 2.769898364471197,
+        "depth_p95_m": 3.663652424262089,
+        "incidence_median_deg": 24.225042448042835,
+        "n_points": 471650,
+        "conf_threshold": 2.8952637672424317,
+        "dropped": {
+          "conf": 338688,
+          "edge": 26462,
+          "grazing": 9920
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.6267428372106556,
+        "depth_p05_m": 3.3739966666903976,
+        "depth_p95_m": 4.30643126880343,
+        "incidence_median_deg": 26.17704952065874,
+        "n_points": 479558,
+        "conf_threshold": 2.4696602821350098,
+        "dropped": {
+          "conf": 338688,
+          "edge": 17722,
+          "grazing": 10752
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 2,
+    "rot_err_deg": 1.455,
+    "scale": 2.002012,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": null,
+    "run": "top+right_res1008",
+    "scale_baseline": 1.436045,
+    "per_camera_scale": {
+      "top": 2.02567,
+      "right": 1.978354
+    },
+    "n_points": 910668,
+    "per_camera": [
+      {
+        "camera": "top",
+        "median_depth_m": 3.7925277371942996,
+        "depth_p05_m": 3.5436918159733413,
+        "depth_p95_m": 4.652131715371609,
+        "incidence_median_deg": 23.50364571068734,
+        "n_points": 484778,
+        "conf_threshold": 3.513214921951294,
+        "dropped": {
+          "conf": 338688,
+          "edge": 12674,
+          "grazing": 10580
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.2133953631460663,
+        "depth_p05_m": 2.866871293113601,
+        "depth_p95_m": 4.011682350226879,
+        "incidence_median_deg": 24.560885783427295,
+        "n_points": 476402,
+        "conf_threshold": 2.6002774715423587,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16690,
+          "grazing": 14940
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 3,
+    "rot_err_deg": 1.734,
+    "scale": 1.505185,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": 14.293,
+    "run": "center+left+right_res1008",
+    "scale_baseline": 1.13593,
+    "per_camera_scale": {
+      "center": 1.505185,
+      "left": 1.522156,
+      "right": 1.490793
+    },
+    "n_points": 1020163,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.2095976942658426,
+        "depth_p05_m": 2.8569033240140675,
+        "depth_p95_m": 4.060579381876946,
+        "incidence_median_deg": 23.123005359703384,
+        "n_points": 477537,
+        "conf_threshold": 3.336324167251587,
+        "dropped": {
+          "conf": 338688,
+          "edge": 15659,
+          "grazing": 14836
+        }
+      },
+      {
+        "camera": "left",
+        "median_depth_m": 3.187011584628105,
+        "depth_p05_m": 2.881408837692261,
+        "depth_p95_m": 4.063154187236071,
+        "incidence_median_deg": 23.436344365199258,
+        "n_points": 477246,
+        "conf_threshold": 3.143300580978394,
+        "dropped": {
+          "conf": 338688,
+          "edge": 21208,
+          "grazing": 9578
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.1834593611691,
+        "depth_p05_m": 2.837791967202938,
+        "depth_p95_m": 4.057916868867516,
+        "incidence_median_deg": 22.619982077370715,
+        "n_points": 477662,
+        "conf_threshold": 3.306210517883301,
+        "dropped": {
+          "conf": 338687,
+          "edge": 15659,
+          "grazing": 14712
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 3,
+    "rot_err_deg": 2.879,
+    "scale": 1.839141,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": 47.08,
+    "run": "center+left+top_res1008",
+    "scale_baseline": 1.533981,
+    "per_camera_scale": {
+      "center": 1.814891,
+      "left": 1.839141,
+      "top": 1.855218
+    },
+    "n_points": 1204242,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.1757382920057178,
+        "depth_p05_m": 2.8669379312516807,
+        "depth_p95_m": 3.9140916539688946,
+        "incidence_median_deg": 21.662538098909128,
+        "n_points": 477984,
+        "conf_threshold": 2.410428905487061,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16342,
+          "grazing": 13706
+        }
+      },
+      {
+        "camera": "left",
+        "median_depth_m": 3.179475935678959,
+        "depth_p05_m": 2.8775337602032183,
+        "depth_p95_m": 3.9112528362441297,
+        "incidence_median_deg": 23.292731721249268,
+        "n_points": 472887,
+        "conf_threshold": 2.7625384807586673,
+        "dropped": {
+          "conf": 338688,
+          "edge": 24434,
+          "grazing": 10711
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.712468453229427,
+        "depth_p05_m": 3.448232846940744,
+        "depth_p95_m": 4.481625276334762,
+        "incidence_median_deg": 22.911994428089486,
+        "n_points": 476740,
+        "conf_threshold": 1.906958818435669,
+        "dropped": {
+          "conf": 338687,
+          "edge": 18637,
+          "grazing": 12656
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 3,
+    "rot_err_deg": 2.352,
+    "scale": 1.788971,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": 136.083,
+    "run": "center+top+right_res1008",
+    "scale_baseline": 1.295087,
+    "per_camera_scale": {
+      "center": 1.788971,
+      "top": 1.898692,
+      "right": 1.784323
+    },
+    "n_points": 1345362,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.246921154551685,
+        "depth_p05_m": 2.8501712876649026,
+        "depth_p95_m": 4.146097649971235,
+        "incidence_median_deg": 25.112776197617144,
+        "n_points": 478092,
+        "conf_threshold": 2.753484630584717,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14840,
+          "grazing": 15100
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.78440466015625,
+        "depth_p05_m": 3.5590997392974377,
+        "depth_p95_m": 4.798314184356689,
+        "incidence_median_deg": 26.09641297850792,
+        "n_points": 482260,
+        "conf_threshold": 2.312919521331787,
+        "dropped": {
+          "conf": 338688,
+          "edge": 11550,
+          "grazing": 14222
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.1990471324349645,
+        "depth_p05_m": 2.828446474580872,
+        "depth_p95_m": 4.166548316111159,
+        "incidence_median_deg": 24.42905866124916,
+        "n_points": 480007,
+        "conf_threshold": 2.9815335273742676,
+        "dropped": {
+          "conf": 338687,
+          "edge": 15009,
+          "grazing": 13017
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 3,
+    "rot_err_deg": 4.22,
+    "scale": 1.802715,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": 126.251,
+    "run": "left+top+right_res1008",
+    "scale_baseline": 1.270637,
+    "per_camera_scale": {
+      "left": 1.802715,
+      "top": 1.85357,
+      "right": 1.785112
+    },
+    "n_points": 1238951,
+    "per_camera": [
+      {
+        "camera": "left",
+        "median_depth_m": 3.200915503730178,
+        "depth_p05_m": 2.8945837664503458,
+        "depth_p95_m": 3.9977307624303107,
+        "incidence_median_deg": 22.77152680630922,
+        "n_points": 477055,
+        "conf_threshold": 3.446136951446533,
+        "dropped": {
+          "conf": 338688,
+          "edge": 22488,
+          "grazing": 8489
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.768129478908777,
+        "depth_p05_m": 3.5256787502789493,
+        "depth_p95_m": 4.528224810845852,
+        "incidence_median_deg": 22.18174491829707,
+        "n_points": 484646,
+        "conf_threshold": 3.237556695938111,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14965,
+          "grazing": 8421
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.1962339655303955,
+        "depth_p05_m": 2.887821240825415,
+        "depth_p95_m": 3.952756755279541,
+        "incidence_median_deg": 22.79075731025433,
+        "n_points": 482598,
+        "conf_threshold": 3.160088920593262,
+        "dropped": {
+          "conf": 338688,
+          "edge": 14685,
+          "grazing": 10749
+        }
+      }
+    ]
+  },
+  {
+    "n_cams": 4,
+    "rot_err_deg": 1.985,
+    "scale": 1.689469,
+    "scale_source": "file, via metric_fit_cfg1008.json, per camera",
+    "centre_resid_mm": 109.067,
+    "run": "center+left+top+right_res1008",
+    "scale_baseline": 1.271611,
+    "per_camera_scale": {
+      "center": 1.671619,
+      "left": 1.707318,
+      "top": 1.760075,
+      "right": 1.664315
+    },
+    "n_points": 1557682,
+    "per_camera": [
+      {
+        "camera": "center",
+        "median_depth_m": 3.219545366216302,
+        "depth_p05_m": 2.8560470340389967,
+        "depth_p95_m": 4.07291368402462,
+        "incidence_median_deg": 23.288682779155188,
+        "n_points": 478183,
+        "conf_threshold": 3.299470138549805,
+        "dropped": {
+          "conf": 338688,
+          "edge": 15653,
+          "grazing": 14196
+        }
+      },
+      {
+        "camera": "left",
+        "median_depth_m": 3.1962050948252676,
+        "depth_p05_m": 2.8789508750333903,
+        "depth_p95_m": 4.091487640016555,
+        "incidence_median_deg": 24.562768872846753,
+        "n_points": 476200,
+        "conf_threshold": 3.0804111003875736,
+        "dropped": {
+          "conf": 338688,
+          "edge": 22686,
+          "grazing": 9146
+        }
+      },
+      {
+        "camera": "top",
+        "median_depth_m": 3.7543925407052043,
+        "depth_p05_m": 3.503191129349023,
+        "depth_p95_m": 4.660639451450706,
+        "incidence_median_deg": 23.034128411759685,
+        "n_points": 480554,
+        "conf_threshold": 2.316200637817383,
+        "dropped": {
+          "conf": 338688,
+          "edge": 15127,
+          "grazing": 12351
+        }
+      },
+      {
+        "camera": "right",
+        "median_depth_m": 3.195934902279377,
+        "depth_p05_m": 2.835525070987493,
+        "depth_p95_m": 4.078543998223543,
+        "incidence_median_deg": 23.12150657346014,
+        "n_points": 477644,
+        "conf_threshold": 3.2101532936096193,
+        "dropped": {
+          "conf": 338688,
+          "edge": 16143,
+          "grazing": 14245
+        }
+      }
+    ]
+  }
+]

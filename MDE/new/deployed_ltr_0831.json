@@ -1,0 +1,192 @@
+{
+  "run": "left+top+right_res1008",
+  "split": "along",
+  "common_mode_mm": 208.18,
+  "model": "deficit = c0 + h*(k0 + kx*x + ky*y), metres",
+  "note": "held-out residuals are the honest figure; the coefficients are refitted on all cells for use",
+  "cameras": {
+    "left": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            110,
+            160
+          ],
+          "n": 3528,
+          "median_deficit_mm": 213.8
+        },
+        {
+          "band_mm": [
+            160,
+            210
+          ],
+          "n": 157,
+          "median_deficit_mm": 114.2
+        },
+        {
+          "band_mm": [
+            210,
+            260
+          ],
+          "n": 1265,
+          "median_deficit_mm": 286.6
+        },
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 2301,
+          "median_deficit_mm": 177.0
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 2874,
+          "median_deficit_mm": 183.9
+        }
+      ],
+      "band_slope": 0.0063,
+      "c0_mm": 138.396,
+      "k0": 0.25617,
+      "kx_per_m": 0.13206,
+      "ky_per_m": -0.57153,
+      "n_cells": 10136,
+      "heldout_rms_mm": {
+        "constant": 105.9,
+        "relief": 107.68,
+        "positional": 188.65
+      },
+      "uncorrected_heldout_rms_mm": 231.23,
+      "deployed_heldout_rms_mm": 235.7,
+      "deployed_coefficients": {
+        "alpha": 1.1712323789579404,
+        "beta_mm": 0.521
+      }
+    },
+    "top": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            110,
+            160
+          ],
+          "n": 3652,
+          "median_deficit_mm": 99.2
+        },
+        {
+          "band_mm": [
+            160,
+            210
+          ],
+          "n": 188,
+          "median_deficit_mm": 56.6
+        },
+        {
+          "band_mm": [
+            210,
+            260
+          ],
+          "n": 1277,
+          "median_deficit_mm": 142.6
+        },
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 2180,
+          "median_deficit_mm": 172.0
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 2821,
+          "median_deficit_mm": 409.3
+        }
+      ],
+      "band_slope": 1.4711,
+      "c0_mm": -43.226,
+      "k0": 1.09,
+      "kx_per_m": -0.01827,
+      "ky_per_m": 0.1917,
+      "n_cells": 10127,
+      "heldout_rms_mm": {
+        "constant": 107.89,
+        "relief": 138.02,
+        "positional": 166.23
+      },
+      "uncorrected_heldout_rms_mm": 237.82,
+      "deployed_heldout_rms_mm": 243.02,
+      "deployed_coefficients": {
+        "alpha": 1.1712323789579404,
+        "beta_mm": 0.521
+      }
+    },
+    "right": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            110,
+            160
+          ],
+          "n": 2624,
+          "median_deficit_mm": 41.6
+        },
+        {
+          "band_mm": [
+            160,
+            210
+          ],
+          "n": 112,
+          "median_deficit_mm": 44.0
+        },
+        {
+          "band_mm": [
+            210,
+            260
+          ],
+          "n": 1122,
+          "median_deficit_mm": -15.0
+        },
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 722,
+          "median_deficit_mm": 203.9
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 2386,
+          "median_deficit_mm": 226.2
+        }
+      ],
+      "band_slope": 1.0583,
+      "c0_mm": -19.262,
+      "k0": 0.6381,
+      "kx_per_m": -0.16112,
+      "ky_per_m": -0.17818,
+      "n_cells": 6977,
+      "heldout_rms_mm": {
+        "constant": 195.68,
+        "relief": 195.29,
+        "positional": 274.22
+      },
+      "uncorrected_heldout_rms_mm": 147.66,
+      "deployed_heldout_rms_mm": 154.95,
+      "deployed_coefficients": {
+        "alpha": 1.1712323789579404,
+        "beta_mm": 0.521
+      }
+    }
+  }
+}

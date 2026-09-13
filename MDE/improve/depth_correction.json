@@ -1,0 +1,250 @@
+{
+  "created": "2026-08-22T19:31:21+02:00",
+  "lens_id": "EO-58-001-12mm",
+  "model": "deck_height_linear",
+  "source": "reference_scan",
+  "formula": "h = z * (n_cam . r) - d_cam ; h' = alpha * h + beta ; z' = (h' + d_cam) / (n_cam . r)",
+  "reference": "1 scan(s) via scan_to_rig.json",
+  "valid_range_m": [
+    -0.06,
+    0.4
+  ],
+  "range_note": "the correction was fitted only inside valid_range_m. Outside it da3_stream.py holds the correction at its endpoint and passes the excess through unchanged, because an affine map extrapolated to the floor fabricated 126 mm on this rig",
+  "captures": [
+    "runs/gt_20260822_101415/frame_00000",
+    "runs/gt_20260822_101415/frame_00001",
+    "runs/gt_20260822_101415/frame_00002"
+  ],
+  "scans": [
+    "scans/pointcloud_20260822_102246.ply"
+  ],
+  "scan_to_rig": {
+    "file": "scan_to_rig.json",
+    "score": 0.8315784931182861,
+    "coarse_yaw_deg": 180.0,
+    "parcels_rig": 9,
+    "parcels_scan": 9,
+    "icp_median_mm": 6.12500750056158,
+    "icp_rms_mm": 18.78792902561449,
+    "icp_out_of_plane_deg": 0.0,
+    "planar_icp": true,
+    "deck_scan_m": 3.3119777631459253,
+    "deck_rig_m": 3.190954392940494,
+    "belt_width_scan_mm": 951.1,
+    "belt_width_rig_mm": 930.0,
+    "scan": "scans/pointcloud_20260822_102246.ply",
+    "rig_source": "runs/gt_20260822_101415/frame_00000",
+    "rotation_deg": 90.89413164820611
+  },
+  "world_deck": {
+    "normal": [
+      0.005780641171134724,
+      0.0070344522193701384,
+      0.999958549475739
+    ],
+    "offset_m": 3.1968463464373347
+  },
+  "predict_height_m": 0.27,
+  "shared": {
+    "p": 0.9591162771193997,
+    "q": 0.006452093525471329,
+    "alpha": 1.0426264508860072,
+    "beta": -0.006727123373246758,
+    "compression": 0.04088372288060027,
+    "sigma_at_predict_height_mm": 6.528
+  },
+  "per_view_terms": true,
+  "views": {
+    "left": {
+      "p_v": 0.9591162771193997,
+      "q_v": 0.001179671227517231,
+      "alpha": 1.0426264508860072,
+      "beta": -0.0012299564251586302,
+      "a_v": 0.0,
+      "b_v": -0.005272422297954098,
+      "slope_fitted": false,
+      "n_cam": [
+        -0.008505579034586649,
+        -0.020707522271404523,
+        -0.9997494034248058
+      ],
+      "d_cam": -3.197751249069902,
+      "delayering_at_deck_mm": -5.497,
+      "delayering_at_predict_height_mm": -5.497,
+      "delayering_sigma_mm": 0.322,
+      "n_bins": 75
+    },
+    "center": {
+      "p_v": 0.9591162771193997,
+      "q_v": 0.012877271326533124,
+      "alpha": 1.0426264508860072,
+      "beta": -0.01342618370027938,
+      "a_v": 0.0,
+      "b_v": 0.006425177801061796,
+      "slope_fitted": false,
+      "n_cam": [
+        -0.005780641171134724,
+        -0.0070344522193701384,
+        -0.999958549475739
+      ],
+      "d_cam": -3.1968463464373347,
+      "delayering_at_deck_mm": 6.699,
+      "delayering_at_predict_height_mm": 6.699,
+      "delayering_sigma_mm": 0.41,
+      "n_bins": 66
+    },
+    "right": {
+      "p_v": 0.9591162771193997,
+      "q_v": -0.005794076257267029,
+      "alpha": 1.0426264508860072,
+      "beta": 0.006041057164277204,
+      "a_v": 0.0,
+      "b_v": -0.012246169782738358,
+      "slope_fitted": false,
+      "n_cam": [
+        0.0010459716537455277,
+        -0.010158256792218153,
+        -0.9999478312316503
+      ],
+      "d_cam": -3.1878642831514594,
+      "delayering_at_deck_mm": -12.768,
+      "delayering_at_predict_height_mm": -12.768,
+      "delayering_sigma_mm": 1.106,
+      "n_bins": 63
+    },
+    "top": {
+      "p_v": 0.9591162771193997,
+      "q_v": 0.017545507781239398,
+      "alpha": 1.0426264508860072,
+      "beta": -0.018293410506946457,
+      "a_v": 0.0,
+      "b_v": 0.01109341425576807,
+      "slope_fitted": false,
+      "n_cam": [
+        -0.004877710866852777,
+        0.008463057277084166,
+        -0.9999522827529763
+      ],
+      "d_cam": -3.738810252805604,
+      "delayering_at_deck_mm": 11.566,
+      "delayering_at_predict_height_mm": 11.566,
+      "delayering_sigma_mm": 1.323,
+      "n_bins": 68
+    }
+  },
+  "residuals": {
+    "left": {
+      "before_rms_mm": 23.17,
+      "after_rms_mm": 22.23,
+      "after_max_mm": 51.19
+    },
+    "center": {
+      "before_rms_mm": 23.47,
+      "after_rms_mm": 23.91,
+      "after_max_mm": 56.05
+    },
+    "right": {
+      "before_rms_mm": 51.12,
+      "after_rms_mm": 50.13,
+      "after_max_mm": 128.9
+    },
+    "top": {
+      "before_rms_mm": 23.47,
+      "after_rms_mm": 22.9,
+      "after_max_mm": 62.28
+    }
+  },
+  "layering": {
+    "-20": {
+      "before_median_mm": 28.57,
+      "after_median_mm": 42.29
+    },
+    "-10": {
+      "before_median_mm": 18.9,
+      "after_median_mm": 29.35
+    },
+    "0": {
+      "before_median_mm": 16.77,
+      "after_median_mm": 17.59
+    },
+    "10": {
+      "before_median_mm": 26.64,
+      "after_median_mm": 24.98
+    },
+    "20": {
+      "before_median_mm": 35.99,
+      "after_median_mm": 21.62
+    },
+    "30": {
+      "before_median_mm": 25.16,
+      "after_median_mm": 26.07
+    },
+    "40": {
+      "before_median_mm": 19.99,
+      "after_median_mm": 22.46
+    },
+    "50": {
+      "before_median_mm": 17.77,
+      "after_median_mm": 21.38
+    },
+    "150": {
+      "before_median_mm": 12.93,
+      "after_median_mm": 23.96
+    },
+    "160": {
+      "before_median_mm": 19.49,
+      "after_median_mm": 20.48
+    },
+    "170": {
+      "before_median_mm": 31.19,
+      "after_median_mm": 22.56
+    },
+    "220": {
+      "before_median_mm": 76.8,
+      "after_median_mm": 84.94
+    },
+    "230": {
+      "before_median_mm": 23.58,
+      "after_median_mm": 15.46
+    },
+    "240": {
+      "before_median_mm": 15.71,
+      "after_median_mm": 38.49
+    },
+    "250": {
+      "before_median_mm": 22.89,
+      "after_median_mm": 32.38
+    },
+    "280": {
+      "before_median_mm": 21.53,
+      "after_median_mm": 21.96
+    },
+    "310": {
+      "before_median_mm": 33.18,
+      "after_median_mm": 21.13
+    },
+    "320": {
+      "before_median_mm": 32.65,
+      "after_median_mm": 22.15
+    },
+    "330": {
+      "before_median_mm": 30.42,
+      "after_median_mm": 26.85
+    }
+  },
+  "capture_effects_mm": {
+    "frame_00000": -4.52,
+    "frame_00001": 16.41,
+    "frame_00002": -11.89
+  },
+  "height_uncertainty": {
+    "model": "constant, measured as the capture-to-capture drift",
+    "capture_drift_sd_mm": 14.68,
+    "n_captures": 3,
+    "at_predict_height_mm": 14.68,
+    "shared_correction_sigma_mm": 6.53,
+    "note": "one sigma on a reconstructed absolute height. It is the term shared across all four views inside one capture, so it is NOT reduced by view consensus and must not be estimated from inter-view agreement."
+  },
+  "bootstrap_draws": 300,
+  "bootstrap_over": "captures"
+}

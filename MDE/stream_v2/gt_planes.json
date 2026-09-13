@@ -1,0 +1,164 @@
+{
+  "intrinsics": "/home/jetson/Projects/Calibration_4_5/results/intrinsics_center.json",
+  "board": {
+    "squares_x": 12,
+    "squares_y": 9,
+    "square_length_m": 0.06,
+    "marker_length_m": 0.047,
+    "dictionary": "DICT_5X5_250",
+    "marker_id_offset": 0,
+    "legacy_pattern": false,
+    "thickness_m": 0.047,
+    "max_corners": 88
+  },
+  "deck": {
+    "per_image": [
+      {
+        "image": "deck_01.png",
+        "n_corners": 88,
+        "rms_px": 0.2466,
+        "normal": [
+          0.03635761170893048,
+          0.020905634212420657,
+          0.9991201521984223
+        ],
+        "d": -3.0344001567276777,
+        "perp_dist_m": 3.0344,
+        "centroid_dist_m": 3.05176,
+        "centroid_cam": [
+          0.1497383990872388,
+          0.3859841644679844,
+          3.0235470436208893
+        ]
+      },
+      {
+        "image": "deck_02.png",
+        "n_corners": 88,
+        "rms_px": 0.1945,
+        "normal": [
+          0.034815391404029575,
+          0.010238803255223455,
+          0.9993413107788975
+        ],
+        "d": -3.0324920771844988,
+        "perp_dist_m": 3.03249,
+        "centroid_dist_m": 3.03341,
+        "centroid_cam": [
+          0.150343830581109,
+          -0.02859360607162803,
+          3.0295460915398915
+        ]
+      },
+      {
+        "image": "deck_03.png",
+        "n_corners": 88,
+        "rms_px": 0.2134,
+        "normal": [
+          0.037352742365340225,
+          0.012444514938284442,
+          0.9992246527611991
+        ],
+        "d": -3.034677683643693,
+        "perp_dist_m": 3.03468,
+        "centroid_dist_m": 3.08413,
+        "centroid_cam": [
+          0.14851034917738506,
+          -0.5111507477253687,
+          3.037846824095029
+        ]
+      }
+    ],
+    "n_images": 3,
+    "perp_dist_mean_m": 3.03386,
+    "perp_dist_spread_mm": 2.19,
+    "centroid_dist_mean_m": 3.05643,
+    "normal_mean": [
+      0.03617565068243151,
+      0.014529812339923497,
+      0.9992398144845257
+    ],
+    "d_mean": -3.0338566391852897,
+    "rms_px_max": 0.2466,
+    "n_corners_min": 88,
+    "normal_spread_deg": 0.2283,
+    "surface_perp_dist_m": 2.98686,
+    "surface_centroid_dist_m": 3.00943
+  },
+  "floor": {
+    "per_image": [
+      {
+        "image": "floor_01.png",
+        "n_corners": 77,
+        "rms_px": 0.3165,
+        "normal": [
+          0.03850937427987081,
+          0.014730859744279526,
+          0.9991496533872025
+        ],
+        "d": -3.8577608066188636,
+        "perp_dist_m": 3.85776,
+        "centroid_dist_m": 3.97188,
+        "centroid_cam": [
+          -0.7313619756455703,
+          -0.2863355125505764,
+          3.8934538522435918
+        ]
+      },
+      {
+        "image": "floor_02.png",
+        "n_corners": 81,
+        "rms_px": 0.3434,
+        "normal": [
+          0.04080950747590877,
+          0.007313290446824644,
+          0.9991401802962454
+        ],
+        "d": -3.858702606528368,
+        "perp_dist_m": 3.8587,
+        "centroid_dist_m": 4.04564,
+        "centroid_cam": [
+          -0.7616930906208941,
+          -0.7660700572587501,
+          3.898741634112617
+        ]
+      },
+      {
+        "image": "floor_03.png",
+        "n_corners": 77,
+        "rms_px": 0.3511,
+        "normal": [
+          0.03406957431450529,
+          0.028940190292873567,
+          0.9990003651109649
+        ],
+        "d": -3.8597408366807735,
+        "perp_dist_m": 3.85974,
+        "centroid_dist_m": 3.95977,
+        "centroid_cam": [
+          -0.7492233702629796,
+          0.037603023080213904,
+          3.8880649647181507
+        ]
+      }
+    ],
+    "n_images": 3,
+    "perp_dist_mean_m": 3.85873,
+    "perp_dist_spread_mm": 1.98,
+    "centroid_dist_mean_m": 3.99243,
+    "normal_mean": [
+      0.0377978217145443,
+      0.016995530926468255,
+      0.9991408692482572
+    ],
+    "d_mean": -3.858734749942668,
+    "rms_px_max": 0.3511,
+    "n_corners_min": 77,
+    "normal_spread_deg": 0.581,
+    "surface_perp_dist_m": 3.81173,
+    "surface_centroid_dist_m": 3.94543
+  },
+  "separation_m": 0.82488,
+  "separation_mm": 824.88,
+  "plane_angle_deg": 0.1692,
+  "planes_parallel": true
+}

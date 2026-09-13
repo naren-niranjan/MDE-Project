@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+*.bak
+ArenaSDK/
+Logs/
+captures*/
+runs*/
+results/
+grades/
+gt/
+archive/
+mde_captures/
+*.ply
+*.png
+*.jpg
+*.pdf
+*.tar.gz
+*.pt
+*.pth
+*.onnx
+*.engine
+# virtual environments
+MDE/DA3/da3/
+MDE/DA3/da3_new/
+MDE/Moge2/MoGe/moge2/
+MDE/Moge2/Calibration/arena/
+Calibration/arena/
+**/site-packages/
+**/pyvenv.cfg
+# upstream repos and outputs
+MDE/DA3/depth-anything-3/
+MDE/DA3/fused_output/
+Miniforge*.sh
+*.so
+*.whl

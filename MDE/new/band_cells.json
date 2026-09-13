@@ -1,0 +1,10 @@
+{
+  "band_mm": [
+    110.0,
+    160.0
+  ],
+  "camera": "right",
+  "n_cells": 888,
+  "median_recon_mm": 259.0,
+  "median_deficit_mm": -115.6
+}

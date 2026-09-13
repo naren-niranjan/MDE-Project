@@ -1,0 +1,4 @@
+arena-api @ file:///home/jetson/Projects/ArenaSDK/ArenaSDK_Linux_ARM64/arena_api-2.8.4-py3-none-any.whl#sha256=a261c82836a0d4ef96809a16ae95bee9ba87832122e36e747b2e674b68aeb962
+numpy==2.4.6
+opencv-contrib-python==4.13.0.92
+opencv-python==4.13.0.92

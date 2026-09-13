@@ -1,0 +1,216 @@
+  center+left+right [raw] n= 2540160  z[1.77,3.07] span=1.306
+      layers (predicted z, points, area m2, gap to next):
+         2.388    390697      nan   +0.494
+         2.882    119493      nan   +0.037
+         2.919    265075      nan   +0.039
+         2.958    214909      nan   +0.028
+         2.986     82494      nan   +0.032
+         3.018    445950      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~44 mm predicted (alpha~1.07); peak suppression 18 mm, merge 26 mm
+      deck layer = 2.388 (390697 pts), floor = 3.018 (445950 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+left+right [filtered] n= 2383092 ( 93.8% of unfiltered)  z[1.54,3.28] span=1.739
+      layers (predicted z, points, area m2, gap to next):
+         2.061    145164     0.92   +0.351
+         2.412    335866     2.37   +0.505
+         2.917     61838     1.09   +0.068
+         2.985     90237     2.63   +0.039
+         3.024    721816     5.72       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~52 mm predicted (alpha~0.89); peak suppression 21 mm, merge 31 mm
+      deck layer = 2.985 (90237 pts), floor = 3.024 (721816 pts)
+      working band, 4 layers, local fit alpha=0.3591 beta=+2119 mm
+        residuals (mm): +7.8  +3.0  -131.6  +120.8   RMS 89.4
+      SCALE-FREE gap ratio: predicted 0.1939 vs scan 2.2832  ->  -91.51%
+      deck->floor implies alpha=20.247 vs working-band 0.359  (56.38x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+      per view, largest-area layer (the deck):
+        center  z=3.017  area= 4.69 m2  3 layers
+        left    z=3.121  area= 0.75 m2  6 layers
+        right   z=3.027  area= 4.42 m2  5 layers
+        inter-view spread on the deck: 105 mm   *** the views are on different sheets; this is what --correction removes
+
+  center+left [raw]      n= 1693440  z[1.46,2.53] span=1.067
+      layers (predicted z, points, area m2, gap to next):
+         2.094    248044      nan   +0.328
+         2.422    199689      nan   +0.048
+         2.470    141215      nan   +0.026
+         2.496    381106      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~36 mm predicted (alpha~1.32); peak suppression 14 mm, merge 21 mm
+      deck layer = 2.094 (248044 pts), floor = 2.496 (381106 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+left [filtered] n= 1594347 ( 94.1% of unfiltered)  z[1.28,2.72] span=1.434
+      layers (predicted z, points, area m2, gap to next):
+         1.905     93997     1.00   +0.194
+         2.099    208123     1.78   +0.394
+         2.493    422317     4.27       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~45 mm predicted (alpha~1.03); peak suppression 18 mm, merge 27 mm
+      deck layer = 2.099 (208123 pts), floor = 2.493 (422317 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+      per view, largest-area layer (the deck):
+        center  z=2.496  area= 3.95 m2  4 layers
+        left    z=2.577  area= 0.85 m2  6 layers
+        inter-view spread on the deck: 81 mm   *** the views are on different sheets; this is what --correction removes
+
+  center+right [raw]     n= 1693440  z[1.99,3.11] span=1.118
+      layers (predicted z, points, area m2, gap to next):
+         2.423    269232      nan   +0.026
+         2.449     51820      nan   +0.528
+         2.977    130313      nan   +0.052
+         3.030    541578      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~38 mm predicted (alpha~1.23); peak suppression 15 mm, merge 23 mm
+      deck layer = 2.423 (269232 pts), floor = 3.030 (541578 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+right [filtered] n= 1591906 ( 94.0% of unfiltered)  z[2.01,3.12] span=1.113
+      layers (predicted z, points, area m2, gap to next):
+         2.083     41399     0.45   +0.371
+         2.455    280734     2.11   +0.583
+         3.037    636463     5.30   +0.027
+         3.064    102481     5.44       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~38 mm predicted (alpha~1.22); peak suppression 15 mm, merge 23 mm
+      deck layer = 3.037 (636463 pts), floor = 3.064 (102481 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=0.3512 beta=+2225 mm
+        residuals (mm): +31.7  -51.9  +20.2   RMS 37.0
+      SCALE-FREE gap ratio: predicted 1.5696 vs scan 5.9273  ->  -73.52%
+      deck->floor implies alpha=28.999 vs working-band 0.351  (82.58x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+      per view, largest-area layer (the deck):
+        center  z=3.032  area= 4.76 m2  4 layers
+        right   z=3.056  area= 4.51 m2  5 layers
+        inter-view spread on the deck: 24 mm
+
+  center [raw]           n=  846720  z[1.84,2.98] span=1.142
+      layers (predicted z, points, area m2, gap to next):
+         2.324     27773      nan   +0.076
+         2.400     27074      nan   +0.226
+         2.626    138288      nan   +0.022
+         2.648     18011      nan   +0.256
+         2.904     32971      nan   +0.043
+         2.947    334078      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~34 mm predicted (alpha~1.38); peak suppression 14 mm, merge 20 mm
+      deck layer = 2.626 (138288 pts), floor = 2.947 (334078 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=1.1059 beta=+403 mm
+        residuals (mm): +16.0  -21.4  +5.4   RMS 15.8
+      SCALE-FREE gap ratio: predicted 2.9709 vs scan 5.9273  ->  -49.88%
+      deck->floor implies alpha=2.435 vs working-band 1.106  (2.20x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+  center [filtered]      n=  796981 ( 94.1% of unfiltered)  z[1.91,2.98] span=1.074
+      layers (predicted z, points, area m2, gap to next):
+         2.324     27159     0.43   +0.076
+         2.400     25466     0.48   +0.228
+         2.628    141561     1.61   +0.277
+         2.905     31825     0.91   +0.043
+         2.948    327456     3.95       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~34 mm predicted (alpha~1.39); peak suppression 13 mm, merge 20 mm
+      deck layer = 2.628 (141561 pts), floor = 2.948 (327456 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=1.1003 beta=+415 mm
+        residuals (mm): +15.8  -21.1  +5.3   RMS 15.6
+      SCALE-FREE gap ratio: predicted 2.9916 vs scan 5.9273  ->  -49.53%
+      deck->floor implies alpha=2.448 vs working-band 1.100  (2.22x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+
+  left+right [raw]       n= 1693440  z[1.49,2.24] span=0.756
+      layers (predicted z, points, area m2, gap to next):
+         1.918     93149      nan   +0.024
+         1.942    145284      nan   +0.225
+         2.167    114281      nan   +0.028
+         2.195    569702      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~26 mm predicted (alpha~1.79); peak suppression 10 mm, merge 16 mm
+      deck layer = 1.942 (145284 pts), floor = 2.195 (569702 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  left+right [filtered]  n= 1612225 ( 95.2% of unfiltered)  z[1.49,2.28] span=0.791
+      layers (predicted z, points, area m2, gap to next):
+         1.950    168922     2.23   +0.222
+         2.172    204596     3.70   +0.033
+         2.205    305739     4.33   +0.028
+         2.233    138607     2.80       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~27 mm predicted (alpha~1.71); peak suppression 11 mm, merge 16 mm
+      deck layer = 2.205 (305739 pts), floor = 2.233 (138607 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=0.8821 beta=+1251 mm
+        residuals (mm): +17.0  -132.4  +115.4   RMS 101.9
+      SCALE-FREE gap ratio: predicted 0.1477 vs scan 5.9273  ->  -97.51%
+      deck->floor implies alpha=27.733 vs working-band 0.882  (31.44x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+      per view, largest-area layer (the deck):
+        left    z=2.204  area= 2.71 m2  6 layers
+        right   z=2.203  area= 2.52 m2  5 layers
+        inter-view spread on the deck: 1 mm
+
+  left [raw]             n=  846720  z[1.29,2.04] span=0.749
+      layers (predicted z, points, area m2, gap to next):
+         1.870     43991      nan   +0.036
+         1.906     91235      nan   +0.016
+         1.923     19964      nan   +0.052
+         1.975     52810      nan   +0.032
+         2.006    275165      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~25 mm predicted (alpha~1.85); peak suppression 10 mm, merge 15 mm
+      deck layer = 1.906 (91235 pts), floor = 2.006 (275165 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  left [filtered]        n=  803671 ( 94.9% of unfiltered)  z[1.29,2.04] span=0.749
+      layers (predicted z, points, area m2, gap to next):
+         1.870     40811     1.19   +0.036
+         1.907     86424     1.27   +0.016
+         1.923     19139     1.23   +0.052
+         1.975     51118     1.69   +0.032
+         2.007    268982     2.58       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~25 mm predicted (alpha~1.85); peak suppression 10 mm, merge 15 mm
+      deck layer = 1.975 (51118 pts), floor = 2.007 (268982 pts)
+      working band, 4 layers, local fit alpha=4.2864 beta=-5174 mm
+        residuals (mm): +23.3  -10.7  -32.7  +20.1   RMS 23.1
+      SCALE-FREE gap ratio: predicted 1.4431 vs scan 2.2832  ->  -36.80%
+      deck->floor implies alpha=24.556 vs working-band 4.286  (5.73x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+
+  right [raw]            n=  846720  z[2.15,2.94] span=0.782
+      layers (predicted z, points, area m2, gap to next):
+         2.820    151886      nan   +0.027
+         2.847     75133      nan   +0.033
+         2.880    140231      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~27 mm predicted (alpha~1.70); peak suppression 11 mm, merge 16 mm
+      deck layer = 2.820 (151886 pts), floor = 2.880 (140231 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  right [filtered]       n=  806776 ( 95.3% of unfiltered)  z[2.16,2.94] span=0.777
+      layers (predicted z, points, area m2, gap to next):
+         2.229     36300     0.81   +0.593
+         2.822    142788     2.87   +0.025
+         2.847     72668     3.30   +0.033
+         2.880    137589     2.25       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      resolution: smallest scan gap maps to ~27 mm predicted (alpha~1.70); peak suppression 11 mm, merge 16 mm
+      deck layer = 2.847 (72668 pts), floor = 2.880 (137589 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=0.3194 beta=+2271 mm
+        residuals (mm): +5.5  -137.2  +131.7   RMS 109.9
+      SCALE-FREE gap ratio: predicted 0.0417 vs scan 5.9273  ->  -99.30%
+      deck->floor implies alpha=23.458 vs working-band 0.319  (73.45x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+

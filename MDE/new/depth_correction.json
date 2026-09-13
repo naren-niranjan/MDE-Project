@@ -1,0 +1,594 @@
+{
+  "created": "2026-08-19T11:56:29+02:00",
+  "lens_id": "EO-58-001-12mm",
+  "model": "deck_height_linear",
+  "formula": "h = z * (n_cam . r) - d_cam ; h' = alpha * h + beta ; z' = (h' + d_cam) / (n_cam . r)",
+  "reference": "per-capture ChArUco board pose",
+  "runs": [
+    {
+      "dir": "runs/gt_deck",
+      "label": "deck",
+      "nominal_mm": 0.0,
+      "frames": 7
+    },
+    {
+      "dir": "runs/gt_riser1",
+      "label": "riser1",
+      "nominal_mm": 130.0,
+      "frames": 6
+    },
+    {
+      "dir": "runs/gt_riser",
+      "label": "riser",
+      "nominal_mm": 218.0,
+      "frames": 6
+    }
+  ],
+  "board": {
+    "squares": [
+      12,
+      9
+    ],
+    "square_mm": 60.0,
+    "marker_mm": 47.0,
+    "dictionary": "DICT_5X5_250",
+    "legacy": true,
+    "legacy_used": true
+  },
+  "board_thickness_applied_to_fit": false,
+  "rectified_sizes": {
+    "left": [
+      2447,
+      2047
+    ],
+    "center": [
+      2447,
+      2047
+    ],
+    "right": [
+      2447,
+      2047
+    ],
+    "top": [
+      2447,
+      2047
+    ]
+  },
+  "depth_shape": [
+    420,
+    504
+  ],
+  "predict_height_m": 0.27,
+  "shared": {
+    "p": 0.8538015324420182,
+    "q": -0.0004446923869141681,
+    "alpha": 1.1712323789579404,
+    "beta": 0.000520838122229966,
+    "compression": 0.14619846755798183,
+    "at_deck_mm": 0.445,
+    "at_predict_height_mm": 39.918,
+    "sigma_at_predict_height_mm": 14.781,
+    "p_sigma": 0.061592,
+    "q_sigma_mm": 4.248,
+    "leave_one_height_out": {
+      "deck": {
+        "p": 0.8131311496736935,
+        "q_mm": 5.042,
+        "median_mm": -7.16,
+        "rms_mm": 15.81
+      },
+      "riser1": {
+        "p": 0.8533111729345327,
+        "q_mm": -0.653,
+        "median_mm": 7.84,
+        "rms_mm": 23.97
+      },
+      "riser": {
+        "p": 0.8669209675391553,
+        "q_mm": -0.659,
+        "median_mm": -1.78,
+        "rms_mm": 37.04
+      }
+    }
+  },
+  "geometry": {
+    "deck_label": "deck",
+    "deck_normal_world": [
+      -0.03388685659604541,
+      -0.018469408956667266,
+      -0.9992550034314717
+    ],
+    "deck_offset_m": -3.067057866199226,
+    "reference_camera": "center",
+    "deck_face_perp_m": 3.06706,
+    "deck_surface_perp_m": 3.07306,
+    "deck_pooled_corner_rms_mm": 2.682,
+    "deck_placement_scatter_rms_mm": 2.384,
+    "median_placement_tilt_deg": 1.491,
+    "board_thickness_mm": 6.0,
+    "heights": {
+      "deck": {
+        "n_placements": 26,
+        "block_top_above_deck_mm": 0.328,
+        "spread_p95_mm": 4.491,
+        "nominal_mm": 0.0,
+        "error_mm": 0.328
+      },
+      "riser1": {
+        "n_placements": 22,
+        "block_top_above_deck_mm": 129.438,
+        "spread_p95_mm": 3.216,
+        "nominal_mm": 130.0,
+        "error_mm": -0.562
+      },
+      "riser": {
+        "n_placements": 24,
+        "block_top_above_deck_mm": 217.201,
+        "spread_p95_mm": 3.713,
+        "nominal_mm": 218.0,
+        "error_mm": -0.799
+      }
+    },
+    "cross_camera": {
+      "deck": {
+        "max_normal_disagreement_deg": 0.4269,
+        "max_height_disagreement_mm": 3.546
+      },
+      "riser1": {
+        "max_normal_disagreement_deg": 0.1976,
+        "max_height_disagreement_mm": 3.962
+      },
+      "riser": {
+        "max_normal_disagreement_deg": 0.2002,
+        "max_height_disagreement_mm": 5.218
+      }
+    }
+  },
+  "anchor": {
+    "left": {
+      "deck": {
+        "charuco_median_m": 3.0714,
+        "da3_median_m": 3.078,
+        "excess_mm": 6.58,
+        "scale_ratio": 1.00214
+      },
+      "riser1": {
+        "charuco_median_m": 2.9424,
+        "da3_median_m": 2.9655,
+        "excess_mm": 23.05,
+        "scale_ratio": 1.00783
+      },
+      "riser": {
+        "charuco_median_m": 2.8543,
+        "da3_median_m": 2.8906,
+        "excess_mm": 36.24,
+        "scale_ratio": 1.0127
+      }
+    },
+    "center": {
+      "deck": {
+        "charuco_median_m": 3.0725,
+        "da3_median_m": 3.0724,
+        "excess_mm": -0.17,
+        "scale_ratio": 0.99994
+      },
+      "riser1": {
+        "charuco_median_m": 2.9431,
+        "da3_median_m": 2.9559,
+        "excess_mm": 12.86,
+        "scale_ratio": 1.00437
+      },
+      "riser": {
+        "charuco_median_m": 2.8571,
+        "da3_median_m": 2.8957,
+        "excess_mm": 38.57,
+        "scale_ratio": 1.0135
+      }
+    },
+    "right": {
+      "deck": {
+        "charuco_median_m": 3.0671,
+        "da3_median_m": 3.0694,
+        "excess_mm": 2.33,
+        "scale_ratio": 1.00076
+      },
+      "riser1": {
+        "charuco_median_m": 2.9376,
+        "da3_median_m": 2.9502,
+        "excess_mm": 12.65,
+        "scale_ratio": 1.00431
+      },
+      "riser": {
+        "charuco_median_m": 2.8513,
+        "da3_median_m": 2.8874,
+        "excess_mm": 36.17,
+        "scale_ratio": 1.01268
+      }
+    },
+    "top": {
+      "deck": {
+        "charuco_median_m": 3.6092,
+        "da3_median_m": 3.5978,
+        "excess_mm": -11.44,
+        "scale_ratio": 0.99683
+      },
+      "riser1": {
+        "charuco_median_m": 3.4811,
+        "da3_median_m": 3.4946,
+        "excess_mm": 13.54,
+        "scale_ratio": 1.00389
+      },
+      "riser": {
+        "charuco_median_m": 3.3929,
+        "da3_median_m": 3.4206,
+        "excess_mm": 27.77,
+        "scale_ratio": 1.00818
+      }
+    }
+  },
+  "relief": {
+    "left": {
+      "compression": 0.16073,
+      "offset_at_deck_mm": 6.936,
+      "between_placement_rms_mm": 18.897,
+      "within_placement_rms_mm": 4.261,
+      "field_residual_rms_mm": 15.158,
+      "field_coef": [
+        5.895999,
+        -0.160766,
+        0.203537,
+        -1.074204
+      ],
+      "n_placements": 19
+    },
+    "center": {
+      "compression": 0.17996,
+      "offset_at_deck_mm": -0.862,
+      "between_placement_rms_mm": 20.331,
+      "within_placement_rms_mm": 5.798,
+      "field_residual_rms_mm": 16.17,
+      "field_coef": [
+        -1.999066,
+        -0.082543,
+        0.299833,
+        -0.85673
+      ],
+      "n_placements": 19
+    },
+    "right": {
+      "compression": 0.15647,
+      "offset_at_deck_mm": 0.676,
+      "between_placement_rms_mm": 21.759,
+      "within_placement_rms_mm": 6.586,
+      "field_residual_rms_mm": 17.67,
+      "field_coef": [
+        -0.450892,
+        -0.072802,
+        0.332805,
+        -0.737099
+      ],
+      "n_placements": 19
+    },
+    "top": {
+      "compression": 0.18233,
+      "offset_at_deck_mm": -10.564,
+      "between_placement_rms_mm": 26.508,
+      "within_placement_rms_mm": 9.408,
+      "field_residual_rms_mm": 16.894,
+      "field_coef": [
+        -12.22287,
+        -0.127458,
+        0.491747,
+        -0.992702
+      ],
+      "n_placements": 15
+    }
+  },
+  "common_mode": {
+    "deck": {
+      "n_captures": 7,
+      "shared_sd_mm": 10.12,
+      "per_view_sd_mm": 7.22,
+      "shared_fraction": 0.623,
+      "per_capture_mean_mm": {
+        "frame_00000": 6.38,
+        "frame_00001": 10.08,
+        "frame_00002": -12.45,
+        "frame_00003": 2.04,
+        "frame_00004": -16.9,
+        "frame_00005": 5.5,
+        "frame_00006": -2.61
+      }
+    },
+    "riser1": {
+      "n_captures": 6,
+      "shared_sd_mm": 20.85,
+      "per_view_sd_mm": 7.2,
+      "shared_fraction": 0.883,
+      "per_capture_mean_mm": {
+        "frame_00000": -28.44,
+        "frame_00001": -5.18,
+        "frame_00002": -0.63,
+        "frame_00003": -11.27,
+        "frame_00004": -55.84,
+        "frame_00005": -7.02
+      }
+    },
+    "riser": {
+      "n_captures": 6,
+      "shared_sd_mm": 33.09,
+      "per_view_sd_mm": 8.4,
+      "shared_fraction": 0.931,
+      "per_capture_mean_mm": {
+        "frame_00000": -26.71,
+        "frame_00001": -52.35,
+        "frame_00002": -39.99,
+        "frame_00003": -6.58,
+        "frame_00004": -92.84,
+        "frame_00005": -4.14
+      }
+    }
+  },
+  "edge_profile": null,
+  "belt_anchor": null,
+  "labels": [
+    "deck",
+    "riser1",
+    "riser"
+  ],
+  "layering": {
+    "before": {
+      "deck": {
+        "n_captures": 7,
+        "before_median_mm": 17.58,
+        "before_max_mm": 28.37,
+        "after_median_mm": null,
+        "after_max_mm": null
+      },
+      "riser1": {
+        "n_captures": 6,
+        "before_median_mm": 15.67,
+        "before_max_mm": 26.31,
+        "after_median_mm": null,
+        "after_max_mm": null
+      },
+      "riser": {
+        "n_captures": 6,
+        "before_median_mm": 19.03,
+        "before_max_mm": 32.2,
+        "after_median_mm": null,
+        "after_max_mm": null
+      }
+    },
+    "after": {
+      "deck": {
+        "n_captures": 7,
+        "before_median_mm": 17.58,
+        "before_max_mm": 28.37,
+        "after_median_mm": 6.58,
+        "after_max_mm": 19.14
+      },
+      "riser1": {
+        "n_captures": 6,
+        "before_median_mm": 15.67,
+        "before_max_mm": 26.31,
+        "after_median_mm": 12.45,
+        "after_max_mm": 22.28
+      },
+      "riser": {
+        "n_captures": 6,
+        "before_median_mm": 19.03,
+        "before_max_mm": 32.2,
+        "after_median_mm": 14.22,
+        "after_max_mm": 25.97
+      }
+    }
+  },
+  "residuals": {
+    "left": {
+      "deck": {
+        "n": 7,
+        "before_rms_mm": 11.69,
+        "after_rms_mm": 10.48,
+        "after_with_capture_rms_mm": 3.0
+      },
+      "riser1": {
+        "n": 6,
+        "before_rms_mm": 33.4,
+        "after_rms_mm": 23.6,
+        "after_with_capture_rms_mm": 5.74
+      },
+      "riser": {
+        "n": 6,
+        "before_rms_mm": 49.37,
+        "after_rms_mm": 29.59,
+        "after_with_capture_rms_mm": 7.62
+      }
+    },
+    "center": {
+      "deck": {
+        "n": 7,
+        "before_rms_mm": 9.32,
+        "after_rms_mm": 10.94,
+        "after_with_capture_rms_mm": 2.97
+      },
+      "riser1": {
+        "n": 6,
+        "before_rms_mm": 25.45,
+        "after_rms_mm": 23.35,
+        "after_with_capture_rms_mm": 3.62
+      },
+      "riser": {
+        "n": 6,
+        "before_rms_mm": 50.25,
+        "after_rms_mm": 34.35,
+        "after_with_capture_rms_mm": 4.1
+      }
+    },
+    "right": {
+      "deck": {
+        "n": 7,
+        "before_rms_mm": 9.33,
+        "after_rms_mm": 10.21,
+        "after_with_capture_rms_mm": 4.49
+      },
+      "riser1": {
+        "n": 6,
+        "before_rms_mm": 25.35,
+        "after_rms_mm": 23.7,
+        "after_with_capture_rms_mm": 6.76
+      },
+      "riser": {
+        "n": 6,
+        "before_rms_mm": 49.0,
+        "after_rms_mm": 36.56,
+        "after_with_capture_rms_mm": 3.65
+      }
+    },
+    "top": {
+      "deck": {
+        "n": 5,
+        "before_rms_mm": 16.11,
+        "after_rms_mm": 12.91,
+        "after_with_capture_rms_mm": 5.07
+      },
+      "riser1": {
+        "n": 4,
+        "before_rms_mm": 28.07,
+        "after_rms_mm": 26.74,
+        "after_with_capture_rms_mm": 6.44
+      },
+      "riser": {
+        "n": 6,
+        "before_rms_mm": 45.4,
+        "after_rms_mm": 43.27,
+        "after_with_capture_rms_mm": 8.56
+      }
+    }
+  },
+  "capture_effects_mm": {
+    "deck/frame_00000": 10.86,
+    "deck/frame_00001": 11.12,
+    "deck/frame_00002": -11.14,
+    "deck/frame_00003": 3.01,
+    "deck/frame_00004": -12.28,
+    "deck/frame_00005": 7.24,
+    "deck/frame_00006": -1.62,
+    "riser/frame_00000": 6.19,
+    "riser/frame_00001": -19.33,
+    "riser/frame_00002": -7.34,
+    "riser/frame_00003": 26.15,
+    "riser/frame_00004": -59.88,
+    "riser/frame_00005": 28.61,
+    "riser1/frame_00000": -8.36,
+    "riser1/frame_00001": 18.27,
+    "riser1/frame_00002": 22.74,
+    "riser1/frame_00003": 8.46,
+    "riser1/frame_00004": -35.79,
+    "riser1/frame_00005": 13.1
+  },
+  "height_uncertainty": {
+    "model": "sigma_mm = constant + per_mm_of_height * height_mm",
+    "constant_mm": 11.625,
+    "per_mm_of_height": 0.11963,
+    "measured": {
+      "0": 12.58,
+      "129": 24.78,
+      "217": 39.07
+    },
+    "at_predict_height_mm": 43.92,
+    "shared_correction_sigma_mm": 14.78,
+    "note": "one sigma on a reconstructed absolute height after this correction. It is dominated by the term shared across all four views, so it is NOT reduced by view consensus and must not be estimated from inter-view agreement. The layering, which IS reduced, is reported separately under layering."
+  },
+  "bootstrap_draws": 400,
+  "views": {
+    "left": {
+      "p_v": 0.8538015324420182,
+      "q_v": -0.007924697469139229,
+      "alpha": 1.1712323789579404,
+      "beta": 0.009281662269301908,
+      "a_v": 0.0,
+      "b_v": -0.0074800050822250615,
+      "slope_fitted": false,
+      "n_cam": [
+        -0.011038968072485257,
+        0.010818121179663727,
+        -0.9998805475845787
+      ],
+      "d_cam": -3.062662896570625,
+      "deck_plane_rms_mm": 2.226,
+      "delayering_at_deck_mm": -8.761,
+      "delayering_at_predict_height_mm": -8.761,
+      "delayering_sigma_mm": 1.406,
+      "a_v_sigma": 0.0,
+      "b_v_sigma_mm": 1.2,
+      "n_placements": 19
+    },
+    "center": {
+      "p_v": 0.8421781717241524,
+      "q_v": -0.0009603579924374458,
+      "alpha": 1.1873971964302354,
+      "beta": 0.0011403263877895924,
+      "a_v": -0.011623360717865686,
+      "b_v": -0.0005156656055232778,
+      "slope_fitted": true,
+      "n_cam": [
+        -0.03533917575362609,
+        -0.019060219365188664,
+        -0.9991936002070896
+      ],
+      "d_cam": -3.0674081246609854,
+      "deck_plane_rms_mm": 2.353,
+      "delayering_at_deck_mm": -0.604,
+      "delayering_at_predict_height_mm": -4.28,
+      "delayering_sigma_mm": 1.505,
+      "a_v_sigma": 0.004764,
+      "b_v_sigma_mm": 0.801,
+      "n_placements": 19
+    },
+    "right": {
+      "p_v": 0.8654248931597451,
+      "q_v": -0.002474855638832671,
+      "alpha": 1.1555017747974743,
+      "beta": 0.002859700083038688,
+      "a_v": 0.01162336071772696,
+      "b_v": -0.0020301632519185027,
+      "slope_fitted": true,
+      "n_cam": [
+        0.027008873932914568,
+        0.002182796041511908,
+        -0.9996328106511496
+      ],
+      "d_cam": -3.0692091516529145,
+      "deck_plane_rms_mm": 2.241,
+      "delayering_at_deck_mm": -2.378,
+      "delayering_at_predict_height_mm": 1.298,
+      "delayering_sigma_mm": 1.642,
+      "a_v_sigma": 0.004764,
+      "b_v_sigma_mm": 1.231,
+      "n_placements": 19
+    },
+    "top": {
+      "p_v": 0.8538015324420182,
+      "q_v": 0.009581141551598655,
+      "alpha": 1.1712323789579404,
+      "beta": -0.011221743212611664,
+      "a_v": 0.0,
+      "b_v": 0.010025833938512823,
+      "slope_fitted": false,
+      "n_cam": [
+        0.011008022741398749,
+        -0.019569054268520954,
+        -0.9997479059994878
+      ],
+      "d_cam": -3.605777389287033,
+      "deck_plane_rms_mm": 2.647,
+      "delayering_at_deck_mm": 11.743,
+      "delayering_at_predict_height_mm": 11.743,
+      "delayering_sigma_mm": 2.055,
+      "a_v_sigma": 0.0,
+      "b_v_sigma_mm": 1.755,
+      "n_placements": 15
+    }
+  }
+}

@@ -1,0 +1,1182 @@
+{
+  "capture_dir": "runs/live_20260817_144844/capture_00001",
+  "gt": "ground_truth.json",
+  "reference": "center",
+  "cameras": [
+    "left",
+    "center",
+    "right",
+    "top"
+  ],
+  "dof": 4,
+  "planes": [
+    {
+      "label": "riser",
+      "normal": [
+        0.036600017923435764,
+        0.013597006658605358,
+        0.99923748933771
+      ],
+      "offset": 2.85715,
+      "perp_ref_m": 2.85715,
+      "height_above_deck_m": 0.21803,
+      "flatness_rms_mm": 0.73
+    },
+    {
+      "label": "riser1",
+      "normal": [
+        0.039037992511342615,
+        0.012949997515802213,
+        0.9991538083323432
+      ],
+      "offset": 2.94422,
+      "perp_ref_m": 2.94422,
+      "height_above_deck_m": 0.13033,
+      "flatness_rms_mm": 1.68
+    },
+    {
+      "label": "deck",
+      "normal": [
+        0.030367987294811157,
+        0.015042993706396347,
+        0.9994255818659095
+      ],
+      "offset": 3.07527,
+      "perp_ref_m": 3.07527,
+      "height_above_deck_m": 0.0,
+      "flatness_rms_mm": 1.33
+    }
+  ],
+  "filters": {
+    "conf_percentile": 40.0,
+    "edge_thresh": 0.02,
+    "max_incidence_deg": 70.0
+  },
+  "per_camera": {
+    "left": {
+      "solved": true,
+      "theta": [
+        1.0024883160817954,
+        -0.020737358400910844,
+        -0.0006195280119529204,
+        0.0
+      ],
+      "n_accepted_iterations": 2,
+      "dof_used": 3,
+      "s": 1.0024883160817954,
+      "a": -0.020737358400910844,
+      "b": -0.0006195280119529204,
+      "c_m": 0.0,
+      "gain_min": 0.9949312768524396,
+      "gain_max": 1.010082154658817,
+      "gain_span_pct": 1.515087780637736,
+      "implied_scale_error_pct": 0.24883160817954497,
+      "conditioning": {
+        "condition_number": 815.9,
+        "lever_arm_mm": 0.0,
+        "plane_median_scatter_mm": null
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "tol_mm": 100.0,
+          "n": 10991,
+          "n_planes": 1,
+          "rejected": "gain span 11.16% across the frame, beyond --max-gain-span 6%"
+        },
+        {
+          "iter": 1,
+          "tol_mm": 53.1,
+          "n": 8686,
+          "n_planes": 1,
+          "rejected": "gain span 6.14% across the frame, beyond --max-gain-span 6%"
+        },
+        {
+          "iter": 2,
+          "tol_mm": 28.2,
+          "n": 7741,
+          "n_planes": 1,
+          "dof": 3,
+          "s": 1.000968,
+          "a": -0.023812,
+          "b": 0.010746,
+          "c_mm": 0.0,
+          "gain_span_pct": 2.335
+        },
+        {
+          "iter": 3,
+          "tol_mm": 15.0,
+          "n": 7268,
+          "n_planes": 1,
+          "dof": 3,
+          "s": 1.002488,
+          "a": -0.020737,
+          "b": -0.00062,
+          "c_mm": 0.0,
+          "gain_span_pct": 1.515
+        }
+      ],
+      "guard_notes": [
+        "iteration 0 rejected: gain span 11.16% across the frame, beyond --max-gain-span 6%",
+        "iteration 1 rejected: gain span 6.14% across the frame, beyond --max-gain-span 6%",
+        "STAGE ONE KEPT: stage two's worst per-plane rms is 4.99 mm against stage one's nan mm on the planes stage one did not see, so it fits its own planes at the cost of the others"
+      ],
+      "per_plane": [
+        {
+          "plane": 0,
+          "label": "deck",
+          "n_assigned": 7268,
+          "target_depth_median_m": 3.07785,
+          "median_residual_mm": -0.84
+        }
+      ],
+      "stage": "stage1_kept",
+      "stage_detail": [
+        {
+          "stage": 1,
+          "planes": [
+            "deck"
+          ],
+          "theta": [
+            1.0024883160817954,
+            -0.020737358400910844,
+            -0.0006195280119529204,
+            0.0
+          ],
+          "solved": true,
+          "guard_notes": [
+            "iteration 0 rejected: gain span 11.16% across the frame, beyond --max-gain-span 6%",
+            "iteration 1 rejected: gain span 6.14% across the frame, beyond --max-gain-span 6%",
+            "STAGE ONE KEPT: stage two's worst per-plane rms is 4.99 mm against stage one's nan mm on the planes stage one did not see, so it fits its own planes at the cost of the others"
+          ]
+        },
+        {
+          "stage": 2,
+          "planes": [
+            "riser",
+            "riser1",
+            "deck"
+          ],
+          "theta": [
+            1.0030367649950782,
+            -0.020161757597880345,
+            -0.00681625186911656,
+            0.0
+          ],
+          "solved": true,
+          "guard_notes": [
+            "only one reference plane was assigned, so s and c are degenerate and the additive term is dropped. This is the deck-only model, and its correction at parcel height is extrapolated"
+          ]
+        }
+      ],
+      "held_out_after_stage1": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": null,
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 122,
+            "median_mm": 85.31,
+            "rms_mm": 84.27
+          },
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        }
+      ],
+      "per_plane_residual": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": null,
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 122,
+            "median_mm": 85.31,
+            "rms_mm": 84.27
+          },
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 10991,
+            "median_mm": -13.82,
+            "rms_mm": 36.77
+          },
+          "tilt_deg_before": 7.11,
+          "after": {
+            "n": 7232,
+            "median_mm": -0.28,
+            "rms_mm": 5.06
+          },
+          "tilt_deg_after": 0.357
+        }
+      ],
+      "spatial_structure_mm": 10.3
+    },
+    "center": {
+      "solved": true,
+      "theta": [
+        0.9740394424732385,
+        -0.015053405603168209,
+        -0.005152746329008998,
+        0.014655610989325073
+      ],
+      "n_accepted_iterations": 4,
+      "dof_used": 4,
+      "s": 0.9740394424732385,
+      "a": -0.015053405603168209,
+      "b": -0.005152746329008998,
+      "c_m": 0.014655610989325073,
+      "gain_min": 0.9672890625821842,
+      "gain_max": 0.9811177530315746,
+      "gain_span_pct": 1.382869044939039,
+      "implied_scale_error_pct": -2.596055752676152,
+      "conditioning": {
+        "condition_number": 27318.2,
+        "plane_depths_m": [
+          2.8592,
+          2.9401,
+          3.0754
+        ],
+        "lever_arm_mm": 216.3,
+        "plane_median_scatter_mm": 3.65,
+        "scale_offset_correlation": -0.9998,
+        "note": "the scale and the offset are 99.98% correlated over a 216 mm lever arm, so their individual values are NOT separately determined. The CORRECTION is still well determined inside the span of the reference planes and degrades roughly linearly outside it. Do not quote s or c on their own, and add a third reference plane before relying on the correction above the highest one"
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "tol_mm": 25.0,
+          "n": 85666,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.973416,
+          "a": -0.014604,
+          "b": -0.004817,
+          "c_mm": 17.02,
+          "gain_span_pct": 1.331
+        },
+        {
+          "iter": 1,
+          "tol_mm": 21.1,
+          "n": 83931,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.972998,
+          "a": -0.014237,
+          "b": -0.004859,
+          "c_mm": 18.15,
+          "gain_span_pct": 1.307
+        },
+        {
+          "iter": 2,
+          "tol_mm": 17.8,
+          "n": 81308,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.973647,
+          "a": -0.014426,
+          "b": -0.004931,
+          "c_mm": 15.99,
+          "gain_span_pct": 1.325
+        },
+        {
+          "iter": 3,
+          "tol_mm": 15.0,
+          "n": 77462,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.974039,
+          "a": -0.015053,
+          "b": -0.005153,
+          "c_mm": 14.66,
+          "gain_span_pct": 1.383
+        }
+      ],
+      "guard_notes": [],
+      "per_plane": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "n_assigned": 6530,
+          "target_depth_median_m": 2.85917,
+          "median_residual_mm": 4.67
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "n_assigned": 2910,
+          "target_depth_median_m": 2.94009,
+          "median_residual_mm": -4.27
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "n_assigned": 68022,
+          "target_depth_median_m": 3.07544,
+          "median_residual_mm": 0.1
+        }
+      ],
+      "stage": "stage2",
+      "stage_detail": [
+        {
+          "stage": 1,
+          "planes": [
+            "deck"
+          ],
+          "theta": [
+            0.9789284815824144,
+            -0.01636899556725316,
+            -0.004935605899183084,
+            0.0
+          ],
+          "solved": true,
+          "guard_notes": []
+        },
+        {
+          "stage": 2,
+          "planes": [
+            "riser",
+            "riser1",
+            "deck"
+          ],
+          "theta": [
+            0.9740394424732385,
+            -0.015053405603168209,
+            -0.005152746329008998,
+            0.014655610989325073
+          ],
+          "solved": true,
+          "guard_notes": []
+        }
+      ],
+      "stage1_theta": [
+        0.9789284815824144,
+        -0.01636899556725316,
+        -0.004935605899183084,
+        0.0
+      ],
+      "held_out_after_stage1": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 8367,
+            "median_mm": 68.37,
+            "rms_mm": 69.15
+          },
+          "tilt_deg_before": 2.461,
+          "after": {
+            "n": 6528,
+            "median_mm": 4.06,
+            "rms_mm": 7.02
+          },
+          "tilt_deg_after": 2.342
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 13016,
+            "median_mm": -13.75,
+            "rms_mm": 39.93
+          },
+          "tilt_deg_before": 5.477,
+          "after": {
+            "n": 2923,
+            "median_mm": -4.48,
+            "rms_mm": 7.06
+          },
+          "tilt_deg_after": 0.536
+        }
+      ],
+      "per_plane_residual": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 8367,
+            "median_mm": 68.37,
+            "rms_mm": 69.15
+          },
+          "tilt_deg_before": 2.461,
+          "after": {
+            "n": 6539,
+            "median_mm": 4.52,
+            "rms_mm": 7.14
+          },
+          "tilt_deg_after": 2.338
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 13016,
+            "median_mm": -13.75,
+            "rms_mm": 39.93
+          },
+          "tilt_deg_before": 5.477,
+          "after": {
+            "n": 2910,
+            "median_mm": -4.51,
+            "rms_mm": 7.09
+          },
+          "tilt_deg_after": 0.552
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 81663,
+            "median_mm": 65.63,
+            "rms_mm": 67.26
+          },
+          "tilt_deg_before": 1.87,
+          "after": {
+            "n": 67928,
+            "median_mm": 0.01,
+            "rms_mm": 7.06
+          },
+          "tilt_deg_after": 0.026
+        }
+      ],
+      "spatial_structure_mm": 17.1
+    },
+    "right": {
+      "solved": true,
+      "theta": [
+        0.9791941561523082,
+        0.025848001069003042,
+        0.010775526788449206,
+        0.037214094525964476
+      ],
+      "n_accepted_iterations": 4,
+      "dof_used": 4,
+      "s": 0.9791941561523082,
+      "a": 0.025848001069003042,
+      "b": 0.010775526788449206,
+      "c_m": 0.037214094525964476,
+      "gain_min": 0.9665655710076068,
+      "gain_max": 0.9914567860655896,
+      "gain_span_pct": 2.4891215057982863,
+      "implied_scale_error_pct": -2.0805843847691796,
+      "conditioning": {
+        "condition_number": 35883.0,
+        "plane_depths_m": [
+          2.8556,
+          3.0727
+        ],
+        "lever_arm_mm": 217.2,
+        "plane_median_scatter_mm": 1.76,
+        "scale_offset_correlation": -0.9998,
+        "note": "the scale and the offset are 99.98% correlated over a 217 mm lever arm, so their individual values are NOT separately determined. The CORRECTION is still well determined inside the span of the reference planes and degrades roughly linearly outside it. Do not quote s or c on their own, and add a third reference plane before relying on the correction above the highest one"
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "tol_mm": 25.0,
+          "n": 81090,
+          "n_planes": 2,
+          "dof": 4,
+          "s": 0.984301,
+          "a": 0.021613,
+          "b": 0.009556,
+          "c_mm": 22.67,
+          "gain_span_pct": 2.114
+        },
+        {
+          "iter": 1,
+          "tol_mm": 21.1,
+          "n": 79807,
+          "n_planes": 2,
+          "dof": 4,
+          "s": 0.982443,
+          "a": 0.022775,
+          "b": 0.00979,
+          "c_mm": 28.22,
+          "gain_span_pct": 2.211
+        },
+        {
+          "iter": 2,
+          "tol_mm": 17.8,
+          "n": 76697,
+          "n_planes": 2,
+          "dof": 4,
+          "s": 0.981439,
+          "a": 0.024676,
+          "b": 0.010139,
+          "c_mm": 30.89,
+          "gain_span_pct": 2.367
+        },
+        {
+          "iter": 3,
+          "tol_mm": 15.0,
+          "n": 72226,
+          "n_planes": 2,
+          "dof": 4,
+          "s": 0.979194,
+          "a": 0.025848,
+          "b": 0.010776,
+          "c_mm": 37.21,
+          "gain_span_pct": 2.489
+        }
+      ],
+      "guard_notes": [],
+      "per_plane": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "n_assigned": 5955,
+          "target_depth_median_m": 2.85555,
+          "median_residual_mm": 5.4
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "n_assigned": 174,
+          "target_depth_median_m": 2.94402,
+          "median_residual_mm": 4.13
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "n_assigned": 66271,
+          "target_depth_median_m": 3.07272,
+          "median_residual_mm": 1.2
+        }
+      ],
+      "stage": "stage2",
+      "stage_detail": [
+        {
+          "stage": 1,
+          "planes": [
+            "deck"
+          ],
+          "theta": [
+            0.9914592288563225,
+            0.02222840681147193,
+            0.008570329076930585,
+            0.0
+          ],
+          "solved": true,
+          "guard_notes": []
+        },
+        {
+          "stage": 2,
+          "planes": [
+            "riser",
+            "riser1",
+            "deck"
+          ],
+          "theta": [
+            0.9791941561523082,
+            0.025848001069003042,
+            0.010775526788449206,
+            0.037214094525964476
+          ],
+          "solved": true,
+          "guard_notes": []
+        }
+      ],
+      "stage1_theta": [
+        0.9914592288563225,
+        0.02222840681147193,
+        0.008570329076930585,
+        0.0
+      ],
+      "held_out_after_stage1": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6661,
+            "median_mm": 38.14,
+            "rms_mm": 38.82
+          },
+          "tilt_deg_before": 4.397,
+          "after": {
+            "n": 6003,
+            "median_mm": 4.85,
+            "rms_mm": 7.96
+          },
+          "tilt_deg_after": 3.639
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6885,
+            "median_mm": -48.44,
+            "rms_mm": 50.72
+          },
+          "tilt_deg_before": 6.131,
+          "after": {
+            "n": 175,
+            "median_mm": 3.82,
+            "rms_mm": 8.95
+          },
+          "tilt_deg_after": null
+        }
+      ],
+      "per_plane_residual": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6661,
+            "median_mm": 38.14,
+            "rms_mm": 38.82
+          },
+          "tilt_deg_before": 4.397,
+          "after": {
+            "n": 5974,
+            "median_mm": 4.77,
+            "rms_mm": 8.07
+          },
+          "tilt_deg_after": 3.758
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6885,
+            "median_mm": -48.44,
+            "rms_mm": 50.72
+          },
+          "tilt_deg_before": 6.131,
+          "after": {
+            "n": 177,
+            "median_mm": 4.0,
+            "rms_mm": 8.89
+          },
+          "tilt_deg_after": null
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 76510,
+            "median_mm": 27.76,
+            "rms_mm": 28.91
+          },
+          "tilt_deg_before": 1.317,
+          "after": {
+            "n": 65812,
+            "median_mm": 0.69,
+            "rms_mm": 6.92
+          },
+          "tilt_deg_after": 0.063
+        }
+      ],
+      "spatial_structure_mm": 17.73
+    },
+    "top": {
+      "solved": true,
+      "theta": [
+        0.980975177034649,
+        -0.019884463664142323,
+        -0.00729427062081327,
+        -0.0055846873444263265
+      ],
+      "n_accepted_iterations": 3,
+      "dof_used": 4,
+      "s": 0.980975177034649,
+      "a": -0.019884463664142323,
+      "b": -0.00729427062081327,
+      "c_m": -0.0055846873444263265,
+      "gain_min": 0.9717062314147246,
+      "gain_max": 0.9901133037768575,
+      "gain_span_pct": 1.8407072362132904,
+      "implied_scale_error_pct": -1.9024822965351018,
+      "conditioning": {
+        "condition_number": 221358.9,
+        "plane_depths_m": [
+          3.4022,
+          3.4865,
+          3.6191
+        ],
+        "lever_arm_mm": 216.9,
+        "plane_median_scatter_mm": 4.6,
+        "scale_offset_correlation": -1.0,
+        "note": "the scale and the offset are 100.00% correlated over a 217 mm lever arm, so their individual values are NOT separately determined. The CORRECTION is still well determined inside the span of the reference planes and degrades roughly linearly outside it. Do not quote s or c on their own, and add a third reference plane before relying on the correction above the highest one"
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "tol_mm": 25.0,
+          "n": 80384,
+          "n_planes": 3,
+          "rejected": "c = -100 mm, beyond --max-offset-m 50 mm"
+        },
+        {
+          "iter": 1,
+          "tol_mm": 21.1,
+          "n": 76599,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.984716,
+          "a": -0.020102,
+          "b": -0.005647,
+          "c_mm": -18.77,
+          "gain_span_pct": 1.759
+        },
+        {
+          "iter": 2,
+          "tol_mm": 17.8,
+          "n": 72614,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.98319,
+          "a": -0.019998,
+          "b": -0.00636,
+          "c_mm": -13.53,
+          "gain_span_pct": 1.794
+        },
+        {
+          "iter": 3,
+          "tol_mm": 15.0,
+          "n": 67648,
+          "n_planes": 3,
+          "dof": 4,
+          "s": 0.980975,
+          "a": -0.019884,
+          "b": -0.007294,
+          "c_mm": -5.58,
+          "gain_span_pct": 1.841
+        }
+      ],
+      "guard_notes": [
+        "iteration 0 rejected: c = -100 mm, beyond --max-offset-m 50 mm"
+      ],
+      "per_plane": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "n_assigned": 910,
+          "target_depth_median_m": 3.40221,
+          "median_residual_mm": 10.54
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "n_assigned": 1584,
+          "target_depth_median_m": 3.48646,
+          "median_residual_mm": 7.19
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "n_assigned": 65154,
+          "target_depth_median_m": 3.61907,
+          "median_residual_mm": -0.46
+        }
+      ],
+      "stage": "stage2",
+      "stage_detail": [
+        {
+          "stage": 1,
+          "planes": [
+            "deck"
+          ],
+          "theta": [
+            0.9796851638037427,
+            -0.02024226063949582,
+            -0.006408132143263308,
+            0.0
+          ],
+          "solved": true,
+          "guard_notes": []
+        },
+        {
+          "stage": 2,
+          "planes": [
+            "riser",
+            "riser1",
+            "deck"
+          ],
+          "theta": [
+            0.980975177034649,
+            -0.019884463664142323,
+            -0.00729427062081327,
+            -0.0055846873444263265
+          ],
+          "solved": true,
+          "guard_notes": [
+            "iteration 0 rejected: c = -100 mm, beyond --max-offset-m 50 mm"
+          ]
+        }
+      ],
+      "stage1_theta": [
+        0.9796851638037427,
+        -0.02024226063949582,
+        -0.006408132143263308,
+        0.0
+      ],
+      "held_out_after_stage1": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 3534,
+            "median_mm": 91.38,
+            "rms_mm": 90.19
+          },
+          "tilt_deg_before": 5.037,
+          "after": {
+            "n": 735,
+            "median_mm": 10.93,
+            "rms_mm": 10.84
+          },
+          "tilt_deg_after": 4.501
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6633,
+            "median_mm": 11.8,
+            "rms_mm": 37.94
+          },
+          "tilt_deg_before": 7.05,
+          "after": {
+            "n": 1515,
+            "median_mm": 8.14,
+            "rms_mm": 8.84
+          },
+          "tilt_deg_after": 2.393
+        }
+      ],
+      "per_plane_residual": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 3534,
+            "median_mm": 91.38,
+            "rms_mm": 90.19
+          },
+          "tilt_deg_before": 5.037,
+          "after": {
+            "n": 859,
+            "median_mm": 10.69,
+            "rms_mm": 10.7
+          },
+          "tilt_deg_after": 4.822
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6633,
+            "median_mm": 11.8,
+            "rms_mm": 37.94
+          },
+          "tilt_deg_before": 7.05,
+          "after": {
+            "n": 1581,
+            "median_mm": 7.24,
+            "rms_mm": 8.23
+          },
+          "tilt_deg_after": 2.571
+        },
+        {
+          "plane": 2,
+          "label": "deck",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 73554,
+            "median_mm": 69.8,
+            "rms_mm": 73.27
+          },
+          "tilt_deg_before": 1.166,
+          "after": {
+            "n": 65172,
+            "median_mm": -0.6,
+            "rms_mm": 7.13
+          },
+          "tilt_deg_after": 0.039
+        }
+      ],
+      "spatial_structure_mm": 16.78
+    }
+  },
+  "layering": [
+    {
+      "plane": 0,
+      "label": "riser",
+      "before": {},
+      "after": {
+        "center": 4.52,
+        "right": 4.77,
+        "top": 10.69
+      },
+      "spread_before_mm": null,
+      "spread_after_mm": 6.17
+    },
+    {
+      "plane": 1,
+      "label": "riser1",
+      "before": {
+        "center": -5.79,
+        "right": -4.99,
+        "top": 5.11
+      },
+      "after": {
+        "center": -4.51,
+        "right": 4.0,
+        "top": 7.24
+      },
+      "spread_before_mm": 10.9,
+      "spread_after_mm": 11.75
+    },
+    {
+      "plane": 2,
+      "label": "deck",
+      "before": {
+        "left": -12.23,
+        "center": 0.87,
+        "right": 7.56
+      },
+      "after": {
+        "left": -0.28,
+        "center": 0.01,
+        "right": 0.69,
+        "top": -0.6
+      },
+      "spread_before_mm": 19.79,
+      "spread_after_mm": 1.29
+    }
+  ],
+  "holdout": {
+    "left": {
+      "theta": [
+        1.0024883160817954,
+        -0.020737358400910844,
+        -0.0006195280119529204,
+        0.0
+      ],
+      "held_out": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": null,
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 122,
+            "median_mm": 85.31,
+            "rms_mm": 84.27
+          },
+          "tilt_deg_before": null,
+          "after": null,
+          "tilt_deg_after": null
+        }
+      ]
+    },
+    "center": {
+      "theta": [
+        0.9789284815824144,
+        -0.01636899556725316,
+        -0.004935605899183084,
+        0.0
+      ],
+      "held_out": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 8367,
+            "median_mm": 68.37,
+            "rms_mm": 69.15
+          },
+          "tilt_deg_before": 2.461,
+          "after": {
+            "n": 6528,
+            "median_mm": 4.06,
+            "rms_mm": 7.02
+          },
+          "tilt_deg_after": 2.342
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 13016,
+            "median_mm": -13.75,
+            "rms_mm": 39.93
+          },
+          "tilt_deg_before": 5.477,
+          "after": {
+            "n": 2923,
+            "median_mm": -4.48,
+            "rms_mm": 7.06
+          },
+          "tilt_deg_after": 0.536
+        }
+      ]
+    },
+    "right": {
+      "theta": [
+        0.9914592288563225,
+        0.02222840681147193,
+        0.008570329076930585,
+        0.0
+      ],
+      "held_out": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6661,
+            "median_mm": 38.14,
+            "rms_mm": 38.82
+          },
+          "tilt_deg_before": 4.397,
+          "after": {
+            "n": 6003,
+            "median_mm": 4.85,
+            "rms_mm": 7.96
+          },
+          "tilt_deg_after": 3.639
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6885,
+            "median_mm": -48.44,
+            "rms_mm": 50.72
+          },
+          "tilt_deg_before": 6.131,
+          "after": {
+            "n": 175,
+            "median_mm": 3.82,
+            "rms_mm": 8.95
+          },
+          "tilt_deg_after": null
+        }
+      ]
+    },
+    "top": {
+      "theta": [
+        0.9796851638037427,
+        -0.02024226063949582,
+        -0.006408132143263308,
+        0.0
+      ],
+      "held_out": [
+        {
+          "plane": 0,
+          "label": "riser",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 3534,
+            "median_mm": 91.38,
+            "rms_mm": 90.19
+          },
+          "tilt_deg_before": 5.037,
+          "after": {
+            "n": 735,
+            "median_mm": 10.93,
+            "rms_mm": 10.84
+          },
+          "tilt_deg_after": 4.501
+        },
+        {
+          "plane": 1,
+          "label": "riser1",
+          "window_before_mm": 100.0,
+          "window_after_mm": 15.0,
+          "before": {
+            "n": 6633,
+            "median_mm": 11.8,
+            "rms_mm": 37.94
+          },
+          "tilt_deg_before": 7.05,
+          "after": {
+            "n": 1515,
+            "median_mm": 8.14,
+            "rms_mm": 8.84
+          },
+          "tilt_deg_after": 2.393
+        }
+      ]
+    }
+  },
+  "runtime_s": 2.423
+}

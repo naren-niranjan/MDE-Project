@@ -1,0 +1,137 @@
+{
+  "run": "left+top+right_res1008",
+  "split": "along",
+  "common_mode_mm": 100.69,
+  "model": "deficit = c0 + h*(k0 + kx*x + ky*y), metres",
+  "note": "held-out residuals are the honest figure; the coefficients are refitted on all cells for use",
+  "cameras": {
+    "left": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            160,
+            210
+          ],
+          "n": 361,
+          "median_deficit_mm": 52.4
+        },
+        {
+          "band_mm": [
+            210,
+            260
+          ],
+          "n": 595,
+          "median_deficit_mm": 55.7
+        },
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 598,
+          "median_deficit_mm": 106.8
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 620,
+          "median_deficit_mm": 124.2
+        }
+      ],
+      "band_slope": 0.5324,
+      "c0_mm": -156.756,
+      "k0": 0.82604,
+      "kx_per_m": 0.13602,
+      "ky_per_m": 0.33328,
+      "n_cells": 2174,
+      "heldout_rms_mm": {
+        "constant": 90.38,
+        "relief": 748.63,
+        "positional": 813.08
+      },
+      "uncorrected_heldout_rms_mm": 79.62
+    },
+    "top": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            160,
+            210
+          ],
+          "n": 176,
+          "median_deficit_mm": 50.3
+        },
+        {
+          "band_mm": [
+            210,
+            260
+          ],
+          "n": 450,
+          "median_deficit_mm": 52.5
+        },
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 1266,
+          "median_deficit_mm": 122.1
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 1111,
+          "median_deficit_mm": 135.2
+        }
+      ],
+      "band_slope": 0.6482,
+      "c0_mm": -83.894,
+      "k0": 0.67246,
+      "kx_per_m": -0.02712,
+      "ky_per_m": 0.08362,
+      "n_cells": 3003,
+      "heldout_rms_mm": {
+        "constant": 72.86,
+        "relief": 52.81,
+        "positional": 59.33
+      },
+      "uncorrected_heldout_rms_mm": 133.64
+    },
+    "right": {
+      "deficit_by_height_mm": [
+        {
+          "band_mm": [
+            260,
+            310
+          ],
+          "n": 532,
+          "median_deficit_mm": 71.2
+        },
+        {
+          "band_mm": [
+            310,
+            360
+          ],
+          "n": 444,
+          "median_deficit_mm": 75.5
+        }
+      ],
+      "band_slope": 0.0847,
+      "c0_mm": 365.537,
+      "k0": -0.9027,
+      "kx_per_m": 0.07459,
+      "ky_per_m": 0.54455,
+      "n_cells": 979,
+      "heldout_rms_mm": {
+        "constant": 70.74,
+        "relief": 78.15,
+        "positional": 817.31
+      },
+      "uncorrected_heldout_rms_mm": 118.07
+    }
+  }
+}

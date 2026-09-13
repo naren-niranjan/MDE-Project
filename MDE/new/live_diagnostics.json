@@ -1,0 +1,718 @@
+{
+  "timestamp": "2026-08-31T16:19:51+02:00",
+  "settings": {
+    "calib_dir": "/home/jetson/Projects/Calibration_4_5/results",
+    "out_dir": "runs/live",
+    "cameras": [
+      "left",
+      "center",
+      "right",
+      "top"
+    ],
+    "reference": "center",
+    "expect_lens": "EO-58-001-12mm",
+    "self_test": false,
+    "correction": null,
+    "dead_grid_flag": false,
+    "view_correction": true,
+    "width": 2448,
+    "height": 2048,
+    "pixel_format": "RGB8",
+    "bayer_code": "COLOR_BayerRG2RGB",
+    "exposure_us": 20000.0,
+    "gain_db": 5.0,
+    "fps": 0.0,
+    "link_budget_mb_s": 250.0,
+    "link_limit": true,
+    "num_buffers": 6,
+    "buffer_timeout_ms": 2000,
+    "throughput_limit": 0,
+    "ptp": false,
+    "max_sync_ms": 202.7,
+    "use_device_timestamp": false,
+    "capture_trigger": "key",
+    "capture_key": "p",
+    "settle_thresh": 1.5,
+    "settle_frames": 4,
+    "settle_rearm": 4.0,
+    "settle_timeout": 0.0,
+    "model": "depth-anything/da3nested-giant-large-1.1",
+    "mode": "prior",
+    "process_res": 504,
+    "device": "cuda",
+    "warmup": 2,
+    "start_timeout": 30.0,
+    "input_scale": 1.0,
+    "align_ext_scale": true,
+    "conf_percentile": 40.0,
+    "edge_thresh": 0.02,
+    "edge_dilate": 2,
+    "max_incidence": 70.0,
+    "voxel": 0.004,
+    "fuse_mode": "union",
+    "tsdf_trunc": 0.02,
+    "tsdf_depth_trunc": 6.0,
+    "rect_mode": "common",
+    "undistort": true,
+    "layer_report": true,
+    "layer_band_mm": 40.0,
+    "layer_above_mm": 60.0,
+    "save_mode": "all",
+    "save_per_camera": false,
+    "save_npy": false,
+    "save_proc": true,
+    "colour_by_camera": true,
+    "view_cloud": false,
+    "preview": true,
+    "preview_width": 560,
+    "status_interval": 2.0,
+    "duration": 0.0,
+    "max_frames": 0,
+    "json": "live_diagnostics.json",
+    "no_segment": false,
+    "no_geom": false,
+    "box_log": true,
+    "segment": true,
+    "seg_voxel": 0.006,
+    "seg_roi": null,
+    "seg_plane_thresh": 0.008,
+    "seg_plane_iter": 2000,
+    "seg_plane_distance": null,
+    "seg_max_plane_attempts": 5,
+    "seg_max_boxes_warn": 12,
+    "seg_min_height": 0.02,
+    "seg_max_height": 1.0,
+    "seg_belt_only": true,
+    "seg_belt_margin": 0.05,
+    "seg_belt_eps": 0.05,
+    "seg_belt_voxel": 0.015,
+    "seg_belt_close": 0.3,
+    "seg_belt_raster_m": 0.01,
+    "seg_belt_include_objects": true,
+    "seg_belt_file": null,
+    "seg_belt_refit": false,
+    "seg_belt_edge_warn": 0.02,
+    "seg_cluster_eps": 0.02,
+    "seg_cluster_min_points": 20,
+    "seg_min_points": 300,
+    "seg_top_percentile": 97.0,
+    "seg_top_band": 0.03,
+    "seg_face_thresh": 0.006,
+    "seg_min_face_points": 150,
+    "seg_max_tilt": 25.0,
+    "seg_max_levels": 1,
+    "seg_level_gap": 0.02,
+    "seg_face_grow_scale": 0.5,
+    "seg_min_views": 2,
+    "seg_face_per_view": true,
+    "seg_min_view_face_points": 60,
+    "seg_max_face_incidence": 65.0,
+    "seg_max_view_shift": 0.06,
+    "seg_view_agree_iou": 0.5,
+    "seg_comb_warn": 0.35,
+    "seg_view_disagree_warn": 0.01,
+    "seg_dim_percentile": 1.0,
+    "seg_min_dim": 0.05,
+    "seg_max_dim": 1.2,
+    "seg_max_aspect": 4.0,
+    "seg_min_area": 0.01,
+    "seg_max_overlap": 0.5,
+    "seg_min_coverage": 0.55,
+    "seg_max_residual": 0.012,
+    "seg_single_view_frac": 0.8,
+    "seg_min_view_points": 40,
+    "seg_approach_offset": 0.1,
+    "seg_clearance_warn": 0.015,
+    "seg_overlay_scale": 2.0,
+    "seg_draw_points": false,
+    "seg_pick_radius": 0.04,
+    "seg_desaturate": true,
+    "seg_label_detail": "short",
+    "seg_views": "bev",
+    "seg_bev_mm_per_px": 2.0,
+    "seg_bev_max_px": 2000,
+    "seg_seed": 0,
+    "geom": true,
+    "geom_every": 1,
+    "geom_edge_radius": 0.003,
+    "geom_edge_step": 0.002,
+    "geom_mesh": true,
+    "geom_lines": true,
+    "geom_combined": false,
+    "geom_markers": true,
+    "geom_axes": true,
+    "geom_joints": true,
+    "geom_pick_ring": false,
+    "geom_approach": false,
+    "geom_belt_wire": true,
+    "geom_cameras": false
+  },
+  "lens_id": "EO-58-001-12mm",
+  "link_plan": {
+    "frame_mb": 15.040512,
+    "fps": 3.7,
+    "fps_source": "derived from the link budget",
+    "aggregate_mb_s": 222.5995776,
+    "per_cam_cap_fps": 8.310887288943356,
+    "budget_cap_fps": 4.155443644471678,
+    "throughput_limit": 62500000
+  },
+  "warmup": {
+    "depth_shape": [
+      420,
+      504
+    ],
+    "is_metric": 1,
+    "fx_ratio": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "median_depth_m": [
+      3.1528,
+      3.4158,
+      3.5807,
+      4.2422
+    ]
+  },
+  "correction": null,
+  "segmentation": {
+    "enabled": true,
+    "parameters": {
+      "voxel": 0.006,
+      "roi": null,
+      "plane_thresh": 0.008,
+      "plane_iter": 2000,
+      "min_plane_fraction": 0.15,
+      "plane_distance": null,
+      "max_plane_attempts": 5,
+      "max_boxes_warn": 12,
+      "min_height": 0.02,
+      "max_height": 1.0,
+      "belt_only": true,
+      "belt_margin": 0.05,
+      "belt_eps": 0.05,
+      "belt_voxel": 0.015,
+      "belt_close": 0.3,
+      "belt_raster_m": 0.01,
+      "belt_include_objects": true,
+      "belt_file": null,
+      "belt_refit": false,
+      "belt_edge_warn": 0.02,
+      "cluster_eps": 0.02,
+      "cluster_min_points": 20,
+      "min_points": 300,
+      "top_percentile": 97.0,
+      "top_band": 0.03,
+      "face_thresh": 0.006,
+      "min_face_points": 150,
+      "max_tilt_deg": 25.0,
+      "max_levels": 1,
+      "level_min_gap": 0.02,
+      "face_grow_scale": 0.5,
+      "min_views_pickable": 2,
+      "face_per_view": true,
+      "min_view_face_points": 60,
+      "max_face_incidence": 65.0,
+      "max_view_shift": 0.06,
+      "view_agree_iou": 0.5,
+      "comb_warn": 0.35,
+      "view_disagree_warn": 0.01,
+      "min_dim": 0.05,
+      "max_dim": 1.2,
+      "max_aspect": 4.0,
+      "min_area": 0.01,
+      "max_overlap": 0.5,
+      "dim_percentile": 1.0,
+      "min_coverage": 0.55,
+      "max_residual": 0.012,
+      "single_view_frac": 0.8,
+      "min_view_points": 40,
+      "approach_offset": 0.1,
+      "clearance_warn": 0.015,
+      "overlay_scale": 2.0,
+      "draw_points": false,
+      "pick_radius": 0.04,
+      "desaturate": true,
+      "label_detail": "short",
+      "views": "bev",
+      "bev_mm_per_px": 2.0,
+      "bev_max_px": 2000,
+      "seed": 0,
+      "metadata": {}
+    },
+    "geometry": {
+      "enabled": true,
+      "every": 1,
+      "edge_radius": 0.003,
+      "edge_step": 0.002,
+      "mesh": true,
+      "lines": true,
+      "combined": false,
+      "markers": true,
+      "axes": true,
+      "joints": true,
+      "pick_ring": false,
+      "approach": false,
+      "belt_wire": true,
+      "cameras": false,
+      "pick_radius": 0.04,
+      "approach_offset": 0.1
+    },
+    "last_capture": {
+      "n_boxes": 13,
+      "warnings": [
+        "the fitted plane holds only 9.2 per cent of the points, so it may not be the conveyor",
+        "no --seg-plane-distance given, so the plane is whichever surface is largest. It came out 3.143 m from the reference camera: if that is the floor rather than the deck, every result below is meaningless",
+        "the belt footprint was re-solved from this capture (2973 x 1206 mm). It bounds the parcel search, so any variation in it between captures moves the reported dimensions with it. Pass --seg-belt-file to measure it once and freeze it",
+        "--seg-cluster-min-points 20 exceeds what a sheet at 6 mm spacing can supply within 20 mm (about 35 neighbours), so it was reduced to 13. Raise --seg-cluster-eps or lower --seg-voxel if you want it higher",
+        "13 parcels found, above the 12 expected. Their tops span 248 mm at a median of 160 mm above the plane. A tight cluster of many objects at one height is the signature of a structure being segmented, usually the roller deck after the floor was fitted as the plane; set --seg-plane-distance or --seg-roi"
+      ],
+      "conveyor": {
+        "normal": [
+          -0.017263244410339888,
+          -0.007692850351279268,
+          -0.9998213842711616
+        ],
+        "offset_m": 3.142905760151553,
+        "inlier_fraction": 0.09217137401654367,
+        "inlier_rms_m": 0.004596533121466739,
+        "distance_from_reference_camera_m": 3.142905760151553,
+        "planes_rejected_on_distance": [],
+        "frame_x_axis": [
+          0.999850979092599,
+          -0.00013282334928233714,
+          -0.01726273343155761
+        ],
+        "frame_y_axis": [
+          0.0,
+          0.9999704007676582,
+          -0.007693996917681481
+        ],
+        "frame_note": "right-handed about the approach axis, that is about -normal, so reported yaw matches the wrist rotation",
+        "per_view": {
+          "left": {
+            "n_points": 13277,
+            "median_mm": -0.17,
+            "rms_mm": 4.52
+          },
+          "center": {
+            "n_points": 5608,
+            "median_mm": -2.0,
+            "rms_mm": 4.68
+          },
+          "right": {
+            "n_points": 4335,
+            "median_mm": -1.31,
+            "rms_mm": 4.67
+          },
+          "top": {
+            "n_points": 3233,
+            "median_mm": 1.99,
+            "rms_mm": 4.66
+          }
+        },
+        "per_view_spread_mm": 3.99,
+        "belt": {
+          "centre_m": [
+            0.06696731925223956,
+            -0.22718731612283694,
+            3.144058983363263
+          ],
+          "corners_m": [
+            [
+              0.6565510217923429,
+              -1.7190044243344933,
+              3.1453574134909545
+            ],
+            [
+              0.6830900527717055,
+              1.2537030443067398,
+              3.1220265027507303
+            ],
+            [
+              -0.5226163832878638,
+              1.2646297920888192,
+              3.1427605532355716
+            ],
+            [
+              -0.5491554142672264,
+              -1.708077676552414,
+              3.1660914639757958
+            ]
+          ],
+          "x_axis": [
+            0.008926931592860125,
+            0.9999293583394439,
+            -0.007847816460934931
+          ],
+          "y_axis": [
+            -0.9998111273059354,
+            0.009060815876119984,
+            0.017193351357248175
+          ],
+          "length_m": 2.97291748046875,
+          "width_m": 1.2059342041015626,
+          "n_points": 22832,
+          "n_components": 2,
+          "raster_cell_m": 0.01,
+          "closed_m": 0.3,
+          "included_objects": true,
+          "margin_m": 0.05,
+          "source": "fitted",
+          "points_inside": 187891
+        }
+      }
+    }
+  },
+  "calibration": {
+    "left": {
+      "serial": "260505158",
+      "intrinsic_rms_px": 0.271699934678038,
+      "extrinsic_rms_px": 0.2593837948484739,
+      "baseline_m": 0.29413435110821484,
+      "distortion_max_field_pct": 2.41309941944599,
+      "rectified_size": [
+        2447,
+        2047
+      ],
+      "rectified_fx": 3425.754584186617,
+      "camera_centre_m": [
+        0.02342950461522463,
+        0.29318329952547306,
+        -0.00310285267012833
+      ]
+    },
+    "center": {
+      "serial": "261100628",
+      "intrinsic_rms_px": 0.2742339034230437,
+      "extrinsic_rms_px": 0.0,
+      "baseline_m": null,
+      "distortion_max_field_pct": 2.3906598420571608,
+      "rectified_size": [
+        2447,
+        2047
+      ],
+      "rectified_fx": 3416.0159977182648,
+      "camera_centre_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "right": {
+      "serial": "261100627",
+      "intrinsic_rms_px": 0.2892689792877351,
+      "extrinsic_rms_px": 0.31621459056669704,
+      "baseline_m": 0.8591988669810454,
+      "distortion_max_field_pct": 2.339195820119657,
+      "rectified_size": [
+        2447,
+        2047
+      ],
+      "rectified_fx": 3416.273009296667,
+      "camera_centre_m": [
+        -0.010782310151502399,
+        -0.8589987188963152,
+        0.01508760232105869
+      ]
+    },
+    "top": {
+      "serial": "261100631",
+      "intrinsic_rms_px": 0.2936523196858143,
+      "extrinsic_rms_px": 0.3640457165179365,
+      "baseline_m": 0.5887911370495383,
+      "distortion_max_field_pct": 2.3231355754837124,
+      "rectified_size": [
+        2447,
+        2047
+      ],
+      "rectified_fx": 3443.9453290721967,
+      "camera_centre_m": [
+        0.07537098172197891,
+        -0.22011340660002493,
+        -0.5408736510658336
+      ]
+    }
+  },
+  "rect_mode": "common",
+  "fuse_mode": "union",
+  "pad_square": false,
+  "rot_k_applied": false,
+  "ptp_status": null,
+  "node_configuration": {
+    "left": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "TriggerMode: Off",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 5.0",
+      "AcquisitionFrameRateEnable: True",
+      "AcquisitionFrameRate: 3.7",
+      "DeviceLinkThroughputLimitMode: On",
+      "DeviceLinkThroughputLimit: 62500000",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "center": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "TriggerMode: Off",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 5.0",
+      "AcquisitionFrameRateEnable: True",
+      "AcquisitionFrameRate: 3.7",
+      "DeviceLinkThroughputLimitMode: On",
+      "DeviceLinkThroughputLimit: 62500000",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "right": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "TriggerMode: Off",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 5.0",
+      "AcquisitionFrameRateEnable: True",
+      "AcquisitionFrameRate: 3.7",
+      "DeviceLinkThroughputLimitMode: On",
+      "DeviceLinkThroughputLimit: 62500000",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "top": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "TriggerMode: Off",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 5.0",
+      "AcquisitionFrameRateEnable: True",
+      "AcquisitionFrameRate: 3.7",
+      "DeviceLinkThroughputLimitMode: On",
+      "DeviceLinkThroughputLimit: 62500000",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ]
+  },
+  "inferences": 21,
+  "frames_processed": 3,
+  "sets_accepted": 21,
+  "measured_duration_s": 52.022,
+  "mean_inference_hz": 0.4037,
+  "sync_rejections": 10,
+  "sync_spread_median_ms": 103.53,
+  "last_layer_report": {
+    "plane_normal": [
+      -0.02085609408463644,
+      -0.004655895319891761,
+      -0.9997716469165863
+    ],
+    "plane_offset_m": -3.143586965337921,
+    "belt": {
+      "left": -1.24,
+      "center": -9.44,
+      "right": -4.71,
+      "top": 19.01
+    },
+    "above": {
+      "left": 227.11,
+      "center": 215.47,
+      "right": 157.58,
+      "top": 192.05
+    },
+    "belt_spread_mm": 28.45,
+    "above_spread_mm": 69.53
+  },
+  "stage_timings": {
+    "assemble": {
+      "n": 21,
+      "mean_ms": 0.23,
+      "median_ms": 0.06,
+      "p95_ms": 0.66,
+      "min_ms": 0.04,
+      "max_ms": 0.69
+    },
+    "inference": {
+      "n": 21,
+      "mean_ms": 1308.93,
+      "median_ms": 1286.58,
+      "p95_ms": 1461.1,
+      "min_ms": 1210.23,
+      "max_ms": 1491.06
+    },
+    "correct": {
+      "n": 21,
+      "mean_ms": 0.01,
+      "median_ms": 0.0,
+      "p95_ms": 0.01,
+      "min_ms": 0.0,
+      "max_ms": 0.01
+    },
+    "backproject": {
+      "n": 21,
+      "mean_ms": 44.48,
+      "median_ms": 0.0,
+      "p95_ms": 311.41,
+      "min_ms": 0.0,
+      "max_ms": 356.06
+    },
+    "fuse": {
+      "n": 21,
+      "mean_ms": 57.61,
+      "median_ms": 0.0,
+      "p95_ms": 404.37,
+      "min_ms": 0.0,
+      "max_ms": 405.25
+    },
+    "write": {
+      "n": 21,
+      "mean_ms": 29.48,
+      "median_ms": 0.0,
+      "p95_ms": 209.64,
+      "min_ms": 0.0,
+      "max_ms": 214.26
+    },
+    "segment": {
+      "n": 21,
+      "mean_ms": 315.85,
+      "median_ms": 0.0,
+      "p95_ms": 2315.94,
+      "min_ms": 0.0,
+      "max_ms": 2472.75
+    },
+    "geometry": {
+      "n": 21,
+      "mean_ms": 2.3,
+      "median_ms": 0.0,
+      "p95_ms": 14.82,
+      "min_ms": 0.0,
+      "max_ms": 23.22
+    },
+    "cycle": {
+      "n": 21,
+      "mean_ms": 2058.38,
+      "median_ms": 1293.45,
+      "p95_ms": 6731.13,
+      "min_ms": 1210.37,
+      "max_ms": 7177.02
+    }
+  },
+  "per_camera_acquisition": {
+    "left": {
+      "frames_acquired": 242,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 4.652,
+      "buffer_wait": {
+        "n": 242,
+        "mean_ms": 199.89,
+        "median_ms": 247.07,
+        "p95_ms": 352.99,
+        "min_ms": 0.03,
+        "max_ms": 557.95
+      },
+      "rectify": {
+        "n": 242,
+        "mean_ms": 69.37,
+        "median_ms": 23.15,
+        "p95_ms": 274.67,
+        "min_ms": 14.88,
+        "max_ms": 435.8
+      },
+      "errors": []
+    },
+    "center": {
+      "frames_acquired": 240,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 4.613,
+      "buffer_wait": {
+        "n": 240,
+        "mean_ms": 212.18,
+        "median_ms": 249.04,
+        "p95_ms": 366.5,
+        "min_ms": 0.02,
+        "max_ms": 628.18
+      },
+      "rectify": {
+        "n": 240,
+        "mean_ms": 58.55,
+        "median_ms": 21.04,
+        "p95_ms": 267.76,
+        "min_ms": 13.85,
+        "max_ms": 389.8
+      },
+      "errors": []
+    },
+    "right": {
+      "frames_acquired": 243,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 4.671,
+      "buffer_wait": {
+        "n": 243,
+        "mean_ms": 187.38,
+        "median_ms": 248.86,
+        "p95_ms": 348.46,
+        "min_ms": 0.02,
+        "max_ms": 505.82
+      },
+      "rectify": {
+        "n": 243,
+        "mean_ms": 80.38,
+        "median_ms": 21.28,
+        "p95_ms": 309.81,
+        "min_ms": 14.6,
+        "max_ms": 486.83
+      },
+      "errors": []
+    },
+    "top": {
+      "frames_acquired": 240,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 4.613,
+      "buffer_wait": {
+        "n": 240,
+        "mean_ms": 211.06,
+        "median_ms": 248.94,
+        "p95_ms": 330.07,
+        "min_ms": 0.02,
+        "max_ms": 575.1
+      },
+      "rectify": {
+        "n": 240,
+        "mean_ms": 59.82,
+        "median_ms": 20.92,
+        "p95_ms": 274.33,
+        "min_ms": 15.89,
+        "max_ms": 411.07
+      },
+      "errors": []
+    }
+  },
+  "memory": {
+    "gpu_peak_alloc_gb": 8.565
+  }
+}

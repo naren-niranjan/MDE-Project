@@ -1,0 +1,312 @@
+{
+  "model": "depth-anything/da3nested-giant-large-1.1",
+  "cameras": [
+    "left",
+    "center",
+    "right",
+    "top"
+  ],
+  "expect_depth_m": 3.15,
+  "extrinsic_convention": "w2c",
+  "image_shapes": [
+    [
+      2048,
+      2448
+    ],
+    [
+      2048,
+      2448
+    ],
+    [
+      2048,
+      2448
+    ],
+    [
+      2048,
+      2448
+    ]
+  ],
+  "runs": {
+    "prior": {
+      "fields": [
+        {
+          "field": "conf",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.0,
+          "median": 5.809630393981934,
+          "max": 16.636926651000977,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "depth",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 2.0959465503692627,
+          "median": 3.434119462966919,
+          "max": 4.1634039878845215,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "extrinsics",
+          "shape": [
+            4,
+            3,
+            4
+          ],
+          "dtype": "float32",
+          "min": -0.9999454617500305,
+          "median": 0.0,
+          "max": 1.0,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "intrinsics",
+          "shape": [
+            4,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "min": 0.0,
+          "median": 1.0,
+          "max": 487.501953125,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "processed_images",
+          "shape": [
+            4,
+            420,
+            504,
+            3
+          ],
+          "dtype": "uint8",
+          "min": 0.0,
+          "median": 61.0,
+          "max": 255.0,
+          "finite_frac": 1.0
+        }
+      ],
+      "candidates": [
+        {
+          "field": "depth",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 2.0959465503692627,
+          "median": 3.434119462966919,
+          "max": 4.1634039878845215,
+          "finite_frac": 1.0,
+          "kind": "depthlike",
+          "ratio_vs_expected": 0.9173
+        },
+        {
+          "field": "conf",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.0,
+          "median": 5.809630393981934,
+          "max": 16.636926651000977,
+          "finite_frac": 1.0,
+          "kind": "depthlike",
+          "ratio_vs_expected": 0.5422
+        },
+        {
+          "field": "intrinsics",
+          "shape": [
+            4,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "min": 0.0,
+          "median": 1.0,
+          "max": 487.501953125,
+          "finite_frac": 1.0,
+          "kind": "pointmap",
+          "ratio_vs_expected": 3.15
+        },
+        {
+          "field": "processed_images",
+          "shape": [
+            4,
+            420,
+            504,
+            3
+          ],
+          "dtype": "uint8",
+          "min": 0.0,
+          "median": 61.0,
+          "max": 255.0,
+          "finite_frac": 1.0,
+          "kind": "pointmap",
+          "ratio_vs_expected": 0.0516
+        }
+      ]
+    },
+    "noprior": {
+      "fields": [
+        {
+          "field": "conf",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.0,
+          "median": 5.7879109382629395,
+          "max": 19.042919158935547,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "depth",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.609528660774231,
+          "median": 2.3631415367126465,
+          "max": 2.8975419998168945,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "extrinsics",
+          "shape": [
+            4,
+            3,
+            4
+          ],
+          "dtype": "float32",
+          "min": -0.9999223351478577,
+          "median": 0.0004762040334753692,
+          "max": 0.9999999403953552,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "intrinsics",
+          "shape": [
+            4,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "min": 0.0,
+          "median": 1.0,
+          "max": 486.4755554199219,
+          "finite_frac": 1.0
+        },
+        {
+          "field": "processed_images",
+          "shape": [
+            4,
+            420,
+            504,
+            3
+          ],
+          "dtype": "uint8",
+          "min": 0.0,
+          "median": 61.0,
+          "max": 255.0,
+          "finite_frac": 1.0
+        }
+      ],
+      "candidates": [
+        {
+          "field": "depth",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.609528660774231,
+          "median": 2.3631415367126465,
+          "max": 2.8975419998168945,
+          "finite_frac": 1.0,
+          "kind": "depthlike",
+          "ratio_vs_expected": 1.333
+        },
+        {
+          "field": "conf",
+          "shape": [
+            4,
+            420,
+            504
+          ],
+          "dtype": "float32",
+          "min": 1.0,
+          "median": 5.7879109382629395,
+          "max": 19.042919158935547,
+          "finite_frac": 1.0,
+          "kind": "depthlike",
+          "ratio_vs_expected": 0.5442
+        },
+        {
+          "field": "intrinsics",
+          "shape": [
+            4,
+            3,
+            3
+          ],
+          "dtype": "float32",
+          "min": 0.0,
+          "median": 1.0,
+          "max": 486.4755554199219,
+          "finite_frac": 1.0,
+          "kind": "pointmap",
+          "ratio_vs_expected": 3.15
+        },
+        {
+          "field": "processed_images",
+          "shape": [
+            4,
+            420,
+            504,
+            3
+          ],
+          "dtype": "uint8",
+          "min": 0.0,
+          "median": 61.0,
+          "max": 255.0,
+          "finite_frac": 1.0,
+          "kind": "pointmap",
+          "ratio_vs_expected": 0.0516
+        },
+        {
+          "field": "extrinsics",
+          "shape": [
+            4,
+            3,
+            4
+          ],
+          "dtype": "float32",
+          "min": -0.9999223351478577,
+          "median": 0.0004762040334753692,
+          "max": 0.9999999403953552,
+          "finite_frac": 1.0,
+          "kind": "depthlike",
+          "ratio_vs_expected": 6614.8117
+        }
+      ]
+    }
+  }
+}

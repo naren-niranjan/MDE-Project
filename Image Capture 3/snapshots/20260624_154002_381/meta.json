@@ -1,0 +1,35 @@
+{
+  "capture_local_time": "20260624_154002_381",
+  "cameras": {
+    "center": {
+      "t_call_ns": 1641787729549676,
+      "t_device_ns": 602907070105376,
+      "file": "center.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "left": {
+      "t_call_ns": 1641787729499889,
+      "t_device_ns": 602907054943240,
+      "file": "left.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    },
+    "right": {
+      "t_call_ns": 1641787729422324,
+      "t_device_ns": 602907291147056,
+      "file": "right.png",
+      "shape": [
+        2048,
+        2448,
+        3
+      ]
+    }
+  }
+}

@@ -1,0 +1,170 @@
+  center+left+right [raw] n= 2540160  z[1.77,3.07] span=1.306
+      layers (predicted z, points, area m2, gap to next):
+         2.389    513535      nan   +0.543
+         2.931    675733      nan   +0.087
+         3.018    518452      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.931 (675733 pts), floor = 3.018 (518452 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+left+right [filtered] n= 2383092 ( 93.8% of unfiltered)  z[1.54,3.28] span=1.739
+      layers (predicted z, points, area m2, gap to next):
+         2.056    146573     0.91   +0.356
+         2.412    370208     2.37   +0.609
+         3.021    856929     5.72       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.412 (370208 pts), floor = 3.021 (856929 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+      per view, largest-area layer (the deck):
+        center  z=3.018  area= 4.67 m2  5 layers
+        left    z=3.103  area= 0.81 m2  4 layers
+        right   z=3.023  area= 4.33 m2  4 layers
+        inter-view spread on the deck: 85 mm   *** the views are on different sheets; this is what --correction removes
+
+  center+left [raw]      n= 1693440  z[1.46,2.53] span=1.067
+      layers (predicted z, points, area m2, gap to next):
+         1.879     86175      nan   +0.211
+         2.090    358553      nan   +0.331
+         2.421    292721      nan   +0.072
+         2.493    478161      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.090 (358553 pts), floor = 2.493 (478161 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+left [filtered] n= 1594347 ( 94.1% of unfiltered)  z[1.28,2.72] span=1.434
+      layers (predicted z, points, area m2, gap to next):
+         1.899    105851     0.97   +0.208
+         2.106    246160     1.82   +0.145
+         2.251     73223     0.98   +0.235
+         2.486    469966     4.25       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.106 (246160 pts), floor = 2.486 (469966 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+      per view, largest-area layer (the deck):
+        center  z=2.491  area= 3.98 m2  5 layers
+        left    z=2.594  area= 0.87 m2  4 layers
+        inter-view spread on the deck: 103 mm   *** the views are on different sheets; this is what --correction removes
+
+  center+right [raw]     n= 1693440  z[1.99,3.11] span=1.118
+      layers (predicted z, points, area m2, gap to next):
+         2.081    117002      nan   +0.346
+         2.427    361076      nan   +0.541
+         2.967    283501      nan   +0.062
+         3.029    547884      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.427 (361076 pts), floor = 3.029 (547884 pts)
+      (parcel layers may have merged; they differ by only 168 mm)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  center+right [filtered] n= 1591906 ( 94.0% of unfiltered)  z[2.01,3.12] span=1.113
+      layers (predicted z, points, area m2, gap to next):
+         2.104    139714     0.57   +0.347
+         2.451    337517     2.10   +0.585
+         3.036    765691     5.24       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.451 (337517 pts), floor = 3.036 (765691 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+      per view, largest-area layer (the deck):
+        center  z=3.031  area= 4.75 m2  4 layers
+        right   z=3.052  area= 4.50 m2  3 layers
+        inter-view spread on the deck: 21 mm
+
+  center [raw]           n=  846720  z[1.84,2.98] span=1.142
+      layers (predicted z, points, area m2, gap to next):
+         2.223     34431      nan   +0.100
+         2.324     45207      nan   +0.076
+         2.400     49877      nan   +0.232
+         2.632    158944      nan   +0.309
+         2.941    382128      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.632 (158944 pts), floor = 2.941 (382128 pts)
+      working band, 4 layers, local fit alpha=1.0778 beta=+469 mm
+        residuals (mm): +1.1  +14.4  -20.9  +5.5   RMS 13.0
+      SCALE-FREE gap ratio: predicted 2.3200 vs scan 2.2832  ->  +1.61%
+      deck->floor implies alpha=2.534 vs working-band 1.078  (2.35x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+  center [filtered]      n=  796981 ( 94.1% of unfiltered)  z[1.91,2.98] span=1.074
+      layers (predicted z, points, area m2, gap to next):
+         2.224     33482     0.28   +0.100
+         2.324     43340     0.43   +0.076
+         2.400     45942     0.48   +0.228
+         2.629    147577     1.61   +0.313
+         2.942    371839     4.02       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.629 (147577 pts), floor = 2.942 (371839 pts)
+      working band, 4 layers, local fit alpha=1.0894 beta=+442 mm
+        residuals (mm): +1.9  +14.1  -22.1  +6.1   RMS 13.5
+      SCALE-FREE gap ratio: predicted 2.2800 vs scan 2.2832  ->  -0.14%
+      deck->floor implies alpha=2.501 vs working-band 1.089  (2.30x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+
+  left+right [raw]       n= 1693440  z[1.49,2.24] span=0.756
+      layers (predicted z, points, area m2, gap to next):
+         1.560    116210      nan   +0.068
+         1.629    128492      nan   +0.298
+         1.927    369922      nan   +0.265
+         2.192    751100      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 1.927 (369922 pts), floor = 2.192 (751100 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=0.8971 beta=+1582 mm
+        residuals (mm): +6.6  -8.1  +1.5   RMS 6.1
+      SCALE-FREE gap ratio: predicted 4.3578 vs scan 5.9273  ->  -26.48%
+      deck->floor implies alpha=2.953 vs working-band 0.897  (3.29x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+  left+right [filtered]  n= 1612225 ( 95.2% of unfiltered)  z[1.49,2.28] span=0.791
+      layers (predicted z, points, area m2, gap to next):
+         1.601    142020     0.82   +0.347
+         1.948    312873     2.25   +0.249
+         2.198    759311     4.51       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 1.948 (312873 pts), floor = 2.198 (759311 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+      per view, largest-area layer (the deck):
+        left    z=2.193  area= 2.82 m2  4 layers
+        right   z=2.235  area= 2.40 m2  5 layers
+        inter-view spread on the deck: 42 mm   *** the views are on different sheets; this is what --correction removes
+
+  left [raw]             n=  846720  z[1.29,2.04] span=0.749
+      layers (predicted z, points, area m2, gap to next):
+         1.389     74111      nan   +0.500
+         1.889    252172      nan   +0.112
+         2.001    356668      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 1.889 (252172 pts), floor = 2.001 (356668 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+  left [filtered]        n=  803671 ( 94.9% of unfiltered)  z[1.29,2.04] span=0.749
+      layers (predicted z, points, area m2, gap to next):
+         1.384     68670     0.34   +0.506
+         1.890    233800     1.37   +0.112
+         2.002    346985     2.68       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 1.890 (233800 pts), floor = 2.002 (346985 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+
+  right [raw]            n=  846720  z[2.15,2.94] span=0.782
+      layers (predicted z, points, area m2, gap to next):
+         2.219    112583      nan   +0.295
+         2.514    161099      nan   +0.307
+         2.821    227116      nan   +0.060
+         2.881    155483      nan       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.821 (227116 pts), floor = 2.881 (155483 pts)
+      [note] 3 predicted layers vs 4 in the scan -- matching the nearest 3 to the deck
+      working band, 3 layers, local fit alpha=0.5396 beta=+1753 mm
+        residuals (mm): +38.0  -74.7  +36.6   RMS 52.8
+      SCALE-FREE gap ratio: predicted 1.0384 vs scan 5.9273  ->  -82.48%
+      deck->floor implies alpha=13.039 vs working-band 0.540  (24.16x)
+      *** the response is NOT affine across this range. Do not fit alpha/beta
+          on deck+floor; the floor is outside the band the model behaves in.
+  right [filtered]       n=  806776 ( 95.3% of unfiltered)  z[2.16,2.94] span=0.777
+      layers (predicted z, points, area m2, gap to next):
+         2.219    108986     0.84   +0.297
+         2.516    153235     1.41   +0.330
+         2.847    369093     3.30       -
+      scan says: floor 4.095, deck 3.312 (gap 0.783), parcel tops 3.312-[0.277..0.445]
+      deck layer = 2.516 (153235 pts), floor = 2.847 (369093 pts)
+      *** fewer than 2 parcel layers resolved; cannot measure relative depth
+

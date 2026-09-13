@@ -1,0 +1,335 @@
+{
+  "capture": "/home/jetson/Projects/MDE/new/runs/before/frame_00002",
+  "depth_source": "corrected",
+  "depth_shape": [
+    420,
+    504
+  ],
+  "pose_deltas": {
+    "left": {
+      "fx_ratio": 0.98183,
+      "rotation_deg": 0.0032,
+      "centre_err_mm": 0.0
+    },
+    "center": {
+      "fx_ratio": 0.98212,
+      "rotation_deg": 0.0,
+      "centre_err_mm": 0.0
+    },
+    "right": {
+      "fx_ratio": 0.9822,
+      "rotation_deg": 0.0,
+      "centre_err_mm": 0.0
+    },
+    "top": {
+      "fx_ratio": 0.98259,
+      "rotation_deg": 0.0085,
+      "centre_err_mm": 0.0
+    }
+  },
+  "reports": [
+    {
+      "pose_source": "da3",
+      "plane_normal": [
+        -0.01510042695936027,
+        -0.009634956604061804,
+        -0.9998395594878625
+      ],
+      "plane_offset_m": -3.885493,
+      "per_view": {
+        "left": {
+          "n_points": 117399,
+          "n_belt_points": 58719,
+          "offset_mm": -7.19,
+          "tilt_deg": 1.1643,
+          "warp_rms_mm": 16.95,
+          "warp_p95_mm": 37.88,
+          "above_offset_mm": 816.76,
+          "above_warp_rms_mm": 115.49
+        },
+        "center": {
+          "n_points": 114909,
+          "n_belt_points": 44856,
+          "offset_mm": -16.47,
+          "tilt_deg": 0.9425,
+          "warp_rms_mm": 12.61,
+          "warp_p95_mm": 22.61,
+          "above_offset_mm": 792.77,
+          "above_warp_rms_mm": 147.15
+        },
+        "right": {
+          "n_points": 117299,
+          "n_belt_points": 44862,
+          "offset_mm": -18.28,
+          "tilt_deg": 0.4431,
+          "warp_rms_mm": 15.56,
+          "warp_p95_mm": 26.0,
+          "above_offset_mm": 802.6,
+          "above_warp_rms_mm": 123.03
+        },
+        "top": {
+          "n_points": 117168,
+          "n_belt_points": 51350,
+          "offset_mm": 4.88,
+          "tilt_deg": 0.0337,
+          "warp_rms_mm": 12.84,
+          "warp_p95_mm": 29.69,
+          "above_offset_mm": 816.2,
+          "above_warp_rms_mm": 168.85
+        }
+      },
+      "belt_offset_spread_mm": 23.16,
+      "belt_tilt_spread_deg": 1.1306,
+      "above_offset_spread_mm": 23.99,
+      "belt_field": {
+        "n_cells": 739,
+        "shared_sd_mm": 14.09,
+        "per_view_rms_mm": 5.19,
+        "per_view_rms_by_camera_mm": {
+          "left": 5.29,
+          "center": 4.85,
+          "right": 6.71,
+          "top": 3.84
+        },
+        "pairwise": {
+          "left|center": {
+            "n_cells": 613,
+            "correlation": 0.886,
+            "difference_rms_mm": 7.03
+          },
+          "left|right": {
+            "n_cells": 451,
+            "correlation": 0.909,
+            "difference_rms_mm": 11.15
+          },
+          "left|top": {
+            "n_cells": 582,
+            "correlation": 0.852,
+            "difference_rms_mm": 7.71
+          },
+          "center|right": {
+            "n_cells": 561,
+            "correlation": 0.927,
+            "difference_rms_mm": 10.75
+          },
+          "center|top": {
+            "n_cells": 692,
+            "correlation": 0.897,
+            "difference_rms_mm": 6.89
+          },
+          "right|top": {
+            "n_cells": 530,
+            "correlation": 0.931,
+            "difference_rms_mm": 8.17
+          }
+        }
+      },
+      "above_field": {
+        "n_cells": 819,
+        "shared_sd_mm": 109.52,
+        "per_view_rms_mm": 15.53,
+        "per_view_rms_by_camera_mm": {
+          "left": 16.94,
+          "center": 14.11,
+          "right": 16.91,
+          "top": 14.74
+        },
+        "pairwise": {
+          "left|center": {
+            "n_cells": 680,
+            "correlation": 0.977,
+            "difference_rms_mm": 26.25
+          },
+          "left|right": {
+            "n_cells": 360,
+            "correlation": 0.978,
+            "difference_rms_mm": 24.3
+          },
+          "left|top": {
+            "n_cells": 667,
+            "correlation": 0.977,
+            "difference_rms_mm": 27.77
+          },
+          "center|right": {
+            "n_cells": 485,
+            "correlation": 0.962,
+            "difference_rms_mm": 26.15
+          },
+          "center|top": {
+            "n_cells": 792,
+            "correlation": 0.981,
+            "difference_rms_mm": 22.45
+          },
+          "right|top": {
+            "n_cells": 472,
+            "correlation": 0.96,
+            "difference_rms_mm": 27.28
+          }
+        }
+      }
+    },
+    {
+      "pose_source": "calib",
+      "plane_normal": [
+        -0.015100123598471944,
+        -0.009634776903390398,
+        -0.9998395658011003
+      ],
+      "plane_offset_m": -3.885493,
+      "per_view": {
+        "left": {
+          "n_points": 117399,
+          "n_belt_points": 58719,
+          "offset_mm": -7.19,
+          "tilt_deg": 1.1643,
+          "warp_rms_mm": 16.95,
+          "warp_p95_mm": 37.88,
+          "above_offset_mm": 816.76,
+          "above_warp_rms_mm": 115.49
+        },
+        "center": {
+          "n_points": 114909,
+          "n_belt_points": 44856,
+          "offset_mm": -16.47,
+          "tilt_deg": 0.9425,
+          "warp_rms_mm": 12.61,
+          "warp_p95_mm": 22.61,
+          "above_offset_mm": 792.77,
+          "above_warp_rms_mm": 147.15
+        },
+        "right": {
+          "n_points": 117299,
+          "n_belt_points": 44862,
+          "offset_mm": -18.28,
+          "tilt_deg": 0.4431,
+          "warp_rms_mm": 15.56,
+          "warp_p95_mm": 26.0,
+          "above_offset_mm": 802.6,
+          "above_warp_rms_mm": 123.03
+        },
+        "top": {
+          "n_points": 117168,
+          "n_belt_points": 51350,
+          "offset_mm": 4.88,
+          "tilt_deg": 0.0336,
+          "warp_rms_mm": 12.84,
+          "warp_p95_mm": 29.69,
+          "above_offset_mm": 816.2,
+          "above_warp_rms_mm": 168.85
+        }
+      },
+      "belt_offset_spread_mm": 23.16,
+      "belt_tilt_spread_deg": 1.1307,
+      "above_offset_spread_mm": 23.99,
+      "belt_field": {
+        "n_cells": 739,
+        "shared_sd_mm": 14.09,
+        "per_view_rms_mm": 5.19,
+        "per_view_rms_by_camera_mm": {
+          "left": 5.29,
+          "center": 4.85,
+          "right": 6.71,
+          "top": 3.84
+        },
+        "pairwise": {
+          "left|center": {
+            "n_cells": 613,
+            "correlation": 0.886,
+            "difference_rms_mm": 7.03
+          },
+          "left|right": {
+            "n_cells": 451,
+            "correlation": 0.909,
+            "difference_rms_mm": 11.15
+          },
+          "left|top": {
+            "n_cells": 582,
+            "correlation": 0.852,
+            "difference_rms_mm": 7.71
+          },
+          "center|right": {
+            "n_cells": 561,
+            "correlation": 0.927,
+            "difference_rms_mm": 10.75
+          },
+          "center|top": {
+            "n_cells": 692,
+            "correlation": 0.897,
+            "difference_rms_mm": 6.89
+          },
+          "right|top": {
+            "n_cells": 530,
+            "correlation": 0.931,
+            "difference_rms_mm": 8.17
+          }
+        }
+      },
+      "above_field": {
+        "n_cells": 819,
+        "shared_sd_mm": 109.52,
+        "per_view_rms_mm": 15.53,
+        "per_view_rms_by_camera_mm": {
+          "left": 16.93,
+          "center": 14.11,
+          "right": 16.92,
+          "top": 14.73
+        },
+        "pairwise": {
+          "left|center": {
+            "n_cells": 680,
+            "correlation": 0.977,
+            "difference_rms_mm": 26.25
+          },
+          "left|right": {
+            "n_cells": 360,
+            "correlation": 0.978,
+            "difference_rms_mm": 24.3
+          },
+          "left|top": {
+            "n_cells": 667,
+            "correlation": 0.977,
+            "difference_rms_mm": 27.76
+          },
+          "center|right": {
+            "n_cells": 485,
+            "correlation": 0.962,
+            "difference_rms_mm": 26.15
+          },
+          "center|top": {
+            "n_cells": 792,
+            "correlation": 0.981,
+            "difference_rms_mm": 22.45
+          },
+          "right|top": {
+            "n_cells": 472,
+            "correlation": 0.96,
+            "difference_rms_mm": 27.28
+          }
+        }
+      }
+    }
+  ],
+  "settings": {
+    "capture": "/home/jetson/Projects/MDE/new/runs/before/frame_00002",
+    "calib_dir": "/home/jetson/Projects/Calibration_4_5/results",
+    "cameras": [
+      "left",
+      "center",
+      "right",
+      "top"
+    ],
+    "reference": "center",
+    "pose": "both",
+    "use_raw": false,
+    "band_mm": 40.0,
+    "above_mm": 60.0,
+    "cell_mm": 40.0,
+    "min_per_cell": 15,
+    "min_views": 3,
+    "conf_percentile": 40.0,
+    "edge_thresh": 0.02,
+    "edge_dilate": 2,
+    "max_incidence": 70.0,
+    "json": "layer_audit.json"
+  }
+}

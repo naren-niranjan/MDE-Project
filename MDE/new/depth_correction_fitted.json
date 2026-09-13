@@ -1,0 +1,48 @@
+{
+  "run": "left+top+right_res1008",
+  "split": "along",
+  "common_mode_mm": 39.24,
+  "model": "deficit = c0 + h*(k0 + kx*x + ky*y), metres",
+  "note": "held-out residuals are the honest figure; the coefficients are refitted on all cells for use",
+  "cameras": {
+    "left": {
+      "c0_mm": -267.72,
+      "k0": 1.25578,
+      "kx_per_m": 0.29843,
+      "ky_per_m": -0.20819,
+      "n_cells": 4444,
+      "heldout_rms_mm": {
+        "constant": 83.14,
+        "relief": 80.21,
+        "positional": 86.38
+      },
+      "uncorrected_heldout_rms_mm": 78.9
+    },
+    "top": {
+      "c0_mm": -205.891,
+      "k0": 1.1631,
+      "kx_per_m": 0.07418,
+      "ky_per_m": 0.04397,
+      "n_cells": 5464,
+      "heldout_rms_mm": {
+        "constant": 95.73,
+        "relief": 55.86,
+        "positional": 65.08
+      },
+      "uncorrected_heldout_rms_mm": 115.23
+    },
+    "right": {
+      "c0_mm": -175.28,
+      "k0": 0.82865,
+      "kx_per_m": 0.05334,
+      "ky_per_m": 0.35468,
+      "n_cells": 1979,
+      "heldout_rms_mm": {
+        "constant": 135.47,
+        "relief": 116.46,
+        "positional": 385.97
+      },
+      "uncorrected_heldout_rms_mm": 126.67
+    }
+  }
+}

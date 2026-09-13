@@ -1,0 +1,267 @@
+{
+  "lens_id": "EO-58-001-12mm",
+  "reference_camera": "center",
+  "deck_perp_m": 3.07527,
+  "separation_m": null,
+  "reference_planes": [
+    {
+      "label": "riser",
+      "perp_m": 2.85715,
+      "height_above_deck_m": 0.21803,
+      "height_above_deck_mm": 218.0,
+      "tilt_vs_deck_deg": 0.367,
+      "spread_mm": 1.0,
+      "flatness_rms_mm": 0.73,
+      "pooled_extent_m": 1.541,
+      "max_board_tilt_deg": 2.25,
+      "n_images": 4,
+      "n_points": 352,
+      "worst_rms_px": 0.2121,
+      "min_corners": 88,
+      "normal": [
+        -0.0366,
+        -0.013597,
+        -0.999237
+      ],
+      "per_image": [
+        {
+          "file": "gt/riser_01.png",
+          "n_corners": 88,
+          "rms_px": 0.2041,
+          "tilt_deg": 2.12,
+          "lateral_offset_m": 0.49,
+          "ambiguity_ratio": 21.57,
+          "offset_from_pooled_mm": 0.0,
+          "residual_rms_mm": 0.49
+        },
+        {
+          "file": "gt/riser_03.png",
+          "n_corners": 88,
+          "rms_px": 0.1982,
+          "tilt_deg": 2.25,
+          "lateral_offset_m": 0.341,
+          "ambiguity_ratio": 12.93,
+          "offset_from_pooled_mm": 0.38,
+          "residual_rms_mm": 0.71
+        },
+        {
+          "file": "gt/riser_04.png",
+          "n_corners": 88,
+          "rms_px": 0.2121,
+          "tilt_deg": 2.22,
+          "lateral_offset_m": 0.502,
+          "ambiguity_ratio": 19.61,
+          "offset_from_pooled_mm": 0.7,
+          "residual_rms_mm": 1.11
+        },
+        {
+          "file": "gt/riser_05.png",
+          "n_corners": 88,
+          "rms_px": 0.1906,
+          "tilt_deg": 2.18,
+          "lateral_offset_m": 0.111,
+          "ambiguity_ratio": 4.73,
+          "offset_from_pooled_mm": -0.3,
+          "residual_rms_mm": 0.4
+        }
+      ],
+      "expected_height_mm": 218.0,
+      "expected_error_mm": 0.0
+    },
+    {
+      "label": "riser1",
+      "perp_m": 2.94422,
+      "height_above_deck_m": 0.13033,
+      "height_above_deck_mm": 130.3,
+      "tilt_vs_deck_deg": 0.511,
+      "spread_mm": 1.72,
+      "flatness_rms_mm": 1.68,
+      "pooled_extent_m": 1.61,
+      "max_board_tilt_deg": 2.79,
+      "n_images": 5,
+      "n_points": 440,
+      "worst_rms_px": 0.2031,
+      "min_corners": 88,
+      "normal": [
+        -0.039038,
+        -0.01295,
+        -0.999154
+      ],
+      "per_image": [
+        {
+          "file": "gt/riser1_01.png",
+          "n_corners": 88,
+          "rms_px": 0.2031,
+          "tilt_deg": 2.79,
+          "lateral_offset_m": 0.569,
+          "ambiguity_ratio": 25.12,
+          "offset_from_pooled_mm": -1.29,
+          "residual_rms_mm": 2.7
+        },
+        {
+          "file": "gt/riser1_02.png",
+          "n_corners": 88,
+          "rms_px": 0.1848,
+          "tilt_deg": 2.19,
+          "lateral_offset_m": 0.233,
+          "ambiguity_ratio": 8.84,
+          "offset_from_pooled_mm": -0.58,
+          "residual_rms_mm": 1.47
+        },
+        {
+          "file": "gt/riser1_03.png",
+          "n_corners": 88,
+          "rms_px": 0.1578,
+          "tilt_deg": 2.22,
+          "lateral_offset_m": 0.156,
+          "ambiguity_ratio": 5.79,
+          "offset_from_pooled_mm": -0.58,
+          "residual_rms_mm": 1.76
+        },
+        {
+          "file": "gt/riser1_04.png",
+          "n_corners": 88,
+          "rms_px": 0.1864,
+          "tilt_deg": 2.29,
+          "lateral_offset_m": 0.298,
+          "ambiguity_ratio": 11.71,
+          "offset_from_pooled_mm": -0.04,
+          "residual_rms_mm": 1.13
+        },
+        {
+          "file": "gt/riser1_05.png",
+          "n_corners": 88,
+          "rms_px": 0.1784,
+          "tilt_deg": 2.33,
+          "lateral_offset_m": 0.511,
+          "ambiguity_ratio": 21.25,
+          "offset_from_pooled_mm": 0.43,
+          "residual_rms_mm": 0.49
+        }
+      ],
+      "expected_height_mm": 130.0,
+      "expected_error_mm": 0.3
+    },
+    {
+      "label": "deck",
+      "perp_m": 3.07527,
+      "height_above_deck_m": 0.0,
+      "height_above_deck_mm": 0.0,
+      "tilt_vs_deck_deg": 0.0,
+      "spread_mm": 1.19,
+      "flatness_rms_mm": 1.33,
+      "pooled_extent_m": 1.792,
+      "max_board_tilt_deg": 2.53,
+      "n_images": 5,
+      "n_points": 440,
+      "worst_rms_px": 0.2034,
+      "min_corners": 88,
+      "normal": [
+        -0.030368,
+        -0.015043,
+        -0.999426
+      ],
+      "per_image": [
+        {
+          "file": "gt/deck_01.png",
+          "n_corners": 88,
+          "rms_px": 0.172,
+          "tilt_deg": 1.9,
+          "lateral_offset_m": 0.395,
+          "ambiguity_ratio": 14.32,
+          "offset_from_pooled_mm": 0.01,
+          "residual_rms_mm": 0.18
+        },
+        {
+          "file": "gt/deck_02.png",
+          "n_corners": 88,
+          "rms_px": 0.2034,
+          "tilt_deg": 1.99,
+          "lateral_offset_m": 0.633,
+          "ambiguity_ratio": 20.0,
+          "offset_from_pooled_mm": -0.12,
+          "residual_rms_mm": 0.48
+        },
+        {
+          "file": "gt/deck_03.png",
+          "n_corners": 88,
+          "rms_px": 0.1896,
+          "tilt_deg": 2.53,
+          "lateral_offset_m": 0.16,
+          "ambiguity_ratio": 7.53,
+          "offset_from_pooled_mm": -0.44,
+          "residual_rms_mm": 1.84
+        },
+        {
+          "file": "gt/deck_04.png",
+          "n_corners": 88,
+          "rms_px": 0.1799,
+          "tilt_deg": 2.34,
+          "lateral_offset_m": 0.279,
+          "ambiguity_ratio": 12.88,
+          "offset_from_pooled_mm": 0.61,
+          "residual_rms_mm": 1.45
+        },
+        {
+          "file": "gt/deck_05.png",
+          "n_corners": 88,
+          "rms_px": 0.2011,
+          "tilt_deg": 2.44,
+          "lateral_offset_m": 0.631,
+          "ambiguity_ratio": 24.08,
+          "offset_from_pooled_mm": 0.75,
+          "residual_rms_mm": 1.75
+        }
+      ]
+    }
+  ],
+  "span_m": 0.21812,
+  "parcel_band_m": [
+    0.03,
+    0.6
+  ],
+  "planes_in_parcel_band": [
+    "riser",
+    "riser1"
+  ],
+  "usable": true,
+  "problems": [],
+  "focal_spread": {
+    "fx_px": {
+      "left": 3490.56,
+      "center": 3479.61,
+      "right": 3479.62,
+      "top": 3506.41
+    },
+    "spread_fraction": 0.00768
+  },
+  "measured": "2026-08-17",
+  "method": "ChArUco board laid on each surface, solvePnPGeneric against the calibrated intrinsics of the reference camera, board plus mount 6.0 mm ADDED along each placement's own normal, then ALL placements of one surface fitted as a single robust plane. Legacy marker layout off",
+  "notes": "perp_m values are PHYSICAL distances from the reference camera's optical centre, taken from a plane pooled over every placement, so they do not carry the normal-error-times-lateral-offset artefact that a per-placement perpendicular does. spread_mm is now the disagreement between placements about that common plane, which is a consistency measurement rather than a placement artefact. These are not the same quantity as --seg-plane-distance or --deck-distance, which select a band in DA3's unanchored coordinates and read several per cent short. layer_align.py can only match a plane listed here if the same physical surface is present in the capture, so leave the riser BLOCK on the belt, board removed, when taking the alignment capture.",
+  "detail": {
+    "camera_serial": "261100628",
+    "intrinsics_rms_px": 0.2742339034230437,
+    "board": {
+      "squares": [
+        12,
+        9
+      ],
+      "square_m": 0.06,
+      "marker_m": 0.047,
+      "dictionary": "DICT_5X5_250",
+      "legacy_pattern": false,
+      "thickness_mm": 6.0,
+      "thickness_sign": "added along the normal"
+    },
+    "ambiguity_ratio_limit": 3.0,
+    "max_spread_mm": 2.0,
+    "failures": {
+      "riser": [
+        {
+          "file": "gt/riser_02.png",
+          "reason": "planar PnP ambiguity: the second pose reprojects only 2.66 times worse than the first, so the standoff is not determined by the corners. Tilt the board 10 to 20 deg"
+        }
+      ]
+    }
+  }
+}

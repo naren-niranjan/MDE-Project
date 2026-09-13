@@ -1,0 +1,256 @@
+{
+  "timestamp": "2026-08-10T11:24:53+02:00",
+  "settings": {
+    "calib_dir": "/home/jetson/Projects/Calibration_4_1/results",
+    "out_dir": "runs/live",
+    "cameras": [
+      "left",
+      "center",
+      "right",
+      "top"
+    ],
+    "reference": "center",
+    "width": 2448,
+    "height": 2048,
+    "pixel_format": "RGB8",
+    "bayer_code": "COLOR_BayerRG2RGB",
+    "exposure_us": 20000.0,
+    "gain_db": 18.7,
+    "num_buffers": 6,
+    "buffer_timeout_ms": 2000,
+    "throughput_limit": 0,
+    "ptp": false,
+    "max_sync_ms": 60.0,
+    "use_device_timestamp": false,
+    "trigger": "continuous",
+    "settle_thresh": 1.5,
+    "settle_frames": 4,
+    "settle_rearm": 4.0,
+    "model": "depth-anything/da3nested-giant-large-1.1",
+    "mode": "prior",
+    "process_res": 504,
+    "device": "cuda",
+    "warmup": 2,
+    "input_scale": 1.0,
+    "conf_percentile": 40.0,
+    "edge_thresh": 0.02,
+    "edge_dilate": 1,
+    "max_incidence": 85.0,
+    "voxel": 0.004,
+    "undistort": true,
+    "save_mode": "latest",
+    "save_per_camera": false,
+    "colour_by_camera": false,
+    "preview": true,
+    "preview_width": 560,
+    "duration": 0.0,
+    "max_frames": 0,
+    "json": "live_diagnostics.json"
+  },
+  "cameras": {
+    "left": "260505158",
+    "center": "261100628",
+    "right": "261100627",
+    "top": "261100631"
+  },
+  "rectified_sizes": {
+    "left": [
+      2447,
+      2047
+    ],
+    "center": [
+      2447,
+      2047
+    ],
+    "right": [
+      2447,
+      2047
+    ],
+    "top": [
+      2447,
+      2047
+    ]
+  },
+  "ptp_status": null,
+  "node_configuration": {
+    "left": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 18.7",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "center": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 18.7",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "right": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 18.7",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ],
+    "top": [
+      "Width: 2448",
+      "Height: 2048",
+      "PixelFormat: RGB8",
+      "AcquisitionMode: Continuous",
+      "ExposureAuto: Off",
+      "ExposureTime: 20000.0",
+      "GainAuto: Off",
+      "Gain: 18.7",
+      "StreamAutoNegotiatePacketSize: True",
+      "StreamPacketResendEnable: True",
+      "StreamBufferHandlingMode: NewestOnly"
+    ]
+  },
+  "frames_processed": 25,
+  "measured_duration_s": 60.716,
+  "mean_cycle_hz": 0.4117,
+  "sync_rejections": 2890,
+  "stage_timings": {
+    "assemble": {
+      "n": 25,
+      "mean_ms": 0.04,
+      "median_ms": 0.03,
+      "p95_ms": 0.05,
+      "min_ms": 0.02,
+      "max_ms": 0.22
+    },
+    "inference": {
+      "n": 25,
+      "mean_ms": 1346.58,
+      "median_ms": 1357.77,
+      "p95_ms": 1388.65,
+      "min_ms": 1264.28,
+      "max_ms": 1426.2
+    },
+    "backproject": {
+      "n": 25,
+      "mean_ms": 292.89,
+      "median_ms": 282.44,
+      "p95_ms": 393.42,
+      "min_ms": 211.2,
+      "max_ms": 393.61
+    },
+    "fuse": {
+      "n": 25,
+      "mean_ms": 421.72,
+      "median_ms": 417.87,
+      "p95_ms": 499.18,
+      "min_ms": 367.03,
+      "max_ms": 512.18
+    },
+    "write": {
+      "n": 25,
+      "mean_ms": 60.69,
+      "median_ms": 61.53,
+      "p95_ms": 69.01,
+      "min_ms": 53.67,
+      "max_ms": 71.95
+    },
+    "cycle": {
+      "n": 25,
+      "mean_ms": 2122.05,
+      "median_ms": 2110.02,
+      "p95_ms": 2272.27,
+      "min_ms": 2006.38,
+      "max_ms": 2286.47
+    }
+  },
+  "per_camera_acquisition": {
+    "left": {
+      "frames_acquired": 480,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 7.906,
+      "buffer_wait": {
+        "mean_ms": 21.382,
+        "median_ms": 5.368,
+        "p95_ms": 118.488
+      },
+      "rectify": {
+        "mean_ms": 142.733,
+        "median_ms": 136.074,
+        "p95_ms": 289.361
+      },
+      "errors": []
+    },
+    "center": {
+      "frames_acquired": 478,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 7.873,
+      "buffer_wait": {
+        "mean_ms": 84.856,
+        "median_ms": 121.015,
+        "p95_ms": 127.461
+      },
+      "rectify": {
+        "mean_ms": 81.205,
+        "median_ms": 20.216,
+        "p95_ms": 295.411
+      },
+      "errors": []
+    },
+    "right": {
+      "frames_acquired": 498,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 8.202,
+      "buffer_wait": {
+        "mean_ms": 102.759,
+        "median_ms": 121.43,
+        "p95_ms": 211.196
+      },
+      "rectify": {
+        "mean_ms": 56.69,
+        "median_ms": 20.433,
+        "p95_ms": 188.735
+      },
+      "errors": []
+    },
+    "top": {
+      "frames_acquired": 481,
+      "incomplete_buffers": 0,
+      "acquisition_failures": 0,
+      "mean_fps": 7.922,
+      "buffer_wait": {
+        "mean_ms": 28.163,
+        "median_ms": 5.363,
+        "p95_ms": 126.088
+      },
+      "rectify": {
+        "mean_ms": 135.092,
+        "median_ms": 136.011,
+        "p95_ms": 277.683
+      },
+      "errors": []
+    }
+  },
+  "memory": {
+    "gpu_peak_alloc_gb": 8.565
+  }
+}

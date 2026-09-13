@@ -1,0 +1,76 @@
+{
+  "deck_separation_gt_m": 0.8375,
+  "band_m": 0.04,
+  "plane_threshold_m": 0.01,
+  "global_floor_normal": [
+    -0.023036,
+    0.001295,
+    -0.999734
+  ],
+  "cameras": {
+    "left": {
+      "status": "ok",
+      "scale": 1.0182,
+      "offset_mm": -48.69,
+      "camera_to_floor_measured_m": 3.99224,
+      "camera_to_floor_consensus_m": 3.96872,
+      "camera_to_deck_measured_m": 3.16183,
+      "camera_to_deck_consensus_m": 3.15315,
+      "floor_tilt_deg": 0.2787,
+      "deck_tilt_deg": 1.194,
+      "mean_deck_residual_mm": -3.71,
+      "deck_normal_to_optical_axis_deg": 0.599,
+      "n_floor_points": 226625,
+      "n_deck_points": 116836,
+      "verdict": "mixed scale and offset"
+    },
+    "center": {
+      "status": "ok",
+      "scale": 0.985,
+      "offset_mm": 43.96,
+      "camera_to_floor_measured_m": 3.98535,
+      "camera_to_floor_consensus_m": 4.00141,
+      "camera_to_deck_measured_m": 3.1696,
+      "camera_to_deck_consensus_m": 3.17324,
+      "floor_tilt_deg": 0.773,
+      "deck_tilt_deg": 0.5806,
+      "mean_deck_residual_mm": 6.46,
+      "deck_normal_to_optical_axis_deg": 2.067,
+      "n_floor_points": 256165,
+      "n_deck_points": 116931,
+      "verdict": "mixed scale and offset"
+    },
+    "right": {
+      "status": "ok",
+      "scale": 0.98821,
+      "offset_mm": 45.05,
+      "camera_to_floor_measured_m": 3.96705,
+      "camera_to_floor_consensus_m": 3.96879,
+      "camera_to_deck_measured_m": 3.14178,
+      "camera_to_deck_consensus_m": 3.13368,
+      "floor_tilt_deg": 0.9189,
+      "deck_tilt_deg": 0.6719,
+      "mean_deck_residual_mm": -2.64,
+      "deck_normal_to_optical_axis_deg": 1.118,
+      "n_floor_points": 234376,
+      "n_deck_points": 109825,
+      "verdict": "mixed scale and offset"
+    },
+    "top": {
+      "status": "ok",
+      "scale": 1.01647,
+      "offset_mm": -90.3,
+      "camera_to_floor_measured_m": 4.49842,
+      "camera_to_floor_consensus_m": 4.51436,
+      "camera_to_deck_measured_m": 3.6605,
+      "camera_to_deck_consensus_m": 3.69002,
+      "floor_tilt_deg": 0.6783,
+      "deck_tilt_deg": 1.1135,
+      "mean_deck_residual_mm": 26.23,
+      "deck_normal_to_optical_axis_deg": 1.116,
+      "n_floor_points": 178662,
+      "n_deck_points": 90672,
+      "verdict": "mixed scale and offset"
+    }
+  }
+}

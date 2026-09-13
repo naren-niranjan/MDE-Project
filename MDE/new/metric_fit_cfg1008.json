@@ -1,0 +1,154 @@
+{
+  "center+left+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.505185,
+    "per_camera_scale": {
+      "center": 1.505185,
+      "left": 1.522156,
+      "right": 1.490793
+    },
+    "scale_spread": 0.0208,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.689469,
+    "per_camera_scale": {
+      "center": 1.671619,
+      "left": 1.707318,
+      "top": 1.760075,
+      "right": 1.664315
+    },
+    "scale_spread": 0.0563,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left+top_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.839141,
+    "per_camera_scale": {
+      "center": 1.814891,
+      "left": 1.839141,
+      "top": 1.855218
+    },
+    "scale_spread": 0.022,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+left_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.636415,
+    "per_camera_scale": {
+      "center": 1.611428,
+      "left": 1.661401
+    },
+    "scale_spread": 0.0305,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.88688,
+    "per_camera_scale": {
+      "center": 1.895869,
+      "right": 1.87789
+    },
+    "scale_spread": 0.0095,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.788971,
+    "per_camera_scale": {
+      "center": 1.788971,
+      "top": 1.898692,
+      "right": 1.784323
+    },
+    "scale_spread": 0.0627,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center+top_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.884921,
+    "per_camera_scale": {
+      "center": 1.849456,
+      "top": 1.920385
+    },
+    "scale_spread": 0.0376,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "center_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.384821,
+    "per_camera_scale": {
+      "center": 1.384821
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.743625,
+    "per_camera_scale": {
+      "left": 1.752005,
+      "right": 1.735245
+    },
+    "scale_spread": 0.0096,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.802715,
+    "per_camera_scale": {
+      "left": 1.802715,
+      "top": 1.85357,
+      "right": 1.785112
+    },
+    "scale_spread": 0.0377,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left+top_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 2.12268,
+    "per_camera_scale": {
+      "left": 2.060757,
+      "top": 2.184604
+    },
+    "scale_spread": 0.0583,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "left_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.856929,
+    "per_camera_scale": {
+      "left": 1.856929
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 1.536606,
+    "per_camera_scale": {
+      "right": 1.536606
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "top+right_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 2.002012,
+    "per_camera_scale": {
+      "top": 2.02567,
+      "right": 1.978354
+    },
+    "scale_spread": 0.0236,
+    "solved_against": "AprilTag PnP versus depth"
+  },
+  "top_res1008": {
+    "root": "runs_da3/cfg1008",
+    "scale": 2.677628,
+    "per_camera_scale": {
+      "top": 2.677628
+    },
+    "scale_spread": 0.0,
+    "solved_against": "AprilTag PnP versus depth"
+  }
+}

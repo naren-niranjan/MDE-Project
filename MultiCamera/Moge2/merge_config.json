@@ -1,0 +1,52 @@
+{
+  "left": {
+    "mode": "correspondences",
+    "_comment": "pick the SAME features on both clouds; >=3 pairs, 4-6 better",
+    "src": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "dst": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "rigid": false
+  },
+  "right": {
+    "mode": "manual",
+    "_comment": "nudge in metres / degrees until it lines up, then re-run",
+    "tx": 0.0,
+    "ty": 0.0,
+    "tz": 0.0,
+    "rx": 0.0,
+    "ry": 0.0,
+    "rz": 0.0,
+    "scale": 1.0
+  }
+}

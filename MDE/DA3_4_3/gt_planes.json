@@ -1,0 +1,128 @@
+{
+  "intrinsics": "/home/jetson/Projects/Calibration_4_1/results/intrinsics_center.json",
+  "board": {
+    "squares_x": 12,
+    "squares_y": 9,
+    "square_length_m": 0.06,
+    "marker_length_m": 0.047,
+    "dictionary": "DICT_5X5_250",
+    "marker_id_offset": 0,
+    "legacy_pattern": false,
+    "thickness_m": 0.03,
+    "max_corners": 88
+  },
+  "deck": {
+    "per_image": [
+      {
+        "image": "deck_01.png",
+        "n_corners": 88,
+        "rms_px": 0.1483,
+        "normal": [
+          0.04287797586818186,
+          0.011014287259938877,
+          0.9990196017404279
+        ],
+        "d": -3.0718066446403065,
+        "perp_dist_m": 3.07181,
+        "centroid_dist_m": 3.07259,
+        "centroid_cam": [
+          0.09722371489264581,
+          -0.026224605819136326,
+          3.0709374756374648
+        ]
+      },
+      {
+        "image": "deck_02.png",
+        "n_corners": 88,
+        "rms_px": 0.1771,
+        "normal": [
+          0.04853309824759204,
+          0.012626549742864032,
+          0.9987417627275234
+        ],
+        "d": -3.0716815332992775,
+        "perp_dist_m": 3.07168,
+        "centroid_dist_m": 3.23267,
+        "centroid_cam": [
+          0.08815211468626638,
+          -0.9666927655678539,
+          3.083488993127409
+        ]
+      }
+    ],
+    "n_images": 2,
+    "perp_dist_mean_m": 3.07174,
+    "perp_dist_spread_mm": 0.13,
+    "centroid_dist_mean_m": 3.15263,
+    "normal_mean": [
+      0.04570573506123881,
+      0.011820469709255784,
+      0.9988850095373162
+    ],
+    "d_mean": -3.0717440889697922,
+    "rms_px_max": 0.1771,
+    "n_corners_min": 88,
+    "normal_spread_deg": 0.0,
+    "surface_perp_dist_m": 3.04174,
+    "surface_centroid_dist_m": 3.12263
+  },
+  "floor": {
+    "per_image": [
+      {
+        "image": "floor_01.png",
+        "n_corners": 88,
+        "rms_px": 0.1414,
+        "normal": [
+          0.04415735419181982,
+          0.003593303010868133,
+          0.9990181260839315
+        ],
+        "d": -3.9139170864120056,
+        "perp_dist_m": 3.91392,
+        "centroid_dist_m": 4.07264,
+        "centroid_cam": [
+          1.1852545161949584,
+          0.504415275014011,
+          3.8635603951816795
+        ]
+      },
+      {
+        "image": "floor_02.png",
+        "n_corners": 88,
+        "rms_px": 0.2089,
+        "normal": [
+          0.05496942974517285,
+          0.008832980541883499,
+          0.9984489672728583
+        ],
+        "d": -3.9045541250472686,
+        "perp_dist_m": 3.90455,
+        "centroid_dist_m": 4.05663,
+        "centroid_cam": [
+          -0.7098748710507218,
+          -0.559493251328375,
+          3.9546513285366482
+        ]
+      }
+    ],
+    "n_images": 2,
+    "perp_dist_mean_m": 3.90923,
+    "perp_dist_spread_mm": 9.37,
+    "centroid_dist_mean_m": 4.06463,
+    "normal_mean": [
+      0.04956428834142925,
+      0.006213254143425276,
+      0.9987516091572303
+    ],
+    "d_mean": -3.909235605729637,
+    "rms_px_max": 0.2089,
+    "n_corners_min": 88,
+    "normal_spread_deg": 0.0,
+    "surface_perp_dist_m": 3.87923,
+    "surface_centroid_dist_m": 4.03463
+  },
+  "separation_m": 0.83749,
+  "separation_mm": 837.49,
+  "plane_angle_deg": 0.3901,
+  "planes_parallel": true
+}
